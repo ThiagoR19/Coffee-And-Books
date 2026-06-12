@@ -17,7 +17,6 @@ export default function App() {
         <Route path="/about">
           <div>Contenido de Acerca de</div>
         </Route>
-        <Route path="/usuario/:id" component={UserProfle} />
         <Route>404: ¡Página no encontrada!</Route>
       </Switch>
       <Footer />
@@ -26,4 +25,3 @@ export default function App() {
 }
 
 const Home = () => <h2>Inicio</h2>;
-const UserProfle = ({ params }) => <h2>Perfil del usuario: {params.id}</h2>;
