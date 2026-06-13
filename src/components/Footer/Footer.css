@@ -1,0 +1,228 @@
+/* -------------------------------- Paleta del footer --------------------------------- */
+:root {
+  --footer-text: #ffffff;
+  --footer-selected: #FF9666;
+  --footer-border: rgba(255, 255, 255, 0.2);
+  --font-footer: "Inter", sans-serif;
+  --font-footer-display: "Merriweather", serif;
+}
+
+/* -------------------------------- Contenido del footer -------------------------- */
+.footer {
+  color: var(--footer-text);
+  font-family: var(--font-footer);
+  background-image: linear-gradient(90deg, #502F1C, #492B1B, #5E3A27, #513121, #3B2318);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.footer__inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: 48px;
+  align-items: center;
+}
+
+.footer__top {
+  padding: 28px 64px 0;
+}
+
+.footer__brand-name {
+  font-family: var(--font-footer-display);
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--footer-text);
+  margin: 0;
+}
+.footer__brand-tagline {
+  font-size: 20px;
+  font-weight: lighter;
+  line-height: 1.6;
+  margin: 0 0 20px;
+  font-family: "Merriweather Sans";
+}
+
+.footer__social {
+  display: flex;
+  gap: 12px;
+}
+.footer__social-icon{
+  max-width: 24px;
+  max-height: 24px;
+}
+.footer__social-link {
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+.footer__social-link:hover {
+  color: var(--footer-text);
+}
+
+.footer__col-title {
+  font-size: 20px;
+  font-family: var(--font-footer);
+  font-weight: 700;
+  color: var(--footer-text);
+  margin: 0 0 16px;
+}
+
+.footer__col.info{
+  margin-bottom: 30px;
+}
+
+.footer__link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer__link {
+  font-size: 18px;
+  color: var(--footer-text);
+  font-family: "Molengo";
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer__link:hover {
+  color: var(--footer-selected);
+}
+
+.footer__logo-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__brand, .footer__col, .footer__logo-col{
+  display: flex;
+  flex-direction: column;
+}
+
+/* Para copyright */
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 64px 15px;
+}
+.footer__bottom-left,
+.footer__bottom-right {
+  display: flex;
+  align-items: center;
+}
+
+.footer__bottom br {
+  display: none;
+}
+
+/* El logo del bottom es solo para mobile */
+.footer__bottom-right {
+  display: none;
+}
+
+.footer__bottom p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.footer__logo-img {
+  max-width: 160px;
+  height: auto;
+}
+
+/* --------------------------------- Responsive ----------------------------------------- */
+@media (max-width: 768px) {
+  /* Top: 3 columnas compactas (marca, info, categorías) */
+  .footer__top {
+    padding: 20px 16px 0;
+  }
+
+  .footer__inner {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    padding: 0;
+  }
+
+  /* Logo oculto en el grid en mobile (se muestra en footer__bottom) */
+  .footer__inner .footer__logo-col {
+    display: none;
+  }
+
+  .footer__brand {
+    margin-bottom: 38px;
+  }
+
+  /* Logo visible en el bottom solo en mobile */
+  .footer__bottom-right {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* Línea separadora con margen para que no llegue a los bordes */
+  .footer__divider {
+    display: block;
+    height: 1.5px;
+    background-color: var(--footer-border);
+    margin-top: 16px;
+  }
+
+  .footer__brand-name {
+    font-size: 9.5px;
+    margin-bottom: 4px;
+  }
+  .footer__brand-tagline {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+  .footer__social-icon {
+    max-width: 16px;
+    max-height: 16px;
+  }
+
+  .footer__col-title {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+  .footer__col.info{
+    margin-bottom: 0;
+  }
+
+  .footer__col.cats{
+    margin-bottom: 10px;
+  }
+
+  .footer__link {
+    font-size: 12px;
+    word-break: break-word;
+  }
+  .footer__link-list {
+    gap: 6px;
+    line-height: 1;
+  }
+
+  /* Bottom: copyright izquierda + logo derecha, sin border-top */
+  .footer__bottom {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px 16px 10px;
+    gap: 0;
+    border-top: none;
+  }
+  .footer__bottom-right {
+    justify-content: flex-end;
+  }
+  .footer__bottom p {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: 50px;    
+  }
+  .footer__logo-img {
+    margin-right: 16px;
+    max-width: 72px;
+  }
+}
