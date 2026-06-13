@@ -14,11 +14,6 @@ export default function App() {
   return (
     <div>
       <Header />
-      <nav>
-        <Link href="/">Inicio</Link>
-        <Link href="/about">Acerca de</Link>
-      </nav>
-
       <Switch>
         <Route path="/home" component={Home} />
         {/* <Route path="/catalogo" component={Catalogo} /> */}
