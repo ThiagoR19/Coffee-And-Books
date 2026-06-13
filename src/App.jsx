@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home"
 import TerminosYCondiciones from "./pages/TerminosYCondiciones/TerminosYCondiciones";
 import SobreNosotros from "./pages/SobreNosotros/SobreNosotros";
 import PreguntasFrecuentes from "./pages/PreguntasFrecuentes/PreguntasFrecuentes";
+import Carrito from "./pages/Carrito/Carrito";
 
 import './App.css'
 
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="/sobrenosotros" component={SobreNosotros} />
         <Route path="/faqs" component={PreguntasFrecuentes} />
         <Route path="/terminos" component={TerminosYCondiciones} />
+        <Route path="/carrito" component={Carrito} />
         <Route path="/" ><div>Contenido de Acerca de</div></Route>
         <Route>404: ¡Página no encontrada!</Route>
       </Switch>
