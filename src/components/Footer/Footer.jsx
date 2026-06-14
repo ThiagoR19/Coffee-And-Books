@@ -5,8 +5,8 @@ import WhatsAppIcon from "../../assets/icon-whatsapp.png";
 import LogoFooter from "../../assets/logo-footer.png";
 
 const INFO_LINKS = [
-  { label: "Sobre nosotros", path: "/sobre-nosotros" },
-  { label: "Preguntas frecuentes", path: "/faq" },
+  { label: "Sobre nosotros", path: "/sobrenosotros" },
+  { label: "Preguntas frecuentes", path: "/faqs" },
   { label: "Términos y condiciones", path: "/terminos" },
 ];
 
