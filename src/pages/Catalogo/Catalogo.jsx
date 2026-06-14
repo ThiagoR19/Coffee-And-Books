@@ -1,16 +1,29 @@
 import  './Catalogo.css'
 import  '../../App.css'
+import imagenCatalogo from '../../assets/imagen-catalogo.png'
 
 export default function Catalogo() {
     return(
+        <>
         <div className="catalogo">
-            <h1>Catálogo</h1>
-            <p>Libros y cafés importados</p>
-            <p>para inspirar tus mejores momentos.</p>
+            <div className="catalogo-texto">
+                <h1>Catálogo</h1>
+                <p>Libros y cafés importados <hr/> para inspirar tus <hr/> mejores momentos.</p>
 
-            <button>TODOS LOS PRODUCTOS</button>
-            <button>LIBROS</button>
-            <button>CAFÉS IMPORTADOS</button>
+                <div className="catalogo-botones">
+                    <button className="btn active">TODOS LOS LIBROS</button>
+                    <button className="btn">LIBROS</button>
+                    <button className="btn">CAFÉS IMPORTADOS</button>
+                </div>
+            </div>
+            
+
+              <img className="catalogo-img" src={imagenCatalogo} alt="Cafetería con libros"/>
         </div>
+
+        <div className="container-productos">
+            <div className="productos"></div>
+        </div>
+        </>
     );
 }

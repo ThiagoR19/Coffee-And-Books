@@ -1,7 +1,58 @@
 .catalogo{
-    background: linear-gradient(to left,#523325,#713D25)
+    background: linear-gradient(to left,#523325,#713D25);
+    display: flex;
+    align-items: stretch; 
+    overflow: hidden;
+}
+
+.catalogo-texto{
+    flex: 1;
+    padding: 30px 50px;
+}
+
+.catalogo-img{
+    width: 38%;
+    object-fit: contain;
+}
+
+.catalogo-botones{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px 0px 0px 20px;
 }
 
 h1,p{
     color: #FFDCCC;
+    margin: 0px 0px 20px 20px;
 }
+h1{
+    font-size: 70px;
+}
+p{
+    font-size: 30px;
+}
+hr{
+    border: none;
+    margin: 0;
+}
+
+.btn{
+    border : solid 2px #DCDACE;
+    background: none;
+    margin: 0px 10px 0px 0px ;
+    padding: 10px;
+    color: #DCDACE;
+    object-fit: contain;
+    font-size: 17px;
+}
+
+.btn:hover{
+    background: rgb(225, 187, 163);
+    color: #523325;
+}
+
+.btn.active{
+    background: #DCDACE;
+    color: #523325;
+}
+
