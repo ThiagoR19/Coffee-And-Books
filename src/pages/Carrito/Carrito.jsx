@@ -7,7 +7,7 @@ import iconoCheck from '../../assets/icon-check.png'
 import iconoBolsa from '../../assets/icon-bolsa.png'
 import iconoTrash from '../../assets/icon-trash.png'
 
-import '/Carrito.css'
+import './Carrito.css'
 
 const productos = [
   { id: 1, nombre: 'Nombre Producto', precio: 100000 },
