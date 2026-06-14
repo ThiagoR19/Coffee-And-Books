@@ -1,3 +1,106 @@
 img {
   height: 100px;
 }
+
+.Carrito {
+  display: flex;
+  height: 100vh;
+  background-image: url('../../assets/fondos/fondo3.1.0.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;
+}
+
+/* Productos Carrito */
+
+#productos {
+  display: flex;
+  flex-direction: column;
+  background-color: #523325;
+  border: 2px solid #D5713C;
+  border-radius: 10px;
+  padding: 0;
+  flex: 2;
+}
+
+.productos__h3 {
+  color: white;
+  background-color: rgba(46, 28, 20, 0.2);
+  text-align: center;
+  padding: 20px;
+}
+
+.productos__div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px;
+  color: white;
+}
+
+
+.productos__div:last-child {
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+  background-color: #362218;
+  border: solid 1px #D5713C;
+  color: white;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  align-items: center;
+  padding: 10px;
+}
+
+.producto {
+  display: flex;
+  background: linear-gradient(to right, #523325, #713D25);
+  border-radius: 10px;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.producto__img {
+  width: 40%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px 0 0 10px;
+}
+
+.productos__div-img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.producto__underline {
+  width: 90%;
+  height: 1px;
+  background-color: #D5713C;
+}
+
+.productos__div-div-h3 {
+  font-size: 16px;
+  color: #D3D3D3;
+}
+
+.productos__div-div-span {
+  font-size: 13px;
+  color: #D3D3D3;
+}
+
+#producto {
+  display: flex;
+  width: 30%;
+  flex: 4;
+}
+
+#resumen {
+  display: flex;
+  flex: 2;
+}

@@ -1,6 +1,8 @@
 import cafeDefault from '../../assets/imagen-cafe-default.png'
 import iconoWhatsapp from '../../assets/icon-whatsapp.png'
 
+import './ProductosCarrito.css'
+
 function ProductosCarrito({ productos }) {
   return (
     <article id="productos">
@@ -21,14 +23,16 @@ function ProductosCarrito({ productos }) {
 
 function ProductoCarritoLateral({ producto }) {
   return (
-    <div className="producto">
-      <img className='producto__img' src={cafeDefault} alt="Café por defecto" />
-      <div className='producto__div'>
-        <h4 className='producto__div-h4'>{producto.nombre}</h4>
-        <span className='producto__div-span'>{producto.precio}</span>
+    <>
+      <div className="producto">
+        <img className='producto__img' src={cafeDefault} alt="Café por defecto" />
+        <div className='producto__div'>
+          <h4 className='producto__div-h4'>{producto.nombre}</h4>
+          <span className='producto__div-span'>${producto.precio}</span>
+        </div>
       </div>
       <div className='producto__underline'></div>
-    </div>
+    </>
   )
 }
 

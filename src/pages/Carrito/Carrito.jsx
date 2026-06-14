@@ -14,7 +14,7 @@ const productos = [
 
 function Carrito() {
   return (
-    <section>
+    <section className='Carrito'>
       <ProductosCarrito productos={productos} />
       <ProductoCarrito />
       <ResumenCarrito />
