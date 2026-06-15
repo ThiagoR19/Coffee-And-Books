@@ -4,20 +4,20 @@ import buttonMinus from '../../assets/icon-minus-carrito.png'
 import buttonPlus from '../../assets/icon-plus-carrito.png'
 import iconoTrash from '../../assets/icon-trash.png'
 
-
-
 function ProductoCarrito() {
   return (
     <article id="producto">
       <div className='producto__div'>
-        <div className='producto__div-div'>
-          <img className='producto__div-div-img' src={iconoTrash} alt="Icono de Basura" />
+        <div className='producto__div-div-trash'>
+          <img className='producto__div-div-img-trash' src={iconoTrash} alt="Icono de Basura" />
         </div>
-        <div className='producto__div-div'>
-          <h2 className='producto__div-div-h2'>Café Colombiano Importado</h2>
+        <div className='producto__div-div-titulo'>
+          <h2 className='producto__div-div-h2-titulo'>Café Colombiano Importado</h2>
         </div>
-        <img className='producto__div-img' src={cafeDefault} alt="" />
-        <div className='producto__div-div'>
+        <div className='producto__div-div-principal'>
+          <img className='producto__div-div-img-principal' src={cafeDefault} alt="" />
+        </div>
+        <div className='producto__div-div-botones'>
           <button className='producto__div-div-button'>
             <img className='producto__div-div-button-img' src={buttonMinus} alt="" />
           </button>

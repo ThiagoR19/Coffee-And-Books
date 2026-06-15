@@ -11,7 +11,7 @@ function ProductosCarrito({ productos }) {
         {productos.map((producto) => <ProductoCarritoLateral key={producto.id} producto={producto} />)}
       </div>
       <div className='productos__div'>
-        <img className='productos__div-img' src={iconoWhatsapp} alt="Icono de Whatsapp" />
+        <img className='productosL__div-img' src={iconoWhatsapp} alt="Icono de Whatsapp" />
         <div className='productos__div-div'>
           <h3 className='productos__div-div-h3'>¿No encontraste tu producto?</h3>
           <span className='productos__div-div-span'>No dudes en pedirme que lo agregue al catálogo</span>
@@ -24,14 +24,14 @@ function ProductosCarrito({ productos }) {
 function ProductoCarritoLateral({ producto }) {
   return (
     <>
-      <div className="producto">
-        <img className='producto__img' src={cafeDefault} alt="Café por defecto" />
-        <div className='producto__div'>
-          <h4 className='producto__div-h4'>{producto.nombre}</h4>
-          <span className='producto__div-span'>${producto.precio}</span>
+      <div className="productoL">
+        <img className='productoL__img' src={cafeDefault} alt="Café por defecto" />
+        <div className='productoL__div'>
+          <h4 className='productoL__div-h4'>{producto.nombre}</h4>
+          <span className='productoL__div-span'>${producto.precio}</span>
         </div>
       </div>
-      <div className='producto__underline'></div>
+      <div className='productoL__underline'></div>
     </>
   )
 }

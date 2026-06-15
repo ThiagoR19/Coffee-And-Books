@@ -9,7 +9,6 @@ const productos = [
   { id: 2, nombre: 'Nombre Producto', precio: 100000 },
   { id: 3, nombre: 'Nombre Producto', precio: 100000 },
   { id: 4, nombre: 'Nombre Producto', precio: 100000 },
-  { id: 5, nombre: 'Nombre Producto', precio: 100000 },
 ]
 
 function Carrito() {
