@@ -7,6 +7,7 @@ import TerminosYCondiciones from "./pages/TerminosYCondiciones/TerminosYCondicio
 import SobreNosotros from "./pages/SobreNosotros/SobreNosotros";
 import PreguntasFrecuentes from "./pages/PreguntasFrecuentes/PreguntasFrecuentes";
 import Carrito from "./pages/Carrito/Carrito";
+import ProductoCafe from "./pages/ProductoCafe/ProductoCafe";
 
 import './App.css'
 
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/faqs" component={PreguntasFrecuentes} />
         <Route path="/terminos" component={TerminosYCondiciones} />
         <Route path="/carrito" component={Carrito} />
+        <Route path="/productoCafe" component={ProductoCafe} />
         <Route path="/" ><div>Contenido de Acerca de</div></Route>
         <Route>404: ¡Página no encontrada!</Route>
       </Switch>
