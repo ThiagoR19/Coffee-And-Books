@@ -1,0 +1,8 @@
+#cafe {
+  display: flex;
+}
+
+#botones div button:first-child {
+  width: 20px;
+}
+
