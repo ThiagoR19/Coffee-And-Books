@@ -7,6 +7,7 @@ import InstagramIcon from "../../assets/icon-instagram.png";
 import LogoHeader from "../../assets/logo-header.png";
 import SearchIcon from "../../assets/icon-search.png";
 import CartIcon from "../../assets/carrito-icon.png";
+import CartIconActive from "../../assets/carrito-icon-seleccionado.png";
  
 const NAV_LINKS = [
   { label: "HOME", path: "/" },
@@ -48,7 +49,7 @@ function Header({ cartCount = 0 }) {
         </a>
         <a
           href="https://instagram.com/coffeeandboks"
-          className="header__topbar-link"
+          className="header__topbar-link ig"
           target="_blank"
           rel="noreferrer"
         >
@@ -124,8 +125,8 @@ function Header({ cartCount = 0 }) {
             </button>
           )}
  
-          <Link href="/carrito" className="header__icon-btn header__cart">
-            <img src={CartIcon} alt="Carrito" />
+          <Link href="/carrito" className="header__icon-btn header__cart" aria-current={location === "/carrito" ? "page" : undefined}>
+            <img src={location === "/carrito" ? CartIconActive : CartIcon} alt="Carrito"/>
             {cartCount > 0 && (
               <span className="header__cart-badge">{cartCount}</span>
             )}
