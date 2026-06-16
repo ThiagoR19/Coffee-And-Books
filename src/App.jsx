@@ -12,7 +12,7 @@ import './App.css'
 
 export default function App() {
   return (
-    <div>
+    <main>
       <Header />
       <Switch>
         <Route path="/home" component={Home} />
@@ -25,6 +25,6 @@ export default function App() {
         <Route>404: ¡Página no encontrada!</Route>
       </Switch>
       <Footer />
-    </div >
+    </main >
   );
 }
