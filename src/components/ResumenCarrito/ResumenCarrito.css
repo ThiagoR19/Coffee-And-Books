@@ -1,0 +1,40 @@
+#resumen {
+  display: flex;
+  flex-direction: column;
+  background-color: #523325;
+  border: 2px solid #D5713C;
+  border-radius: 10px;
+  flex: 6;
+}
+
+.resumen__h3 {
+  padding: 20px;
+  background-color: rgba(46, 28, 20, 0.2);
+  color: white;
+  font-family: 'inter';
+  font-weight: 300;
+  font-size: 25px;
+  text-align: center;
+}
+
+.resumen__div {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.resumen__div-div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  color: #D3D3D3;
+  margin: 5px 0;
+}
+
+.resumen__div-div-h5 {
+  font-family: 'inter';
+  font-weight: 300;
+  font-size: 15px;
+}

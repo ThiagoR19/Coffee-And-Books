@@ -4,6 +4,8 @@ import buttonMinus from '../../assets/icon-minus-carrito.png'
 import buttonPlus from '../../assets/icon-plus-carrito.png'
 import iconoTrash from '../../assets/icon-trash.png'
 
+import './ProductoCarrito.css'
+
 function ProductoCarrito() {
   return (
     <article id="producto">

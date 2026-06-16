@@ -1,0 +1,148 @@
+#producto {
+  display: flex;
+  flex-direction: column;
+  flex: 10;
+  margin: 0 40px;
+  position: relative;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.producto__div:first-child {
+  background-color: #523325;
+  border-radius: 20px;
+  padding: 15px;
+  border: 4px solid #D5713C;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin: 0 0 10px 0;
+  height: 50%;
+}
+
+.producto__div-div-trash {
+  position: absolute;
+  background-color: #D5713C;
+  right: 0;
+  border-radius: 0 20px 0 20px;
+  padding: 10px;
+}
+
+.producto__div-div-img-trash {
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+}
+
+.producto__div-div-titulo {
+  display: flex;
+  background-color: #713D25;
+  color: white;
+  width: fit-content;
+  border-radius: 10px 0 10px 0;
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+}
+
+.producto__div-div-h2-titulo {
+  text-decoration: underline;
+  font-family: 'Playfair Display';
+  font-weight: 100;
+  text-decoration-thickness: 0.5px;
+}
+
+.producto__div-div-principal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0;
+  width: 90%;
+  height: 50%;
+}
+
+.producto__div-div-img-principal {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.producto__div-div-botones {
+  display: flex;
+  background-color: #713D25;
+  border-radius: 10px 10px 0 10px;
+  padding: 10px 15px;
+  align-items: center;
+}
+
+.producto__div-div-botones button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.producto__div-div-botones div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 15px;
+  color: white;
+  font-size: 30px;
+  background-color: #945C42;
+  border: solid 2px white;
+  border-radius: 40px;
+  padding: 0 35px;
+}
+
+.producto__div-div-div-h3 {
+  font-family: 'inter';
+  font-weight: 300;
+  font-size: 40px;
+}
+
+.producto__div-div-botones button img {
+  height: 45px;
+  border-top: -20px;
+}
+
+.producto__div:last-child {
+  background-color: #523325;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.producto__div-div {
+  display: flex;
+  background: linear-gradient(to right, #713D25, rgba(54, 34, 24, 0.2));
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.producto__div-div-h3 {
+  font-family: 'Playfair Display';
+  font-weight: 200;
+  font-size: 30px;
+  color: white;
+  padding: 10px 25px;
+}
+
+.producto__divp {
+  color: #D3D3D3;
+  padding: 0px 25px;
+  margin: 20px 0;
+}
+
+.producto__div-img {
+  width: 100%;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 0 0 20px 20px;
+}
