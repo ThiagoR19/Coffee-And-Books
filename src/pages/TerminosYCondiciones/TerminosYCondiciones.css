@@ -1,0 +1,344 @@
+/*----------PALETA---------------*/
+:root{
+    --font-h1: "Playfair Display";
+    --font-rules: "Merriweather";
+    --bg-dark: #2f1c12;
+    --bg-soft: rgba(251, 241, 232, 0.96);
+    --bg-card: #FFECDE;
+    --border-soft: rgba(255, 217, 182, 0.55);
+    --text-dark: #3c220c;
+    --text-medium: #5E3719;
+    --text-muted: #6e533f;
+    --h2-terms-cdtns: #FFECDE;
+    --shadow: 0 28px 60px rgba(0, 0, 0, 0.24);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/*-------------CONTENEDOR GENERAL--------------*/
+.container-main{
+    background-image: url('../../assets/fondos/fondo3.1.0.png');
+    background-size: cover;
+    background-position: center;
+    padding: 36px 24px 56px;
+    min-height: 100vh;
+}
+
+.content {
+    width: min(95%, 1500px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(360px, 0.9fr) minmax(360px, 1fr) minmax(480px, 1.1fr);
+    grid-template-areas:
+        "about rules conds"
+        "sep sep conds"
+        "terms cont2 conds";
+    gap: 28px;
+    align-items: start;
+}
+
+.about-our-prodts { grid-area: about; }
+.our-rules { grid-area: rules; }
+.cont-grande { grid-area: conds; align-self: stretch; }
+.hr1 { grid-area: sep; justify-self: center; align-self: center; }
+.terms-conditns { grid-area: terms; }
+.cont2 { grid-area: cont2; }
+
+/*----------"header"-------------------*/
+.header1{
+    background-image: url(/src/assets/fondos/fondo-header-termsAndConditions.png);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 48px 24px;
+    box-shadow: var(--shadow);
+    width: calc(100% + 48px);
+    margin-left: -24px;
+}
+
+.header1 h1{
+    font-family: var(--font-h1);
+    font-size: 66px;
+    line-height: 1.02;
+    color: #ffcfab;
+    margin: 0;
+}
+.header1 p{
+    font-family: var(--font-rules);
+    font-size: 32px;
+    color: #ffcfab;
+    margin: 16px 0 0;
+    letter-spacing: 0.01em;
+}
+
+/*---------------------------HRs-------------------------*/
+.hr1, .hr3, .hr4, .hr5, .hr7 {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.hr1 { max-width: 600px; margin: 35px 0; display: block; }
+.hr2 { width: 100%; max-width: 380px; display: block; height: 20px; margin: 10px 0 20px; justify-content: center; align-self: center;}
+.hr3 { max-width: 390px; justify-self: center; margin: 10px, 0}
+.hr4 { max-width: 390px; }
+.hr5 { max-width: 365px; margin: 5px; height: 2px;}
+.hr7 { max-width: 95%; height: 55px; margin-top: 6px; display: block; align-self: center;}
+
+.separator-row {
+    grid-area: sep;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    justify-self: center;
+    align-self: center;
+}
+
+/*--------------------------COLUMNAS PARA MOSTRAR LA INFO-------------------------------*/
+.col-2{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.col-2 > img.hr7 {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-top: 4px;
+}
+
+/*----------------------------ESTILOS GENERALES------------------------------------*/
+.content h2 {
+    font-family: var(--font-rules);
+    color: var(--text-medium);
+    font-size: 29.5px;
+    margin: 0;
+    text-align: center;
+    letter-spacing: 0.01em;
+}
+
+b{
+    font-family: var(--font-rules);
+}
+
+/*-------------------------CARTEL: SOBRE NUESTROS PRODUCTOS-----------------------*/
+
+.about-our-prodts,
+.terms-conditns {
+    background: var(--bg-card);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    padding: 28px 28px 30px;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+
+.about-our-prodts{
+    height: 360px;
+}
+
+.about-our-prodts,
+.terms-conditns {
+    flex: 1 1 320px;
+    background: var(--bg-card);
+    padding: 18px 18px 20px;
+}
+
+.about-our-prodts h2, .terms-conditns h2{
+    color: #000;
+}
+.about-our-prodts p, .terms-conditns li{
+    font-family: var(--font-rules);
+    color: #000;
+    font-size: 24px;
+}
+
+.about-our-prodts ul {
+    list-style: none;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+.about-our-prodts li {
+    list-style: none;
+    position: relative;
+    padding-left: 32px;
+    margin-bottom: 12px;
+    line-height: 1.8;
+}
+.about-our-prodts li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    height: 28px;
+    width: 18px;
+    background-image: url(/src/assets/grano-cafe-li.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    line-height: 1.8;
+}
+
+
+/*-------------------------CARTEL: TÉRMINOS Y CONDICIONES-----------------------*/
+.terms-conditns ol {
+    margin: 28px 0 0;
+    padding: 0;
+    line-height: 2;
+    counter-reset: item;
+    margin-left: 35px;
+}
+
+.terms-conditns h2{
+    margin-bottom: 10px;
+}
+
+.terms-conditns li {
+    padding-left: 28px;
+    list-style: none;
+    position: relative;
+    font-weight: 600;
+}
+.terms-conditns li::before {
+    counter-increment: item;
+    content: counter(item) ".";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+/*-------------------------CARTEL: NUESTRAS REGLAS-----------------------*/
+.our-rules {
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    padding: 18px 28px 18px;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    height: 360px;
+    background-color: #ffcfab;
+    background-image: url(/src/assets/fondos/img-fondo-rect2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.our-rules .icon-rules {
+    right: 20px;
+    width: auto;
+    max-width: 190px;
+    height: auto;
+    transform: translateY(-6%);
+    pointer-events: none;
+    margin-bottom: -45px;
+    margin-left: 20px;
+    position: relative;
+    top: -40px;
+    align-self: flex-end;
+}
+
+.our-rules,
+.cont2 {
+    flex: 1 1 520px;
+    min-width: 320px;
+}
+
+.our-rules h2{
+    margin-bottom: 5px;
+}
+
+.our-rules p{
+    font-family: var(--font-rules);
+    color: var(--text-dark);
+    font-size: 24px;
+}
+
+/*-------------------------CARTEL: "envíos y entregas"-----------------------*/
+.cont2{
+    background-image: url(/src/assets/fondos/img-fondo-rect2.2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    padding: 18px 35px 30px;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+.cont2 p, .cont2 p b{
+    color: #000;
+    font-family: var(--font-rules);
+    font-size: 24px;
+}
+
+.cont2 h2{
+    margin-bottom: 10px;
+}
+
+.cont2 p {
+    margin: 14px 0 0;
+    line-height: 1.3;
+}
+.cont2 p:first-of-type {
+    margin-top: 0;
+}
+
+/*-------------------------CARTEL: "CONDICIONES GENERALES"-----------------------*/
+.cont-grande{
+    position: relative;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    background:
+        linear-gradient(to bottom, #523325 5%, #4D2E19 39%, #321D0B 100%) padding-box,
+        linear-gradient(to bottom, #FFECDE, #868380) border-box;
+    background-origin: padding-box, border-box;
+    background-clip: padding-box, border-box;
+    padding: 26px 48px;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    line-height: 1.2;
+}
+.cont-grande h2{
+    color: var(--h2-terms-cdtns);
+    margin-bottom: 10px;
+}
+.cont-grande p, .cont-grande b{
+    color: #FFFF;
+    font-family: var(--font-rules);
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+}
+.cont-grande p{
+    font-weight: lighter;
+}
+.cont-grande b{
+    font-weight: 700;
+}
+
+.cont-grande p + .hr4,
+.cont-grande .hr4 + p {
+    margin-top: 18px;
+}
+
+
+/*---------------------------RESPONSIVE-----------------------------------*/
