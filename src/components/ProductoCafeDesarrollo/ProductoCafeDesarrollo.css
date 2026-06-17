@@ -1,44 +1,37 @@
 #cafe {
   display: flex;
-  padding: 40px 60px;
+  padding: 40px 60px 30px 60px;
 }
 
 #imagenes {
   width: 40%;
+  height: 650px;
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
 
 .imagenes__img {
   width: 100%;
+  flex: 10;
   object-fit: cover;
   border-radius: 10px;
-  height: 60%;
+  min-height: 0;
 }
 
 .imagenes__div {
   display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100%;
-  object-fit: cover;
+  flex: 4;
+  gap: 15px;
 }
 
 .imagenes__div-img {
-  display: flex;
-  object-fit: cover;
   flex: 1;
-  height: 170px;
-  margin: 10px;
+  height: 100%;
+  object-fit: cover;
   border-radius: 10px;
-}
-
-.imagenes__div-img:first-child {
-  margin: 10px 10px 10px 0;
-}
-
-.imagenes__div-img:last-child {
-  margin: 10px 0px 10px 10px;
+  min-width: 0;
 }
 
 #informacion {
@@ -97,7 +90,16 @@
 }
 
 #lista {
+  margin-left: 20px;
   color: #FFECDE;
+}
+
+#lista li {
+  margin: 5px 0;
+}
+
+#lista li::marker {
+  color: #94F7ED;
 }
 
 #lista li span {
@@ -107,6 +109,7 @@
 
 #detalles {
   color: #FFECDE;
+  margin-bottom: 10px;
 }
 
 .detalles__div {
@@ -171,7 +174,7 @@
 .botones__div {
   display: flex;
   background: linear-gradient(to right, #005951, #024842);
-  padding: 10px;
+  padding: 2px 10px;
   color: white;
   align-items: center;
   width: min-content;
@@ -180,11 +183,15 @@
   border: 1px solid white;
 }
 
+.botones__div-span {
+  font-size: 35px;
+}
+
 .botones__div-button {
   background-color: transparent;
   border: none;
   align-items: center;
-  margin: 10px;
+  margin: 10px 25px;
 }
 
 .botones__div-button img {

@@ -1,0 +1,43 @@
+#carusel {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  justify-self: center;
+  background-color: #523325;
+  align-self: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.carusel__h3 {
+  font-family: 'Playfair Display';
+  color: white;
+  font-size: 40px;
+  padding: 0 10px;
+  font-weight: 600;
+}
+
+.carusel__div {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.carusel__div-img {
+  height: 40px;
+  margin: 0 20px;
+}
+
+.carusel__div-div {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+}
+
+.carusel__div-div-img {
+  border-radius: 10px;
+  height: 150px;
+}
