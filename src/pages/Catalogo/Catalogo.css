@@ -20,7 +20,7 @@
 }
 
 .catalogo-img{
-    width: 30%;
+    width: 33%;
     object-fit: contain;
 }
 
@@ -32,15 +32,17 @@
 
 .h-cat, .p-Cat{
     color: #FFDCCC;
-    margin: 0px 0px 3px 16px;
 }
+
 .h-cat{
     font-size: 60px;
     font-family: 'Merriweather', sans-serif;
+    margin: 24px 0px 17px 16px;
 }
 .p-Cat{
-    font-size: 30px;
+    font-size: 27px;
     font-family: 'Molengo', sans-serif;
+    margin: 0px 0px 3px 16px;
 }
 .hr-cat{
     border: none;
