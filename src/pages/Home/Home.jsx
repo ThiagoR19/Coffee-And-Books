@@ -3,6 +3,7 @@ import Estanteria from "../../components/Estanteria/Estanteria"
 
 import imagenIzquierda from '../../assets/imagen-home-izquierda.png'
 import imagenDerecha from '../../assets/imagen-home-derecha.png'
+import imagenSlogan from '../../assets/fondos/fondo-tarjeta4.png'
 
 import './Home.css'
 
@@ -32,25 +33,25 @@ function Home() {
         <h2 className="explora__h2">Explorá nuestros mundos</h2>
         <div className="explora__div">
           <div className="explora__div-div">
-            <h3 className="explora__div-div-h3">CAFÉS DE ORIGEN</h3>
-            <p className="explora__div-div-p">Seleccionamos lo mejor del mundo para vos.</p>
+            <h3 className="explora__div-div-h3">CAFÉS DE <br /> ORIGEN</h3>
+            <p className="explora__div-div-p">Seleccionamos lo mejor del  <br />mundo para vos.</p>
             <button className="explora__div-div-button">CONOCER MÁS</button>
           </div>
           <div className="explora__div-div">
-            <h3 className="explora__div-div-h3">NOVEDADES LITERARIAS</h3>
-            <p className="explora__div-div-p">Descubrí los últimos lanzamientos.</p>
+            <h3 className="explora__div-div-h3">NOVEDADES <br /> LITERARIAS</h3>
+            <p className="explora__div-div-p">Descubrí los últimos <br /> lanzamientos.</p>
             <button className="explora__div-div-button">VER NOVEDADES</button>
           </div>
           <div className="explora__div-div">
-            <h3 className="explora__div-div-h3" >COMBOS ESPECIALES</h3>
-            <p className="explora__div-div-p">Libros + Café al mejor precio</p>
+            <h3 className="explora__div-div-h3" >COMBOS <br /> ESPECIALES</h3>
+            <p className="explora__div-div-p">Libros + Café <br /> al mejor precio</p>
             <button className="explora__div-div-button" >VER COMBOS</button>
           </div>
         </div>
         <div className="explora__slogan">
-          <img className="explora__slogan-img" src="" alt="" />
+          <img className="explora__slogan-img" src={imagenSlogan} alt="" />
           <div className="explora__slogan-div">
-            <h2 className="explora__slogan-div-h2">“Cada lectura merece un buen café”</h2>
+            <h2 className="explora__slogan-div-h2">“Cada lectura merece <br /> un buen café”</h2>
             <div className="underline-slogan"></div>
           </div>
           <button className="explora__slogan-button">Descubrí los combos</button>

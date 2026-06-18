@@ -1,7 +1,14 @@
-#Home {}
+#Home {
+  background-image: url(../../assets/fondos/fondo2.0.0.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+
+}
 
 #hero {
-  background-image: url(../../assets/fondos/fondo3.2.0.png);
+  /* background-image: url(../../assets/fondos/fondo3.2.0.png); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -14,17 +21,17 @@
 
 .hero__imagen-izquierda {
   position: absolute;
-  height: 90%;
+  height: 100%;
   left: 0;
   z-index: 100;
-  top: auto;
+  top: 10%;
 }
 
 .hero__imagen-derecha {
   position: absolute;
-  height: 90%;
+  height: 100%;
   right: 0;
-  top: auto;
+  top: 10%;
   z-index: 100;
 }
 
@@ -33,18 +40,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px 0;
+  margin: 50px 0 80px;
   color: #D3D3D3;
   z-index: 1000;
   width: 100%;
-  max-width: 1400px;
+  /* max-width: 1400px; */
 }
 
 .hero__h4 {
   font-family: "Molengo", sans-serif;
   font-weight: 100;
-  font-size: 25px;
+  font-size: 20px;
   letter-spacing: 10px;
+  margin: 0 0 20px 0;
 }
 
 .hero__h1 {
@@ -76,18 +84,175 @@
   background: linear-gradient(to right, #005E55, #243836);
   padding: 10px 30px;
   border: 1px solid white;
-  margin: 0 10px;
+  margin: 0 15px;
   color: white;
-  font-size: 20px;
+  font-size: 25px;
 }
 
-.hero__div-button {
+.hero__div-button:last-child {
   background-color: transparent;
   border-image: linear-gradient(to right, #FFFFFF, #706F6F) 1;
   border-width: 2px;
   border-style: solid;
   color: white;
-  font-size: 20px;
+  font-size: 25px;
   padding: 10px;
-  margin: 0 10px;
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+#explora {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  padding: 20px 50px;
+  max-width: 1400px;
+  width: 100%;
+}
+
+.explora__h2 {
+  font-family: 'Merriweather';
+  font-size: 45px;
+  color: white;
+  align-self: flex-start;
+  margin: 10px;
+}
+
+.explora__div {
+  display: flex;
+  width: 100%;
+}
+
+.explora__div-div {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: center;
+  align-items: start;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  margin: 10px;
+  width: 33%;
+}
+
+.explora__div-div:first-child {
+  background-image: url(../../assets/fondos/fondo-tarjeta1.png);
+  margin: 10px 10px 10px 0;
+}
+
+.explora__div-div:nth-child(2) {
+  background-image: url(../../assets/fondos/fondo-tarjeta2.png);
+}
+
+.explora__div-div:last-child {
+  margin: 10px 0px 10px 10px;
+  background-image: url(../../assets/fondos/fondo-tarjeta3.png);
+}
+
+.explora__div-div-h3 {
+  font-family: 'Merriweather';
+  font-size: 30px;
+}
+
+.explora__div-div-button {
+  background-color: transparent;
+  color: white;
+  padding: 10px 30px;
+  border: 2px solid white;
+  box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.explora__slogan {
+  display: flex;
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 5px 5px 4px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-image:
+    linear-gradient(to right, rgba(89, 58, 43, 0.2), rgba(73, 43, 27, 0.2)),
+    url('../../assets/fondos/img-fondo-rect3.png'),
+    linear-gradient(to right, #FFECDE, #998E85);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-origin: padding-box, padding-box, border-box;
+  background-clip: padding-box, padding-box, border-box;
+}
+
+.explora__slogan-img {
+  margin: 10px;
+  border-radius: 6px;
+  border: 1px solid #FFECDE;
+  height: 130px;
+}
+
+.explora__slogan-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.explora__slogan-div-h2 {
+  font-family: 'Merriweather';
+  font-size: 40px;
+  text-align: center;
+  color: #F2D7BF;
+}
+
+.underline-slogan {
+  height: 2px;
+  width: 50%;
+  background-color: #F2D7BF;
+  margin: 10px 0;
+}
+
+.explora__slogan-button {
+  align-self: start;
+  color: #F2D7BF;
+  padding: 8px 10px;
+  font-family: 'Merriweather';
+  font-size: 20px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  border: 1px solid transparent;
+  background-image:
+    linear-gradient(to right, #024943, #117068),
+    linear-gradient(to right, #FFFDD0, #666552);
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
+  cursor: pointer;
+}
+
+#masVendido {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 50px;
+  max-width: 1400px;
+}
+
+.masVendido__h2 {
+  font-family: 'Merriweather';
+  font-size: 45px;
+  color: white;
+  align-self: flex-start;
+  margin: 10px;
 }
