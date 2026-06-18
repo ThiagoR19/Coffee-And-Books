@@ -33,8 +33,11 @@ function PreguntasFrecuentes() {
         <div className="container-faqs">
             <div className="header-faqs">
                 <div className="header-faqs-text">
-                    <h1>Preguntas Frecuentes</h1>
-                    <p>Encuentra toda la información <br/> que buscas.</p>
+                    <div className="inner-header">
+                        <h1>Preguntas Frecuentes</h1>
+                        <p>Encuentra toda la información <br/> que buscas.</p>
+                    </div>
+                    
                 </div>
                 <img src={portadaFaq} alt="Portada" className="img-faqs" />
             </div>
