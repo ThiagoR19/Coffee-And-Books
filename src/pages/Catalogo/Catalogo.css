@@ -1,0 +1,70 @@
+.catalogo{
+    background: url('../../assets/fondos/fondo3.1.0.png');
+    background-size: cover;
+    background-position: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    
+}
+
+.catalogo-barra{
+    background: linear-gradient(to left,#523325,#713D25);
+    display: flex;
+    align-items: stretch; 
+    overflow: hidden;
+}
+
+.catalogo-texto{
+    flex: 1;
+    padding:  0px 0px 20px 90px;
+}
+
+.catalogo-img{
+    width: 30%;
+    object-fit: contain;
+}
+
+.catalogo-botones{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px 0px 0px 20px;
+}
+
+.h-cat, .p-Cat{
+    color: #FFDCCC;
+    margin: 0px 0px 3px 16px;
+}
+.h-cat{
+    font-size: 60px;
+    font-family: 'Merriweather', sans-serif;
+}
+.p-Cat{
+    font-size: 30px;
+    font-family: 'Molengo', sans-serif;
+}
+.hr-cat{
+    border: none;
+    margin: 0;
+}
+
+.btn{
+    border : solid 2px #DCDACE;
+    background: none;
+    margin: 0px 10px 0px 0px ;
+    padding: 10px 25px 10px 25px;
+    color: #DCDACE;
+    object-fit: contain;
+    font-size: 17px;
+     font-family: 'Molengo', sans-serif;
+}
+
+.btn:hover{
+    background: #DCDACE;
+    color: #523325;
+}
+
+.btn.active{
+    background: #DCDACE;
+    color: #523325;
+}
+

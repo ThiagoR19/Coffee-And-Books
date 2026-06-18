@@ -2,11 +2,11 @@ import { Route, Switch, Link } from "wouter";
 
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
+import Catalogo from "./pages/Catalogo/Catalogo";
 import Home from "./pages/Home/Home"
 import TerminosYCondiciones from "./pages/TerminosYCondiciones/TerminosYCondiciones";
 import SobreNosotros from "./pages/SobreNosotros/SobreNosotros";
 import PreguntasFrecuentes from "./pages/PreguntasFrecuentes/PreguntasFrecuentes";
-import Catalogo from "./pages/Catalogo/Catalogo";
 import Carrito from "./pages/Carrito/Carrito";
 import ProductoCafe from "./pages/ProductoCafe/ProductoCafe";
 
@@ -14,8 +14,9 @@ import './App.css'
 
 export default function App() {
   return (
-    <main>
-      <Header />
+    <div>
+      <Header/>
+      
       <Switch>
         <Route path="/home" component={Home} />
         <Route path="/Catalogo" component={Catalogo} />
@@ -27,7 +28,8 @@ export default function App() {
         <Route path="/" ><div>Contenido de Acerca de</div></Route>
         <Route>404: ¡Página no encontrada!</Route>
       </Switch>
+
       <Footer />
-    </main >
+    </div >
   );
 }
