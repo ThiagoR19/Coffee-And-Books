@@ -9,14 +9,15 @@ import SobreNosotros from "./pages/SobreNosotros/SobreNosotros";
 import PreguntasFrecuentes from "./pages/PreguntasFrecuentes/PreguntasFrecuentes";
 import Carrito from "./pages/Carrito/Carrito";
 import ProductoCafe from "./pages/ProductoCafe/ProductoCafe";
+import ProductoLibro from "./pages/ProductoLibro/ProductoLibro";
 
 import './App.css'
 
 export default function App() {
   return (
     <div>
-      <Header/>
-      
+      <Header />
+
       <Switch>
         <Route path="/home" component={Home} />
         <Route path="/Catalogo" component={Catalogo} />
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/terminos" component={TerminosYCondiciones} />
         <Route path="/carrito" component={Carrito} />
         <Route path="/productoCafe" component={ProductoCafe} />
+        <Route path="/productoLibro" component={ProductoLibro} />
         <Route path="/" component={Home} />
         <Route>404: ¡Página no encontrada!</Route>
       </Switch>
