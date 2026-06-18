@@ -1,4 +1,4 @@
-import { Route, Switch, Link } from "wouter";
+import { Route, Switch } from "wouter";
 
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
@@ -25,7 +25,7 @@ export default function App() {
         <Route path="/terminos" component={TerminosYCondiciones} />
         <Route path="/carrito" component={Carrito} />
         <Route path="/productoCafe" component={ProductoCafe} />
-        <Route path="/" ><div>Contenido de Acerca de</div></Route>
+        <Route path="/" component={Home} />
         <Route>404: ¡Página no encontrada!</Route>
       </Switch>
 

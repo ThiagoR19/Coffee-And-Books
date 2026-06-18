@@ -1,0 +1,48 @@
+#esencia {
+  display: flex;
+  background: linear-gradient(to bottom, #523325, #6B3821);
+  padding: 0 0 0 20px;
+  border-radius: 10px;
+  width: 90vw;
+  justify-content: space-between;
+  margin: 10px 40px;
+  align-items: center;
+  max-width: 1200px;
+}
+
+.esencia__div {
+  display: flex;
+  align-items: center;
+}
+
+.esencia__div-img {
+  height: 80px;
+  border-radius: 1000px;
+  box-shadow: 5px 5px 4px 0 rgba(0, 0, 0, 0.25);
+  margin: 20px;
+}
+
+.esencia__line {
+  display: flex;
+  width: 2px;
+  height: 80px;
+  background-color: #FFFFFF;
+  margin: 0 10px;
+}
+
+.esencia__div-div-h5 {
+  font-family: 'Afacad';
+  color: #FFFFFF;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.esencia__div-div-p {
+  font-family: 'Molengo';
+  color: #FFFFFF;
+}
+
+.esencia__img {
+  height: 130px;
+  border-radius: 0 10px 10px 0;
+}
