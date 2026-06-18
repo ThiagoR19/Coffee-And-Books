@@ -1,0 +1,144 @@
+#resumen {
+  display: flex;
+  flex-direction: column;
+  background-color: #523325;
+  border: 2px solid #D5713C;
+  border-radius: 10px;
+  flex: 6;
+  align-items: center;
+  padding: 0 0 20px 0;
+}
+
+.resumen__div {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+}
+
+.resumen__div:first-child {
+  padding: 20px 0;
+  background-color: rgba(46, 28, 20, 0.2);
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+.resumen__div:nth-child(2) {
+  width: 90%;
+  margin: 15px 0;
+}
+
+.resumen__h3 {
+  font-family: 'inter';
+  font-weight: 300;
+  font-size: 25px;
+}
+
+.resumen__div-div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  color: #D3D3D3;
+  margin: 10px 0;
+}
+
+.resumen__div-div-h5 {
+  font-family: 'inter';
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.descuento {
+  color: #D5713C;
+}
+
+.descuento-precio {
+  color: #D5713C;
+}
+
+.resumen__underline {
+  width: 90%;
+  height: 1px;
+  background-color: #C4744F;
+  margin-top: auto;
+}
+
+
+.resumen__div-total {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.total {
+  color: #D3D3D3;
+  font-family: 'inter';
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.total-precio {
+  color: #D3D3D3;
+  font-family: 'inter';
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.resumen__button {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px 12px 20px;
+  border-radius: 40px;
+  background-color: #713D25;
+  color: #D3D3D3;
+  border: none;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.resumen__button img {
+  height: 25px;
+}
+
+.resumen__div-segura {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  margin: 10px;
+  background-color: #362218;
+  border: 1px solid #D5713C;
+  border-radius: 10px;
+  padding: 5px 0;
+}
+
+.resumen__div-img {
+  height: 20px;
+  margin: 0 15px;
+}
+
+.resumen__div-div-segura {
+  display: flex;
+  flex-direction: column;
+  color: #D3D3D3;
+  padding: 5px 10px 5px 0;
+}
+
+.resumen__div-div-segura h3 {
+  font-family: 'inter';
+  color: #D3D3D3;
+  font-weight: 400;
+  margin: 5px 0 0 0;
+  font-size: 15px;
+}
+
+.resumen__div-div-segura span {
+  font-family: 'inter';
+  color: #D3D3D3;
+  font-size: 11px;
+  margin: 5px 0;
+}

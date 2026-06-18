@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Molengo&family=Playfair+Display:ital,wght@0,400..900;1,400..900');
+
+/*-------------PALETA------------*/
+:root {
+    --font-color: #FFFFFF;
+    --p-color: #FFCFAB;
+    --faq-item-bg: linear-gradient(90deg, #713D25 4%, #5E3719 100%);
+    --line-color: #FFECDE;
+    --faq-font-family: 'Merriweather Sans';
+    --faq-answer-font-family: 'Molengo';
+}
+
+/*--------------CONTENEDOR---------------------------*/
+.container-faqs{
+    background-image: url('../../assets/fondos/fondo3.1.0.png');
+    background-size: cover;
+    background-position: center;
+    padding-top: 45px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+
+/*--------------"header" y portada---------------*/
+.header-faqs{
+    background: linear-gradient(90deg, #713D25 100%, #523325 5%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-faqs-text{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-left: 80px;
+}
+.header-faqs h1{
+    font-family: 'Playfair Display';
+    font-weight: bold;
+    font-size: 68px;
+    color: var(--line-color);
+    margin: 0;
+}
+.header-faqs-text p{
+    font-family: 'Playfair Display';
+    font-weight: 100;
+    font-size: 45px;
+    color: var(--line-color);
+    margin: 0;
+}
+
+.img-faqs{
+    width: 650px;
+    height: auto;
+    margin-right: 0px;
+}
+
+/*------------FAQ LIST------------*/
+.faq-list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 60px 100px 0px 100px;
+}
+
+.container-faqs{
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+/*-------------------FAQ CARDS------------------*/
+.faq-item-superior{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 12px;
+}
+
+.faq-item-superior h2{
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.faq-item{
+    background: var(--faq-item-bg);
+    border: 2px solid var(--line-color);
+    border-radius: 15px;
+    padding: 20px 50px 10px;
+    align-items: center;
+    gap: 20px;
+}
+.faq-item hr .faq-item p{
+    display: flex;
+    flex-direction: column;
+}
+
+.faq-item h2{
+    font-family: var(--faq-font-family);
+    font-weight: normal;
+    font-size: 30px;
+    color: #FFFFFF;
+    margin-left: 20px;
+    width: min-content;
+}
+
+.faq-item-superior{
+    position: relative;
+    flex-wrap: nowrap;
+}
+
+.faq-item-icon2{
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+}
+
+.faq-answer{
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-10px);
+    transition: max-height 0.35s ease, opacity 0.35s ease, transform 0.35s ease;
+}
+
+.faq-answer.open{
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.faq-answer hr{
+    margin: 20px 0;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.faq-answer.open hr{
+    opacity: 1;
+}
+
+.faq-answer p{
+    font-family: var(--faq-answer-font-family);
+    color: var(--p-color);
+    font-size: 30px;
+    line-height: 2.5rem;
+    padding-bottom: 10px;
+    margin: 0;
+}
+
+.faq-icon{
+    width: 70px;
+    height: 70px;
+}
+.faq-icon img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+}
+.faq-item-icon2 img{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+
+hr{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+
+.faq-item-superior{
+    flex-wrap: nowrap !important;
+}
+
+.faq-item-superior h2{
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.faq-item-icon,
+.faq-item-icon2{
+    flex: 0 0 70px !important;
+    width: 70px !important;
+    height: 70px !important;
+}
+
+.faq-item-icon img,
+.faq-item-icon2 img{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+
+.espacio{
+    height: 100px;
+}

@@ -1,0 +1,12 @@
+#productoCafe {
+  display: flex;
+  flex-direction: column;
+  background-image: url('../../assets/fondos/fondo3.1.0.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+img {
+  height: 100px;
+}
