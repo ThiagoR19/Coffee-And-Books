@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home"
 import TerminosYCondiciones from "./pages/TerminosYCondiciones/TerminosYCondiciones";
 import SobreNosotros from "./pages/SobreNosotros/SobreNosotros";
 import PreguntasFrecuentes from "./pages/PreguntasFrecuentes/PreguntasFrecuentes";
+import Catalogo from "./pages/Catalogo/Catalogo";
 import Carrito from "./pages/Carrito/Carrito";
 import ProductoCafe from "./pages/ProductoCafe/ProductoCafe";
 
@@ -17,7 +18,7 @@ export default function App() {
       <Header />
       <Switch>
         <Route path="/home" component={Home} />
-        {/* <Route path="/catalogo" component={Catalogo} /> */}
+        <Route path="/Catalogo" component={Catalogo} />
         <Route path="/sobrenosotros" component={SobreNosotros} />
         <Route path="/faqs" component={PreguntasFrecuentes} />
         <Route path="/terminos" component={TerminosYCondiciones} />
