@@ -1,0 +1,55 @@
+#sobreNosotros {
+  background-image: url(../../assets/fondos/fondo3.1.0.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#nuestraHistoria {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to left, #523325, #713D25);
+}
+
+.nuestraHistoria__div {
+  margin: 0 50px;
+  padding: 0 20px;
+}
+
+.nuestraHistoria__div-h2 {
+  font-family: 'Playfair Display';
+  font-size: 40px;
+  color: #FFECDE;
+  margin: 5px 0;
+}
+
+.nuestraHistoria__div-p {
+  font-family: 'Playfair Display';
+  color: #FFECDE;
+  font-size: 25px;
+}
+
+.nuestraHistoria__img {
+  height: 200px;
+}
+
+.estadisticas__div-img {
+  height: 100px;
+}
+
+
+
+.somosCB__h2 {
+  font-family: 'Playfair Display';
+  font-size: 40px;
+  color: #FFFDD0;
+  margin: 5px 0;
+}
+
+.somosCB__p {
+  font-family: 'Playfair Display';
+  font-size: 20px;
+  color: #FFCFAB;
+  margin: 5px 0;
+}
