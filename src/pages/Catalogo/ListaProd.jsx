@@ -31,13 +31,15 @@ const productos = [
     { etiqueta: 'OFERTA ESPECIAL', especificacion: 'Especificacion', id: 13, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe5 },
     { etiqueta: 'POPULAR', especificacion: 'Especificacion', id: 14, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe1 },
     { etiqueta: 'NUEVO', especificacion: 'Especificacion', id: 15, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe3 },
-    { etiqueta: 'DESTACADO', especificacion: 'Especificacion', id: 16, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe8 },
-    { etiqueta: 'OFERTA', especificacion: 'Especificacion', id: 17, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe1 },
 ]
+
+// cuando se active la paginación,hayque reemplazar `productos` por
+// `productosMostrados` en el .map() y descomentar las flechas de navegación maldito pe causa.
 
 export default function ListaProductos() {
     const [animando, setAnimando] = useState(false);
 
+    // Hook conservado — este lo usamos cuando se active la paginación, por ahora no hace nada
     const {
         productosMostrados,
         irAtras,
@@ -58,12 +60,10 @@ export default function ListaProductos() {
 
         <div className="main-lista" >
 
-
-
             <div className="lista-productos">
 
                 <div className="filtro-contenedor">
-                    <p style={{ color: 'white' }}>MOSTRANDO 1-12 DE n PRODUCTOS</p>
+                    <p style={{ color: 'white' }}>MOSTRANDO 1-{productos.length} DE {productos.length} PRODUCTOS</p>
 
                     <div className="filtro-select">
 
@@ -80,15 +80,17 @@ export default function ListaProductos() {
                     </div>
                 </div>
 
+                {/* Flechitas pro max deshabilitadas hasta terminar la etapa de enmaquebodrio — descomentar al activar paginación
                 {hayPaginaAnterior && (
-                    <button className="lista-productos__flecha izquierda" onClick={() => cambiarPagina(irAtras)}>
+                    <button className="prod-flechitas izquierda" onClick={() => cambiarPagina(irAtras)}>
                         <GoChevronLeft size={110} />
                     </button>
                 )}
+                */}
 
                 <div className={`prod-grid ${animando ? 'animando' : ''}`}>
-                    {productosMostrados.map((producto) => (
-                        <div key={producto.id} className="lista-productos__card">
+                    {productos.map((producto) => (
+                        <div key={producto.id} className="lista-productos_card">
 
                             <div className="card-imagen-contenedor">
                                 {producto.etiqueta && (
@@ -114,11 +116,13 @@ export default function ListaProductos() {
                     ))}
                 </div>
 
+                {/* Flechita de la derecha deshabilitada hasta terminar la etapa de enmaquebodrio — descomentar al activar paginación
                 {hayPaginaSiguiente && (
-                    <button className="lista-productos__flecha derecha" onClick={() => cambiarPagina(irAdelante)}>
+                    <button className="prod-flechitas derecha" onClick={() => cambiarPagina(irAdelante)}>
                         <GoChevronRight size={110} />
                     </button>
                 )}
+                */}
 
             </div>
 

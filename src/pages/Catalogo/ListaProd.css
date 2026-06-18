@@ -14,7 +14,7 @@
     opacity: 0;
 }
 
-.lista-productos__card {
+.lista-productos_card {
     display: flex;
     flex-direction: column;
     background: #523325;
@@ -98,7 +98,7 @@
 }
 
 
-.lista-productos__flecha {
+.prod-flechitas {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -109,11 +109,11 @@
     z-index: 1;
 }
 
-.lista-productos__flecha.izquierda {
+.prod-flechitas.izquierda {
     left: -16px;
 }
 
-.lista-productos__flecha.derecha {
+.prod-flechitas.derecha {
     right: -16px;
 }
 
