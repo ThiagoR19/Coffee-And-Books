@@ -1,0 +1,115 @@
+#sobreNosotros {
+  background-image: url(../../assets/fondos/fondo3.2.0.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 50px 0;
+}
+
+#nuestraHistoria {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to left, #523325, #713D25);
+}
+
+.nuestraHistoria__div {
+  margin: 0 50px;
+  padding: 0 20px;
+}
+
+.nuestraHistoria__div-h2 {
+  font-family: 'Playfair Display';
+  font-size: 40px;
+  color: #FFECDE;
+  margin: 5px 0;
+}
+
+.nuestraHistoria__div-p {
+  font-family: 'Playfair Display';
+  color: #FFECDE;
+  font-size: 25px;
+}
+
+.nuestraHistoria__img {
+  height: 200px;
+}
+
+.estadisticas__div-img {
+  height: 100px;
+}
+
+#somosCB {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  width: 100%;
+  align-self: center;
+  justify-self: center;
+  padding: 40px 80px;
+}
+
+.somosCB__h2 {
+  font-family: 'Playfair Display';
+  font-size: 50px;
+  color: #FFFDD0;
+  margin: 5px 0;
+  font-weight: 400;
+}
+
+.somosCB__p {
+  font-family: 'Playfair Display';
+  font-size: 25px;
+  color: #FFCFAB;
+  margin: 5px 0;
+}
+
+#estadisticas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-self: flex-end;
+  justify-self: end;
+  background: linear-gradient(to right, #713D25, #5E3719);
+  padding: 30px 20px;
+  border-radius: 30px 0 0 30px;
+}
+
+.estadisticas__div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.estadisticas__line {
+  display: flex;
+  width: 2px;
+  height: 90px;
+  background-color: #FFECDE;
+}
+
+.estadisticas__div-div {
+  display: flex;
+  align-items: center;
+}
+
+.estadisticas__div-img {
+  height: 80px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 100%;
+  margin: 0 10px;
+}
+
+.estadisticas__div-div-span {
+  font-family: 'Merriweather Sans';
+  color: #FFECDE;
+  font-size: 35px;
+}
+
+
+.estadisticas__div-span {
+  font-family: 'Molengo';
+  color: #FFECDE;
+  font-size: 20px;
+}
