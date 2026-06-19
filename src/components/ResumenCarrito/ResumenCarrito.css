@@ -142,3 +142,31 @@
   font-size: 11px;
   margin: 5px 0;
 }
+
+/*----------------------------RESPONSIVE-------------------------*/
+@media (max-width: 767px) {
+  #resumen {
+    flex: auto;
+    order: 2;
+    padding: 0 0 15px 0;
+  }
+  
+  .resumen__h3 {
+    font-size: 20px;
+  }
+  
+  .resumen__div-div-h5 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .resumen__button {
+    padding: 10px 20px 10px 15px;
+    font-size: 16px;
+  }
+  
+  .total {
+    font-size: 18px;
+  }
+}

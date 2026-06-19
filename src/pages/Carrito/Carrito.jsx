@@ -19,6 +19,6 @@ function Carrito() {
       <ResumenCarrito />
     </section>
   )
-}
+} 
 
 export default Carrito

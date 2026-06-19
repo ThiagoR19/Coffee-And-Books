@@ -30,10 +30,10 @@ function Header({ cartCount = 0 }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
  
-  function handleSearchSubmit(e) {
-    e.preventDefault();
-    console.log("Buscar:", searchValue);
-  }
+  // function handleSearchSubmit(e) {
+  //   e.preventDefault();
+  //   console.log("Buscar:", searchValue);
+  // }
  
   return (
     <header className="header">
@@ -84,7 +84,7 @@ function Header({ cartCount = 0 }) {
         <div className="header__actions">
           {isMobile ? (
             /* Mobile: buscador siempre visible como input expandido */
-            <form className="header__search-always" onSubmit={handleSearchSubmit}>
+            <form className="header__search-always" /* onSubmit={handleSearchSubmit} */>
               <img src={SearchIcon} alt="Buscar" />
               <input
                 type="text"
@@ -95,7 +95,7 @@ function Header({ cartCount = 0 }) {
             </form>
           ) : searchOpen ? (
             /* Desktop: buscador expandible al hacer click */
-            <form className="header__search-form" onSubmit={handleSearchSubmit}>
+            <form className="header__search-form" /* onSubmit={handleSearchSubmit} */ >
               <input
                 type="text"
                 className="header__search-input"
