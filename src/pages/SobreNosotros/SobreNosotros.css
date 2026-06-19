@@ -1,8 +1,9 @@
 #sobreNosotros {
-  background-image: url(../../assets/fondos/fondo3.1.0.png);
+  background-image: url(../../assets/fondos/fondo3.2.0.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  padding: 50px 0;
 }
 
 #nuestraHistoria {
@@ -38,18 +39,70 @@
   height: 100px;
 }
 
-
+#somosCB {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  width: 100%;
+  align-self: center;
+  justify-self: center;
+  padding: 40px 80px;
+}
 
 .somosCB__h2 {
   font-family: 'Playfair Display';
-  font-size: 40px;
+  font-size: 50px;
   color: #FFFDD0;
   margin: 5px 0;
+  font-weight: 400;
 }
 
 .somosCB__p {
   font-family: 'Playfair Display';
-  font-size: 20px;
+  font-size: 25px;
   color: #FFCFAB;
   margin: 5px 0;
+}
+
+#estadisticas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-self: flex-end;
+  justify-self: end;
+  background: linear-gradient(to right, #713D25, #5E3719);
+  padding: 25px 20px;
+  border-radius: 30px 0 0 30px;
+}
+
+.estadisticas__div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.estadisticas__div-div {
+  display: flex;
+  align-items: center;
+}
+
+.estadisticas__div-img {
+  height: 80px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 100%;
+  margin: 0 10px;
+}
+
+.estadisticas__div-div-span {
+  font-family: 'Merriweather Sans';
+  color: #FFECDE;
+  font-size: 35px;
+}
+
+
+.estadisticas__div-span {
+  font-family: 'Molengo';
+  color: #FFECDE;
+  font-size: 20px;
 }

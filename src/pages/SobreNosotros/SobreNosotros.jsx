@@ -39,7 +39,7 @@ function SobreNosotros() {
         <div className='estadisticas__div'>
           <div className='estadisticas__div-div'>
             <img className='estadisticas__div-img' src={iconCoffee} alt="Icono Café" />
-            <span className='estadisticas__div-div-span'></span>
+            <span className='estadisticas__div-div-span'>19+</span>
           </div>
           <span className='estadisticas__div-span'>Países de Cafés</span>
         </div>
