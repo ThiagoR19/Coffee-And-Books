@@ -1,0 +1,96 @@
+#estanteria {
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.estanteria__h2 {
+  font-family: 'Merriweather';
+  font-size: 50px;
+  color: white;
+  margin: 20px 0 10px;
+}
+
+#estanteria__hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+}
+
+.estanteria__hero-div {
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  flex: 1;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 710px;
+}
+
+.estanteria__img {
+  width: 100px;
+}
+
+.estanteria__hero-img:first-child {
+  height: 450px;
+  position: absolute;
+  top: 22%;
+}
+
+.estanteria__hero-img:last-child {
+  height: 250px;
+  position: absolute;
+  top: 65%;
+  left: 78%;
+  z-index: 500;
+}
+
+.estanteria__hero-div-img {
+  max-width: 1200px;
+  width: 80%;
+  position: absolute;
+  z-index: 100;
+  margin: 0 100px;
+  padding: 0 50px;
+  transform: translateY(-6%);
+}
+
+.estanteria__hero-div-div {
+  z-index: 200;
+}
+
+.estanteria__hero-div-div-div {
+  display: flex;
+  width: 57%;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: -40px;
+}
+
+/* .nuevos {
+  margin-bottom: -50px;
+}
+
+.enDescuento {
+  margin-bottom: -50px;
+}
+
+.masPedidos {
+  margin-bottom: -10px;
+} */
+
+.estanteria__hero-div-div-div-img {
+  height: 120px;
+  border-radius: 20px;
+  margin: 0 10px;
+}
+
+.estanteria__hero-div-div-div-h4 {
+  color: white;
+}
