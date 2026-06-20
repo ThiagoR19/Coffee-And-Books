@@ -144,6 +144,7 @@
 }
 
 /*----------------------------RESPONSIVE-------------------------*/
+/*------TABLETS------*/
 @media (max-width: 767px) {
   #resumen {
     flex: auto;
@@ -151,21 +152,77 @@
     padding: 0 0 15px 0;
   }
   
-  .resumen__h3 {
-    font-size: 20px;
-  }
-  
   .resumen__div-div-h5 {
     font-size: 14px;
   }
 }
 
-@media (max-width: 480px) {
+/*-----CELULARES REALTIVAMENTE GRANDES------*/
+@media (min-width: 360px), (max-width: 375){
+  .producto__div-div-h2-titulo{
+    font-size: 17px;
+  }
+
+  .productoL__div-h4{
+    font-size: 15px;
+  }
+
+  .productos__div-div-h3{
+    font-size: 15px;
+  }
+  .productos__div-div-span{
+    font-size: 9px;
+  }
+  .productosL__div-img{
+    margin-left: 5px;
+  }
+}
+
+/*-----CELULARES REALTIVAMENTE GRANDES------*/
+@media (min-width: 410px), (max-width: 480px) {
   .resumen__button {
-    padding: 10px 20px 10px 15px;
-    font-size: 16px;
+    padding: 10px 30px 10px 30px;
+    font-size: 28px;
+  }
+  .resumen__button img{
+    width: 28px;
+    height: 30px;
   }
   
+  .resumen__div-div{
+    margin: 5px 0;
+  }
+
+  .resumen__underline{
+    margin: 40px 20px 15px 20px;
+  }
+
+  .resumen__h3 h3{
+    font-size: 25px !important;
+  }
+
+  .resumen__div-div-h3 h3{
+    font-size: 20px;
+  }
+  .resumen__div-div-h5{
+    font-size: 26px;
+  }
+  .resumen__div-div-span{
+    font-size: 20px;
+  }
+  .resumen__div-span.total-precio{
+    font-size: 20px;
+  }
+
+  .resumen__div-h5.total{
+    font-size: 26px;
+  }
+
+  .resumen__div-segura{
+    margin: 28px 10px;
+    padding: 10px;
+  }
+
   .total {
     font-size: 18px;
   }

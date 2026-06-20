@@ -28,7 +28,7 @@ function ResumenCarrito() {
         <h5 className='resumen__div-h5 total'>Total</h5>
         <span className='resumen__div-span total-precio'>$65.000</span>
       </div>
-      <button className='resumen__button'>Finalizar Compra <img src={iconoBolsa} alt="" /></button>
+      <button className='resumen__button'>Finalizar compra <img src={iconoBolsa} alt="" /></button>
       <div className='resumen__div-segura'>
         <img className='resumen__div-img' src={iconoCheck} alt="" />
         <div className='resumen__div-div-segura'>
