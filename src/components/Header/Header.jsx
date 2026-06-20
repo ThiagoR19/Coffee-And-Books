@@ -29,21 +29,12 @@ function Header({ cartCount = 0 }) {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-<<<<<<< HEAD
-
-  function handleSearchSubmit(e) {
-    e.preventDefault();
-    console.log("Buscar:", searchValue);
-  }
-
-=======
  
   // function handleSearchSubmit(e) {
   //   e.preventDefault();
   //   console.log("Buscar:", searchValue);
   // }
  
->>>>>>> cdc5a5a7484b50e6154d36a80f36318e2bc6d952
   return (
     <header className="header">
       <div className="header__topbar">
