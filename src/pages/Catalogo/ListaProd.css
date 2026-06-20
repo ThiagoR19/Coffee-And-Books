@@ -1,13 +1,13 @@
 .lista-productos {
     position: relative;
-    padding: 40px 80px; 
+    padding: 40px 80px;
 }
 
 .prod-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 15px;
-    transition: opacity 0.3s ease; 
+    transition: opacity 0.3s ease;
 }
 
 .prod-grid.animando {
@@ -20,13 +20,13 @@
     background: #523325;
     border-radius: 9px 9px 0px 0px;
     overflow: hidden;
-    height: 280px; 
+    flex: content;
 }
 
 .card-imagen-contenedor {
     position: relative;
     height: 80%;
-    background: #3a2218; 
+    background: #3a2218;
 }
 
 .card-imagen {
@@ -75,7 +75,7 @@
 }
 
 .card-precio {
-    color: #ffffff ;
+    color: #ffffff;
     font-weight: bold;
     font-size: 13px;
     margin-top: 6px;
@@ -118,7 +118,7 @@
 }
 
 .filtro-contenedor {
-     display: flex;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0px 0px 15px 0px;
@@ -157,4 +157,3 @@
     right: 5px;
     pointer-events: none;
 }
-
