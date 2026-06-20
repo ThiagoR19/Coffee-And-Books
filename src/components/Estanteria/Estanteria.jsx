@@ -1,6 +1,6 @@
 import estanteria from '../../assets/Estanteria2.png'
 import cafeEstanteria from '../../assets/imagen-cafe-estanteria.png'
-// import maderaEstanteria from '../../assets/imagen-madera-estanteria.png'
+
 import lineEstanteria from '../../assets/imagen-line-estanteria.png'
 import sloganEstanteria from '../../assets/imagen-slogan-estanteria.png'
 import cafeEjemplo from '../../assets/coffee-example1.png'
@@ -54,9 +54,6 @@ function Estanteria() {
           </div>
           <img className='estanteria__hero-img' src={cafeEstanteria} alt="" />
         </div>
-      </div>
-      <div>
-        <span></span>
       </div>
     </article>
   )

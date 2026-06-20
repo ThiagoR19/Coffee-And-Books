@@ -10,6 +10,10 @@ import cafeEjemplo1 from '../../assets/coffee-example1.png'
 import cafeEjemplo2 from '../../assets/coffee-example2.png'
 import cafeEjemplo3 from '../../assets/coffee-example3.png'
 
+// import sombraEstanteria from '../../assets/sombra-estanteria.svg'
+
+import iconoFlecha from '../../assets/icono-flecha.svg'
+
 import './Home.css'
 
 function Home() {
@@ -17,7 +21,7 @@ function Home() {
     <section id="Home">
       <article id="hero">
         <div className="hero__div">
-          <img className="hero__imagen-izquierda" src={imagenIzquierda} alt="" />
+          <img className="hero__imagen-izquierda" src={imagenIzquierda} alt="Imagen principal izquierda" />
           <h4 className="hero__h4">BIENVENIDO A COFFEE AND BOOKS</h4>
           <h1 className="hero__h1">Libros que cuentan historias. <br /> Café que crea momentos.</h1>
           <div className="hero__underline"></div>
@@ -28,10 +32,17 @@ function Home() {
             <button className="hero__div-button">VER LIBROS</button>
             <button className="hero__div-button">EXPLORAR CAFÉS</button>
           </div>
-          <img className="hero__imagen-derecha" src={imagenDerecha} alt="" />
+          <img className="hero__imagen-derecha" src={imagenDerecha} alt="Imagen principal derecha" />
         </div>
         <EsenciaCB />
         <Estanteria />
+        <div id='maderaEstanteria'>
+          <span>Ver todos los productos</span>
+          <img src={iconoFlecha} alt="Icono flecha" />
+          {/* <img className="sombra__estanteria sombra1" src={sombraEstanteria} alt="Sombra de la estanteria" />
+          <img className="sombra__estanteria sombra2" src={sombraEstanteria} alt="Sombra de la estanteria" /> */}
+        </div>
+
       </article>
 
       <article id="explora">
@@ -66,7 +77,7 @@ function Home() {
         <h2 className="masVendido__h2">Los más vendidos</h2>
         <div className="masVendidoP">
           <div className="masVendido__div">
-            <div className="masVendido__div-cartel"><h6>NOVEDAD</h6></div>
+            <div className="masVendido__div-cartel cartel1"><h6>NOVEDAD</h6></div>
             <img className="masVendido__div-img" src={cafeEjemplo1} alt="" />
             <div className="masVendido__div-div">
               <div className="masVendido__div-div-div">
@@ -78,7 +89,7 @@ function Home() {
             </div>
           </div>
           <div className="masVendido__div">
-            <div className="masVendido__div-cartel"><h6>PREMIUM</h6></div>
+            <div className="masVendido__div-cartel cartel2"><h6>PREMIUM</h6></div>
             <img className="masVendido__div-img" src={cafeEjemplo2} alt="" />
             <div className="masVendido__div-div">
               <div className="masVendido__div-div-div">
@@ -90,7 +101,7 @@ function Home() {
             </div>
           </div>
           <div className="masVendido__div">
-            <div className="masVendido__div-cartel"><h6>NOVEDAD</h6></div>
+            <div className="masVendido__div-cartel cartel3"><h6>NOVEDAD</h6></div>
             <img className="masVendido__div-img" src={cafeEjemplo3} alt="" />
             <div className="masVendido__div-div">
               <div className="masVendido__div-div-div">

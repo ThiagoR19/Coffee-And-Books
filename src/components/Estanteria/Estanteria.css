@@ -41,12 +41,13 @@
   height: 450px;
   position: absolute;
   top: 22%;
+  z-index: 300;
 }
 
 .estanteria__hero-img:last-child {
   height: 250px;
   position: absolute;
-  top: 65%;
+  top: 62%;
   left: 78%;
   z-index: 500;
 }
@@ -86,7 +87,7 @@
 } */
 
 .estanteria__hero-div-div-div-img {
-  height: 120px;
+  height: 130px;
   border-radius: 20px;
   margin: 0 10px;
 }
