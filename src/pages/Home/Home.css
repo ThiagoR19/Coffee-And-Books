@@ -256,3 +256,97 @@
   align-self: flex-start;
   margin: 10px;
 }
+
+#masVendido {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1400px;
+  justify-self: center;
+  align-self: center;
+}
+
+.masVendido__div {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-color: #523325;
+  margin: 20px;
+  border-radius: 10px 10px 0 10px;
+  position: relative;
+}
+
+.masVendido__div:first-child {
+  margin: 20px 20px 20px 0;
+}
+
+.masVendido__div:last-child {
+  margin: 20px 0px 20px 20px;
+}
+
+.masVendidoP {
+  display: flex;
+  width: 100%;
+}
+
+.masVendido__div-img {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0px;
+
+}
+
+.masVendido__div-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  color: white;
+}
+
+.iconoPlus {
+  font-size: 60px;
+}
+
+.masVendido__div-div-div-h5 {
+  font-family: 'Momo Trust Sans';
+  font-size: 25px;
+}
+
+.masVendido__div-div-div-h6 {
+  font-family: 'Momo Trust Sans';
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.masVendido__div-div-div-span {
+  font-family: 'Momo Trust Sans';
+  font-weight: bolder;
+}
+
+.masVendido__div-cartel {
+  position: absolute;
+  padding: 10px;
+  border-radius: 10px 0 10px 0;
+}
+
+.masVendido__div-cartel:first-child {
+  background-color: #289E92;
+}
+
+/* 
+.masVendido__div-cartel:nth-child(2) {
+  background-color: #005E55;
+} */
+
+.masVendido__div-cartel:last-child {
+  background-color: #C4744F;
+}
+
+.masVendido__div-cartel h6 {
+  font-family: 'Molengo';
+  color: white;
+  font-size: 20px;
+  font-weight: 200;
+}
