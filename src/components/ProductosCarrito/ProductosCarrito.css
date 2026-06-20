@@ -137,9 +137,13 @@
     width: 100%;
   }
 
+  .productos__div{
+    padding: 10px 25px 10px 10px;
+  }
+
   .productos__h3 h3{
-    font-size: 28px;
-    padding: 26px;
+    font-size: 28px !important;
+    padding: 25px !important;
   }
   
   .productoL {
@@ -167,6 +171,7 @@
   .productos__div:last-child{
     gap: 10px;
     padding: 20px 10px;
+    margin: 0 35px 30px 20px;
   }
 
   .productos__div-div-h3{
@@ -176,6 +181,9 @@
     font-size: 11px;
   }
   
-
+  .productosL__div-img{
+    margin-left: 10px;
+    margin-right: 0;
+  }
 
 }
