@@ -41,3 +41,58 @@
     padding: 20px;
     background-color: #523325;
 } */
+
+.titulo-libro{
+    font-family: "Merriweather";
+    color: white;
+    font-size: 50px;
+    margin: 0px 0px 10px 0px;
+}
+.autor-libro{
+    font-family: "molengo";
+    color: white;
+    font-size: 30px;
+    margin: 0px 0px 10px 0px;
+}
+
+.precio-libro{
+    font-family: "Momo Trust Sans";
+    color: white;
+    font-size: 38px;
+    font-weight: 800;
+    margin: 0px 0px 10px 0px;   
+}
+
+.titleSinopsisLP{
+    font-family: "molengo";
+    font-size: 26px;
+}
+.SinopsisLP{
+    font-family: "Momo Trust Sans";
+}
+
+.cont-de-atributos{
+    display: flex;
+    gap: 40px;
+    justify-content: baseline;
+
+}
+
+.genero{
+    font-family: "molengo";
+    color: #F7AD74;
+    font-size: 26px;
+}
+.formato{
+    font-family: "molengo";
+    color: #F7AD74;
+    font-size: 26px;
+}
+
+/* .bnt-copra-LP{
+    xd
+}
+.boton-comprar{
+    xd2
+}
+.UER */

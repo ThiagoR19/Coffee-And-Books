@@ -22,19 +22,26 @@ export default function ProductoLibro() {
 
                 <div className="detalles-libro-1">
                     <div className="contenido-de-detalles">
+                        
                         <h1 className="titulo-libro">Nombre del libro</h1>
                         <p className="autor-libro">Autor del libro</p>
-                        <p className="precio-libro">$19.00</p>
-                        <p className="genero">Género</p>
-                        <p className="formato">Formato</p>
+                        <p className="precio-libro">$19.000</p>
+
+                        <div className="cont-de-atributos">
+                            <p className="genero">Género</p>
+                            <p className="formato">Formato</p>
+                        </div>
+
 
                         <div className="bnt-copra-LP">
                             <button className="boton-comprar"><FaCartShopping className="icono-carrito" />Comprar</button>
                             <p className="UEC">Unidadee en carrito: 1</p>
                         </div>
+
+
                         <span className="titleSinopsisLP">SINOPSIS</span>
                         <p className="SinopsisLP">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
                     </div>
                 </div>
 
