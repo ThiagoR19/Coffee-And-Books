@@ -5,6 +5,11 @@ import imagenIzquierda from '../../assets/imagen-home-izquierda.png'
 import imagenDerecha from '../../assets/imagen-home-derecha.png'
 import imagenSlogan from '../../assets/fondos/fondo-tarjeta4.png'
 
+import { CiCirclePlus } from "react-icons/ci";
+import cafeEjemplo1 from '../../assets/coffee-example1.png'
+import cafeEjemplo2 from '../../assets/coffee-example2.png'
+import cafeEjemplo3 from '../../assets/coffee-example3.png'
+
 import './Home.css'
 
 function Home() {
@@ -59,6 +64,44 @@ function Home() {
       </article>
       <article id="masVendido">
         <h2 className="masVendido__h2">Los más vendidos</h2>
+        <div className="masVendidoP">
+          <div className="masVendido__div">
+            <div className="masVendido__div-cartel"><h6>NOVEDAD</h6></div>
+            <img className="masVendido__div-img" src={cafeEjemplo1} alt="" />
+            <div className="masVendido__div-div">
+              <div className="masVendido__div-div-div">
+                <h5 className="masVendido__div-div-div-h5">Nombre del café</h5>
+                <h6 className="masVendido__div-div-div-h6">Especificación</h6>
+                <span className="masVendido__div-div-div-span">$100.000</span>
+              </div>
+              <CiCirclePlus className="iconoPlus" />
+            </div>
+          </div>
+          <div className="masVendido__div">
+            <div className="masVendido__div-cartel"><h6>PREMIUM</h6></div>
+            <img className="masVendido__div-img" src={cafeEjemplo2} alt="" />
+            <div className="masVendido__div-div">
+              <div className="masVendido__div-div-div">
+                <h5 className="masVendido__div-div-div-h5">Nombre del café</h5>
+                <h6 className="masVendido__div-div-div-h6">Especificación</h6>
+                <span className="masVendido__div-div-div-span">$100.000</span>
+              </div>
+              <CiCirclePlus className="iconoPlus" />
+            </div>
+          </div>
+          <div className="masVendido__div">
+            <div className="masVendido__div-cartel"><h6>NOVEDAD</h6></div>
+            <img className="masVendido__div-img" src={cafeEjemplo3} alt="" />
+            <div className="masVendido__div-div">
+              <div className="masVendido__div-div-div">
+                <h5 className="masVendido__div-div-div-h5">Nombre del café</h5>
+                <h6 className="masVendido__div-div-div-h6">Especificación</h6>
+                <span className="masVendido__div-div-div-span">$100.000</span>
+              </div>
+              <CiCirclePlus className="iconoPlus" />
+            </div>
+          </div>
+        </div>
       </article>
     </section>
   )
