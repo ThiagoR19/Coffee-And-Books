@@ -9,10 +9,11 @@
 }
 
 .producto__div:first-child {
+  position: relative;
   background-color: #523325;
   border-radius: 20px;
   padding: 15px;
-  border: 4px solid #D5713C;
+  border: 4px solid #D5713C; 
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -23,9 +24,10 @@
 
 .producto__div-div-trash {
   position: absolute;
-  background-color: #D5713C;
+  top: 0;
   right: 0;
-  border-radius: 0 20px 0 20px;
+  background-color: #D5713C;
+  border-radius: 0 10px 0 20px;
   padding: 10px;
 }
 
@@ -68,7 +70,7 @@
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
-  margin: 10px 0;
+  margin: 10px 0; 
 }
 
 .producto__div-div-botones {
@@ -147,4 +149,96 @@
   height: 50px;
   object-fit: cover;
   border-radius: 0 0 20px 20px;
+}
+
+
+/*----------------------RESPONSIVE-----------------------*/
+/* @media (max-width: 1023px) {
+  #producto {
+    margin: 0 20px;
+  }
+} */
+
+@media (max-width: 767px) {
+  #producto {
+    flex: auto;
+    margin: 0;
+    order: 0;
+  }
+  
+  .producto__div:first-child {
+    height: auto;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .producto__div:first-child {
+    padding: 15px;
+    border-width: 2px;
+  }
+
+  .producto__div-div-h2-titulo{
+    font-size: 20px;
+    align-self: flex-start;
+    margin-left: 0;
+  }
+  .producto__div-div-titulo{
+    align-self: flex-start;
+    padding: 15px;
+    border-radius: 20px 0 20px 0;
+    margin-left: 5px;
+  }
+
+  .producto__div-div-img-principal {
+    height: 310px;
+    padding: 5px;
+    border-radius: 15px;
+    margin: 0;
+  }
+
+  .producto__div-div-img-trash{
+    height: 30px;
+    width: 30px;
+  }
+
+  .producto__div:first-child {
+    border: 5px solid #D5713C; 
+  }
+
+  .producto__div-div-principal{
+    width:100%;
+    margin: 10px 0 20px;
+  }
+
+  .producto__div-div-botones{
+    width: 100%;
+    justify-content: space-around;
+    margin-top: -10px;
+    border-radius: 20px 20px 0 20px;
+  }
+  .producto__div-div-botones button img {
+    height: 55px;
+  }
+  .producto__div-div-div-h3{
+    font-size: 48px;
+  }
+  .producto__div-div-botones div{
+    height: 72px;
+    width: 130px;
+    margin: 0;
+  }
+
+  .producto__div-div-h3{
+    font-size: 38px;
+    padding: 20px;
+  }
+  .producto__divp{
+    font-size: 20px;
+    margin: 15px 0 30px;
+  }
+  .producto__div-img{
+    height: 80px;
+    border-radius: 15px 0 15px 0;
+  }
 }

@@ -24,7 +24,7 @@ function ProductoCarrito() {
             <img className='producto__div-div-button-img' src={buttonMinus} alt="" />
           </button>
           <div className='producto__div-div-div'>
-            <h3 className='producto__div-div-div-h3'>3</h3>
+            <h3 className='producto__div-div-div-h3'>3</h3> 
           </div>
           <button className='producto__div-div-button'>
             <img className='producto__div-div-button-img' src={buttonPlus} alt="" />

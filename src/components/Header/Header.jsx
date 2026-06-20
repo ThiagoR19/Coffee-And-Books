@@ -8,14 +8,14 @@ import LogoHeader from "../../assets/logo-header.png";
 import SearchIcon from "../../assets/icon-search.png";
 import CartIcon from "../../assets/carrito-icon.png";
 import CartIconActive from "../../assets/carrito-icon-seleccionado.png";
- 
+
 const NAV_LINKS = [
   { label: "HOME", path: "/" },
   { label: "CATÁLOGO", path: "/catalogo" },
-  { label: "CAFÉ IMPORTADO", path: null },
-  { label: "LIBROS", path: null },
+  { label: "CAFÉ IMPORTADO", path: "/productoCafe" },
+  { label: "LIBROS", path: "/productoLibro" },
 ];
- 
+
 function Header({ cartCount = 0 }) {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchValue, setSearchValue] = useState("");
@@ -30,10 +30,10 @@ function Header({ cartCount = 0 }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
  
-  function handleSearchSubmit(e) {
-    e.preventDefault();
-    console.log("Buscar:", searchValue);
-  }
+  // function handleSearchSubmit(e) {
+  //   e.preventDefault();
+  //   console.log("Buscar:", searchValue);
+  // }
  
   return (
     <header className="header">
@@ -44,7 +44,7 @@ function Header({ cartCount = 0 }) {
           target="_blank"
           rel="noreferrer"
         >
-          <img src={WhatsappIcon} alt="WhatsApp"/>
+          <img src={WhatsappIcon} alt="WhatsApp" />
           Atención por WhatsApp
         </a>
         <a
@@ -53,16 +53,16 @@ function Header({ cartCount = 0 }) {
           target="_blank"
           rel="noreferrer"
         >
-          <img src={InstagramIcon} alt="Instagram"/>
+          <img src={InstagramIcon} alt="Instagram" />
           Seguinos en ig
         </a>
       </div>
- 
+
       <div className="header__main">
         <Link href="/" className="header__logo">
           <img src={LogoHeader} alt="Coffee and Books" className="header__logo-img" />
         </Link>
- 
+
         <nav className="header__nav">
           {NAV_LINKS.map((link) =>
             link.path ? (
@@ -80,11 +80,11 @@ function Header({ cartCount = 0 }) {
             )
           )}
         </nav>
- 
+
         <div className="header__actions">
           {isMobile ? (
             /* Mobile: buscador siempre visible como input expandido */
-            <form className="header__search-always" onSubmit={handleSearchSubmit}>
+            <form className="header__search-always" /* onSubmit={handleSearchSubmit} */>
               <img src={SearchIcon} alt="Buscar" />
               <input
                 type="text"
@@ -95,7 +95,7 @@ function Header({ cartCount = 0 }) {
             </form>
           ) : searchOpen ? (
             /* Desktop: buscador expandible al hacer click */
-            <form className="header__search-form" onSubmit={handleSearchSubmit}>
+            <form className="header__search-form" /* onSubmit={handleSearchSubmit} */ >
               <input
                 type="text"
                 className="header__search-input"
@@ -124,9 +124,9 @@ function Header({ cartCount = 0 }) {
               <img src={SearchIcon} alt="Buscar" />
             </button>
           )}
- 
+
           <Link href="/carrito" className="header__icon-btn header__cart" aria-current={location === "/carrito" ? "page" : undefined}>
-            <img src={location === "/carrito" ? CartIconActive : CartIcon} alt="Carrito"/>
+            <img src={location === "/carrito" ? CartIconActive : CartIcon} alt="Carrito" />
             {cartCount > 0 && (
               <span className="header__cart-badge">{cartCount}</span>
             )}
