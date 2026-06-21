@@ -184,3 +184,16 @@
     width: 20px;
     height: 20px;
 }
+
+.contenedor-de-autores {
+    background-color: #523325;
+    margin: 20px 115px;
+    border-radius: 10px;
+}
+
+.autore-h1 {
+    color: white;
+    text-align: center;
+    font-family: "Merriweather";
+    font-size: 40px;
+}

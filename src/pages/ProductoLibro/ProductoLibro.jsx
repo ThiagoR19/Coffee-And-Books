@@ -9,6 +9,7 @@ import IconLibro from "../../assets/productoLibro/iconsPL/icono-libro 5.png"
 import IconIsbn from "../../assets/productoLibro/iconsPL/icon-isbn 2.png"
 import IconEditorial from "../../assets/productoLibro/iconsPL/icon-editorial 2.png"
 import IconDE from "../../assets/productoLibro/iconsPL/descuento-resumen 4.png"
+import CarrouselAutores from "./carrouselAutores";
 
 export default function ProductoLibro() {
     return (
@@ -92,8 +93,12 @@ export default function ProductoLibro() {
                 </div>
             </div>
 
-            <div className="contenedor-de-autores">
+            <h1 className="autore-h1">Mismo autor</h1>
 
+            <div className="contenedor-de-autores">
+                <div className="contenedor-de-autores">
+                    <CarrouselAutores />
+                </div>
             </div>
         </main>
     )
