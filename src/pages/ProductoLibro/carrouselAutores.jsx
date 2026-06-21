@@ -20,20 +20,18 @@ const librosEjemplo = [
 const VISIBLES = 6;
 
 export default function CarrouselAutores({ libros = librosEjemplo }) {
-    const [inicio, setInicio] = useState(0);
-    const maxInicio = Math.max(0, libros.length - VISIBLES);
-
-    const anterior = () => setInicio((i) => Math.max(i - 1, 0));
-    const siguiente = () => setInicio((i) => Math.min(i + 1, maxInicio));
-
-    const visibles = libros.slice(inicio, inicio + VISIBLES);
+    // const [inicio, setInicio] = useState(0);
+    // const maxInicio = Math.max(0, libros.length - VISIBLES);
+    // const anterior = () => setInicio((i) => Math.max(i - 1, 0));
+    // const siguiente = () => setInicio((i) => Math.min(i + 1, maxInicio));
+    // const visibles = libros.slice(inicio, inicio + VISIBLES);
 
     return (
         <div className="carrousel-wrapper">
             <button
                 className="carrousel-btn"
-                onClick={anterior}
-                disabled={inicio === 0}
+                // onClick={anterior}
+                // disabled={inicio === 0}
                 aria-label="Anterior"
             >
                 <FaChevronLeft size={70} color="#D9D9D9" />
@@ -41,7 +39,8 @@ export default function CarrouselAutores({ libros = librosEjemplo }) {
 
             <div className="carrousel-track-container">
                 <div className="carrousel-track">
-                    {visibles.map((libro) => (
+                    {/* visibles */}
+                    {libros.slice(0, VISIBLES).map((libro) => (
                         <div className="carrousel-card" key={libro.id}>
                             <img src={libro.portada} alt={libro.titulo} />
                             <p>{libro.titulo}</p>
@@ -52,8 +51,8 @@ export default function CarrouselAutores({ libros = librosEjemplo }) {
 
             <button
                 className="carrousel-btn"
-                onClick={siguiente}
-                disabled={inicio >= maxInicio}
+                // onClick={siguiente}
+                // disabled={inicio >= maxInicio}
                 aria-label="Siguiente"
             >
                 <FaChevronRight size={70} color="#D9D9D9" />
