@@ -24,7 +24,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 795px) {
   .Carrito{
     flex-direction: column;
     padding: 40px 15px;
