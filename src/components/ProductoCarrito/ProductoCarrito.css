@@ -153,17 +153,61 @@
 
 
 /*----------------------RESPONSIVE-----------------------*/
-/* @media (max-width: 1023px) {
-  #producto {
-    margin: 0 20px;
+@media (max-width: 900px){
+  #producto{
+    margin: 5px;
   }
-} */
 
-@media (max-width: 767px) {
+  .producto__div-div-h2-titulo{
+    font-size: 18px;
+  }
+
+  .producto__div-div-trash img{
+    height: 28px;
+    width: 28px;
+  }
+
+  .producto__div-div-principal{
+    width: 100%;
+  }
+
+  .producto__div-div-titulo{
+    margin-left: -48px;
+  }
+
+  .producto__div-botones div{
+    width: 100%;
+  }
+
+  .producto__div-div-h3{
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 1124px){
+  #producto{
+    margin: 5px;
+  }
+
+  .producto__div-div-principal{
+    width: 100%;
+  }
+
+  .producto__div-div-trash img{
+    height: 28px;
+    width: 28px;
+  }
+  
+  .producto__div-div-h2-titulo{
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 795px) {
   #producto {
     flex: auto;
     margin: 0;
-    order: 0;
+    order: 1;
   }
   
   .producto__div:first-child {

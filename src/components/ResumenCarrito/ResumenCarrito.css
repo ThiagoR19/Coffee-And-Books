@@ -145,10 +145,10 @@
 
 /*----------------------------RESPONSIVE-------------------------*/
 /*------TABLETS------*/
-@media (max-width: 767px) {
+@media (max-width: 795px) {
   #resumen {
     flex: auto;
-    order: 2;
+    order: 3;
     padding: 0 0 15px 0;
   }
   
@@ -157,8 +157,26 @@
   }
 }
 
+@media (max-width: 900px){
+  .resumen__div-div-h5 {
+    font-size: 15px;
+  }
+
+  .resumen__h3{
+    font-size: 20px;
+  }
+
+  .resumen__button{
+    font-size: 14px;
+  }
+
+  .resumen__div-segura .resumen__div-div-span{
+    font-size: 10px;
+  }
+}
+
 /*-----CELULARES REALTIVAMENTE GRANDES------*/
-@media (min-width: 360px), (max-width: 375){
+@media /*(min-width: 360px),*/ (max-width: 375px){
   .producto__div-div-h2-titulo{
     font-size: 17px;
   }
@@ -179,7 +197,7 @@
 }
 
 /*-----CELULARES REALTIVAMENTE GRANDES------*/
-@media (min-width: 410px), (max-width: 480px) {
+@media /* (min-width: 410px),*/ (max-width: 480px) { 
   .resumen__button {
     padding: 10px 30px 10px 30px;
     font-size: 28px;
