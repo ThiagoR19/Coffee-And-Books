@@ -2,13 +2,10 @@
 :root{
     --font-h1: "Playfair Display";
     --font-rules: "Merriweather";
-    --bg-dark: #2f1c12;
-    --bg-soft: rgba(251, 241, 232, 0.96);
+    --text-dark: #2f1c12;
     --bg-card: #FFECDE;
-    --border-soft: rgba(255, 217, 182, 0.55);
     --text-dark: #3c220c;
     --text-medium: #5E3719;
-    --text-muted: #6e533f;
     --h2-terms-cdtns: #FFECDE;
     --shadow: 0 28px 60px rgba(0, 0, 0, 0.24);
 }
@@ -39,7 +36,7 @@ body {
         "about rules conds"
         "sep sep conds"
         "terms cont2 conds";
-    gap: 28px;
+    gap: 18px;
     align-items: start;
 }
 
@@ -52,7 +49,7 @@ body {
 
 /*----------"header"-------------------*/
 .header1{
-    background-image: url(/src/assets/fondos/fondo-header-termsAndConditions.png);
+    background-image: url('/src/assets/fondos/fondo-header-termsAndConditions.png');
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,7 +58,7 @@ body {
     padding: 48px 24px;
     box-shadow: var(--shadow);
     width: calc(100% + 48px);
-    margin-left: -24px;
+    margin: 0 -24px;
 }
 
 .header1 h1{
@@ -197,7 +194,7 @@ b{
 .terms-conditns ol {
     margin: 28px 0 0;
     padding: 0;
-    line-height: 2;
+    line-height: 1.8;
     counter-reset: item;
     margin-left: 35px;
 }
@@ -276,7 +273,7 @@ b{
     background-size: cover;
     border-radius: 24px;
     box-shadow: var(--shadow);
-    padding: 18px 35px 30px;
+    padding: 18px 25px 30px 35px;
     width: 100%;
     max-width: 100%;
     height: 100%;
@@ -315,7 +312,7 @@ b{
     max-width: 100%;
     height: 100%;
     max-height: 100%;
-    line-height: 1.2;
+    line-height: 1.3;
 }
 .cont-grande h2{
     color: var(--h2-terms-cdtns);
@@ -335,10 +332,272 @@ b{
     font-weight: 700;
 }
 
-.cont-grande p + .hr4,
-.cont-grande .hr4 + p {
-    margin-top: 18px;
-}
-
 
 /*---------------------------RESPONSIVE-----------------------------------*/
+@media (max-width: 480px){
+    .container-main{
+        padding: 24px 16px 40px;
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-areas:
+        "conds conds"
+        "sep sep"
+        "about rules"
+        "terms cont2";
+        gap: 12px;
+        width: min(95%, 100%);
+        margin: 0 auto;
+    }
+    .about-our-prodts,
+    .our-rules,
+    .terms-conditns,
+    .cont2 {
+        min-width: 0;
+    }
+
+    .cont-grande{
+        order: unset;
+    }
+    .hr1{
+        order: unset;
+    }
+    .about-our-prodts, .our-rules{
+        order: unset;
+        height: auto;
+        max-height: none;
+    }
+    .about-our-prodts, .terms-conditns {
+        flex: 1 1 320px;
+        background: var(--bg-card);
+        padding: 12px 12px 15px;
+    }
+   
+    .hr7{
+        order: unset;
+        margin-bottom: 5px;
+    }
+    .separator-row > img.hr7{
+        display: none !important;
+    }
+    .separator-row{
+        grid-area: sep;
+        background-image: url(/src/assets/hr-decorativo-responsive.svg) !important;
+        background-repeat: no-repeat !important;
+        background-size: 100% auto !important;
+        background-position: center !important;
+        min-height: 30px !important;
+        height: auto !important;
+        width: 100% !important;
+        gap: 0 !important;
+    }
+
+    .terms-conditns, .cont2{
+        order: unset;
+        border-radius: 15px;
+    }
+    
+    .header1{
+        background-image: url('../../assets/fondos/fondo-header-termsandcdtns-responsive.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        padding: 16px;
+        width: calc(100% + 32px);
+        margin: 0 -16px 20px;
+    }
+    .header1 h1{
+        font-size: 22px;
+        line-height: 1.02;
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+    }
+    .header1 p{
+        font-size: 9px;
+        margin: 12px 0 0;
+        letter-spacing: 0.01em;
+    }
+
+    .hr3{
+        width: 90%;
+    }
+
+    .our-rules{
+        height: auto;
+        padding: 9px 10px;
+        border-radius: 10px;
+    }
+    .our-rules p{
+        font-size: 10px;
+    }
+    .our-rules h2{
+        font-size: 12px;
+    }
+    .our-rules .icon-rules{
+        width: 90px;
+        height: 70px;
+        margin-left: auto;
+        margin-right: 0;
+        transform: translateY(0);
+        top: 0;
+    }
+    .our-rules .hr2{
+        margin: 0;
+        display: none !important;
+    }
+
+    .cont-grande p{
+        display: block;
+        grid-row: auto;
+        margin: 0 0 18px 0;
+        font-size: 11px;
+        margin-bottom: 2px;
+        line-height: normal;
+    }
+    .cont-grande b{
+        font-weight: 700;
+        font-size: 11px;
+        display: inline;
+        line-height: 1.2;
+        vertical-align: baseline;
+    }
+    .cont-grande{
+        padding: 10px 15px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        align-items: start;
+        grid-auto-flow: dense;
+        border-radius: 15px;
+    }
+    .cont-grande h2{
+        grid-column: 1 / -1;
+        font-size: 18px;
+        margin: 0;
+    }
+    .cont-grande img.hr3{
+        grid-column: 1 / -1;
+        margin-top: -15px;
+        margin-bottom: 0;
+    }
+    .cont-grande p:nth-of-type(1){
+        grid-column: 1;
+        margin-bottom: 2px;
+        margin-top: 0;
+    }
+    .cont-grande img.hr4:nth-of-type(1){
+        grid-column: 1;
+        margin-bottom: 5px;
+    }
+    .cont-grande img.hr4{
+        display: none;
+    }
+    .cont-grande img.hr4:nth-of-type(2){
+        display: block;
+        grid-column: 1 / -1;
+        margin-top: 0;
+        margin-bottom: 0px;
+    }
+
+    .about-our-prodts{
+        height: auto;
+        padding: 8px;
+        border-radius: 10px;
+    }
+    .about-our-prodts li::before {
+        height: 14px;
+        width: 8px;
+        top: 0px;
+    }
+    .about-our-prodts li {
+        padding-left: 12px;
+        margin-left: -15px;
+        margin-bottom: 10px;
+        line-height: 1;
+    }
+    .about-our-prodts .our-rules {
+        grid-template-columns: 1fr 1fr;
+    }
+    .about-our-prodts h2{
+        font-size: 11.5px;
+    }
+    .about-our-prodts p{
+        font-size: 10px;
+    }
+    .about-our-prodts ul{
+        margin-top: 5px;
+    }
+    
+    
+    .cont2 p{
+        font-size: 9px;
+    }
+    
+    /*quedó pendiente arreglar unas cosillas con este contenedor, en el prox push será*/
+
+    .cont2 p b{
+        font-size: 9px;
+    }
+    .cont2 h2{
+        font-size: 12px;
+    }
+    .cont2 .hr2{
+        margin: 0;
+        display: none !important;
+    }
+    .cont2{
+        padding: 10px 9px;
+        border-radius: 10px;
+    }
+    
+    .terms-conditns li{
+        margin-left: -35px;
+        padding-left: 10px;
+        font-size: 10px;
+    }
+    .terms-conditns ol{
+        margin-top: 5px;
+    }
+    .terms-conditns h2{
+        font-size: 11.5px;
+        margin-bottom: 2px;
+    }
+    .terms-conditns{
+        border-radius: 10px;
+    }
+
+    .hr5{
+        margin: 0%;
+    }
+    .hr1{
+        display: none;
+        margin: 0%; 
+    }
+
+    .our-rules h2::after {
+        content: "";
+        display: block;
+        width: 90%;
+        max-width: 150px;
+        height: 10px;
+        background-image: url(/src/assets/hr-decoracionxs.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        margin: auto;
+    }
+    .cont2 h2::after {
+        content: "";
+        display: block;
+        width: 90%;
+        max-width: 150px;
+        height: 10px;
+        background-image: url(/src/assets/hr-decoracionxs.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        margin: auto;
+    }
+}

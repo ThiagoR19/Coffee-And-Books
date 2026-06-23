@@ -57,9 +57,9 @@ function TerminosYCondiciones() {
               <li>Envíos y Entregas</li>
               <li>Propiedad Intelectual</li>
               <li>Devoluciones y <br/> Reembolsos</li>
-              <li>Privacdad y Protección <br/> de datos</li>
+              <li>Privacidad y Protección <br/> de datos</li>
               <li>Métodos de Pago</li>
-              <li>Disponibilidad de <br/> Productos</li>
+              <li>Disponibilidad de <br/> productos</li>
               <li>Atención al cliente</li>
             </ol>
         </div>
