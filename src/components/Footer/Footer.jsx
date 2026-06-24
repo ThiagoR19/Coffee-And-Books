@@ -11,10 +11,10 @@ const INFO_LINKS = [
 ];
 
 const CATEGORY_LINKS = [
-  { label: "Books", path: "/libros" },
-  { label: "Coffees", path: "/cafe-importado" },
-  { label: "Novedades", path: "/novedades" },
-  { label: "Ofertas", path: "/ofertas" },
+  { label: "Libros", path: "/productoLibro" },
+  { label: "Cafés", path: "/productoCafe" },
+  { label: "Novedades", path: "/catalogo" },
+  { label: "Ofertas", path: "/catalogo" },
 ];
 
 function Footer() {
