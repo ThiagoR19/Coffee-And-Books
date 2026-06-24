@@ -10,3 +10,19 @@
 /* img {
   height: 100px;
 } */
+
+/*-----------------RESPONSIVE-----------------------*/
+
+
+/*--------------------CELULARES---------*/
+@media (max-width: 480px){
+  #productoCafe {
+    flex-direction: column;
+  }
+
+  #imagenes,
+  #informacion {
+    width: 100%;
+  }
+}
+
