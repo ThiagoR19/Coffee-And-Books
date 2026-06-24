@@ -27,7 +27,7 @@ function ProductoCafeDesarrollo() {
         <div id='titulos'>
           <h2 className='titulos__h2'>Caramel Expresso</h2>
           <div className='titulos__div'>
-            <h3 className='titulos__div-h3'>Sturbucks</h3>
+            <h3 className='titulos__div-h3'>Starbucks</h3>
             <h2 className='titulos__div-h2'>$19.000</h2>
           </div>
         </div>
