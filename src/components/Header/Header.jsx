@@ -12,8 +12,8 @@ import CartIconActive from "../../assets/carrito-icon-seleccionado.png";
 const NAV_LINKS = [
   { label: "HOME", path: "/" },
   { label: "CATÁLOGO", path: "/catalogo" },
-  { label: "CAFÉ IMPORTADO", path: "/productoCafe" },
-  { label: "LIBROS", path: "/productoLibro" },
+  { label: "SOBRE NOSOTROS", path: "/sobrenosotros" },
+  { label: "PREGUNTAS FRECUENTES", path: "/faqs" },
 ];
 
 function Header({ cartCount = 0 }) {
@@ -29,12 +29,12 @@ function Header({ cartCount = 0 }) {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
- 
+
   // function handleSearchSubmit(e) {
   //   e.preventDefault();
   //   console.log("Buscar:", searchValue);
   // }
- 
+
   return (
     <header className="header">
       <div className="header__topbar">
