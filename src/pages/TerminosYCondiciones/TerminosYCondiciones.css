@@ -33,6 +33,7 @@ body {
     display: grid;
     grid-template-columns: minmax(360px, 0.9fr) minmax(360px, 1fr) minmax(480px, 1.1fr);
     grid-template-areas:
+        "hr1sep hr1sep hr1sep"
         "about rules conds"
         "sep sep conds"
         "terms cont2 conds";
@@ -43,7 +44,7 @@ body {
 .about-our-prodts { grid-area: about; }
 .our-rules { grid-area: rules; }
 .cont-grande { grid-area: conds; align-self: stretch; }
-.hr1 { grid-area: sep; justify-self: center; align-self: center; }
+.hr1 { grid-area: hr1sep; justify-self: center; }
 .terms-conditns { grid-area: terms; }
 .cont2 { grid-area: cont2; }
 
@@ -246,7 +247,7 @@ b{
     margin-bottom: -45px;
     margin-left: 20px;
     position: relative;
-    top: -40px;
+    top: -10px;
     align-self: flex-end;
 }
 
@@ -334,7 +335,8 @@ b{
 
 
 /*---------------------------RESPONSIVE-----------------------------------*/
-@media (max-width: 480px){
+/*---TABLETS-----*/
+@media (min-width: 481px) and (max-width: 900px){
     .container-main{
         padding: 24px 16px 40px;
     }
@@ -346,6 +348,7 @@ b{
         "conds conds"
         "sep sep"
         "about rules"
+        "hr1sep hr1sep"
         "terms cont2";
         gap: 12px;
         width: min(95%, 100%);
@@ -362,7 +365,14 @@ b{
         order: unset;
     }
     .hr1{
-        order: unset;
+        grid-area: hr1sep;
+        display: block;
+        justify-self: center;
+        width: 100%;
+        height: 30px;
+        max-width: 343px;
+        margin: 0;
+        background-size: 100% auto;
     }
     .about-our-prodts, .our-rules{
         order: unset;
@@ -400,10 +410,10 @@ b{
     }
     
     .header1{
-        background-image: url('../../assets/fondos/fondo-header-termsandcdtns-responsive.png');
+        background-image: url(/src/assets/fondos/fondo-header-termsandcdtns-responsive4.svg);
         background-size: contain;
         background-repeat: no-repeat;
-        padding: 16px;
+        padding: 12px;
         width: calc(100% + 32px);
         margin: 0 -16px 20px;
     }
@@ -425,23 +435,24 @@ b{
     }
 
     .our-rules{
-        height: auto;
-        padding: 9px 10px;
+        height: 100%;
+        padding: 9px 10px 15px;
         border-radius: 10px;
     }
     .our-rules p{
-        font-size: 10px;
+        font-size: 16px;
     }
     .our-rules h2{
-        font-size: 12px;
+        font-size: 20px;
     }
     .our-rules .icon-rules{
-        width: 90px;
+        width: 100px;
         height: 70px;
         margin-left: auto;
-        margin-right: 0;
+        margin-right: -15px;
         transform: translateY(0);
-        top: 0;
+        top: -35px;
+        opacity: 60%;
     }
     .our-rules .hr2{
         margin: 0;
@@ -452,13 +463,397 @@ b{
         display: block;
         grid-row: auto;
         margin: 0 0 18px 0;
-        font-size: 11px;
+        font-size: 14px;
         margin-bottom: 2px;
         line-height: normal;
     }
     .cont-grande b{
         font-weight: 700;
-        font-size: 11px;
+        font-size: 14px;
+        display: inline;
+        line-height: 1.2;
+        vertical-align: baseline;
+    }
+    .cont-grande{
+        padding: 10px 15px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        align-items: start;
+        grid-auto-flow: dense;
+        border-radius: 15px;
+    }
+    .cont-grande h2{
+        grid-column: 1 / -1;
+        font-size: 20px;
+        margin: 0;
+    }
+    .cont-grande img.hr3{
+        grid-column: 1 / -1;
+        margin-top: -15px;
+        margin-bottom: 0;
+    }
+    .cont-grande p:nth-of-type(1){
+        grid-column: 1;
+        margin-bottom: 2px;
+        margin-top: 0;
+    }
+    .cont-grande img.hr4:nth-of-type(1){
+        grid-column: 1;
+        margin-bottom: 5px;
+    }
+    .cont-grande img.hr4{
+        display: none;
+    }
+    .cont-grande img.hr4:nth-of-type(2){
+        display: block;
+        grid-column: 1 / -1;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 15%;
+        width: 500px !important;
+    }
+
+    .about-our-prodts{
+        height: auto;
+        padding: 8px;
+        border-radius: 10px;
+    }
+    .about-our-prodts li::before {
+        height: 25px;
+        width: 15px;
+        top: 0px;
+    }
+    .about-our-prodts li {
+        padding-left: 25px;
+        margin-left: -15px;
+        margin-bottom: 10px;
+        line-height: 1;
+    }
+    .about-our-prodts .our-rules {
+        grid-template-columns: 1fr 1fr;
+    }
+    .about-our-prodts h2{
+        font-size: 20px;
+    }
+    .about-our-prodts p{
+        font-size: 18px;
+    }
+    .about-our-prodts ul{
+        margin-top: 10px;
+    }
+    
+    .cont2 p {
+        font-size: 14px;
+        margin: 5px 0 0;
+        line-height: 1.2;
+    }
+    .cont2 p:first-of-type {
+        margin-top: 0;
+    }
+    .cont2 p b{
+        font-size: 14px;
+    }
+    .cont2 h2{
+        font-size: 20px;
+    }
+    .cont2 .hr2{
+        margin: 0;
+        display: none !important;
+    }
+    .cont2{
+        padding: 20px 20px;
+        border-radius: 10px;
+    }
+    
+    .terms-conditns li{
+        margin-left: -35px;
+        padding-left: 20px;
+        font-size: 14px;
+    }
+    .terms-conditns ol{
+        margin-top: 5px;
+        margin-left: 50px;
+    }
+    .terms-conditns h2{
+        font-size: 20px;
+        margin-bottom: 2px;
+    }
+    .terms-conditns{
+        border-radius: 10px;
+    }
+
+    .hr5{
+        margin: 0%;
+    }
+
+    .our-rules h2::after {
+        content: "";
+        display: block;
+        width: 90%;
+        max-width: 250px;
+        height: 20px;
+        background-image: url(/src/assets/hr-decoracion1.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        margin: auto;
+    }
+    .cont2 h2::after {
+        content: "";
+        display: block;
+        width: 90%;
+        max-width: 250px;
+        height: 20px;
+        background-image: url(/src/assets/hr-decoracion1.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        margin: auto;
+    }
+}
+@media (min-width: 1145px) and (max-width: 1124px){
+    .our-rules .icon-rules {
+        top: -60px;
+        bottom: -20px;
+    }
+}
+/*---TABLET HORIZONTAL----*/
+@media (min-width: 901px) and (max-width: 1224px){
+    .container-main{
+        padding: 30px 20px 48px;
+    }
+
+    .content {
+        grid-template-columns: minmax(260px, 0.9fr) minmax(260px, 1fr) minmax(300px, 1.1fr);
+        gap: 14px;
+    }
+
+    .our-rules,
+    .cont2 {
+        min-width: 0;
+        flex: none;
+    }
+
+    .header1{
+        padding: 36px 20px;
+        width: calc(100% + 40px);
+        margin: 0 -20px;
+    }
+    .header1 h1{
+        font-size: 44px;
+    }
+    .header1 p{
+        font-size: 22px;
+        margin: 12px 0 0;
+    }
+
+    .hr1 { max-width: 420px; margin: 24px 0; }
+    .hr2 { max-width: 260px; height: 16px; margin: 8px 0 14px; }
+    .hr3 { max-width: 280px; }
+    .hr4 { max-width: 280px; }
+    .hr5 { max-width: 260px; height: 2px; }
+    .hr7 { height: 40px; margin-top: 4px; }
+
+    .content h2 {
+        font-size: 22px;
+    }
+
+    .about-our-prodts{
+        height: 290px;
+        padding: 20px 20px 22px;
+    }
+    .about-our-prodts p, .terms-conditns li{
+        font-size: 17px;
+    }
+    .about-our-prodts ul{
+        margin-top: 10px;
+    }
+    .about-our-prodts li{
+        padding-left: 24px;
+        margin-bottom: 9px;
+        line-height: 1.6;
+    }
+    .about-our-prodts li::before{
+        height: 20px;
+        width: 13px;
+        top: 6px;
+    }
+
+    .our-rules{
+        height: 290px;
+        padding: 14px 20px 14px;
+    }
+    .our-rules p{
+        font-size: 17px;
+    }
+    .our-rules .icon-rules{
+        max-width: 130px;
+        margin-left: 14px;
+        margin-bottom: -32px;
+        top: -28px;
+    }
+
+    .terms-conditns{
+        padding: 20px 20px 22px;
+    }
+    .terms-conditns ol{
+        margin-left: 26px;
+    }
+    .terms-conditns li{
+        padding-left: 20px;
+    }
+
+    .cont2{
+        padding: 14px 18px 24px 26px;
+    }
+    .cont2 p, .cont2 p b{
+        font-size: 17px;
+    }
+
+    .cont-grande{
+        padding: 20px 32px;
+    }
+    .cont-grande p, .cont-grande b{
+        font-size: 17px;
+    }
+}
+
+
+/*-----CELULAR-----*/
+@media (max-width: 480px){ 
+    .container-main{
+        padding: 24px 16px 40px;
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-areas:
+        "conds conds"
+        "sep sep"
+        "about rules"
+        "hr1sep hr1sep"
+        "terms cont2";
+        gap: 12px;
+        width: min(95%, 100%);
+        margin: 0 auto;
+    }
+    .about-our-prodts,
+    .our-rules,
+    .terms-conditns,
+    .cont2 {
+        min-width: 0;
+    }
+
+    .cont-grande{
+        order: unset;
+    }
+    .hr1{
+        grid-area: hr1sep;
+        display: block;
+        justify-self: center;
+        width: 100%;
+        height: 30px;
+        max-width: 343px;
+        margin: 0;
+    }
+    .about-our-prodts, .our-rules{
+        order: unset;
+        height: auto;
+        max-height: none;
+    }
+    .about-our-prodts, .terms-conditns {
+        flex: 1 1 320px;
+        background: var(--bg-card);
+        padding: 12px 12px 15px;
+    }
+   
+    .hr7{
+        order: unset;
+        margin-bottom: 5px;
+    }
+    .separator-row > img.hr7{
+        display: none !important;
+    }
+    .separator-row{
+        grid-area: sep;
+        background-image: url(/src/assets/hr-decorativo-responsive.svg) !important;
+        background-repeat: no-repeat !important;
+        background-size: 100% auto !important;
+        background-position: center !important;
+        min-height: 30px !important;
+        height: auto !important;
+        width: 100% !important;
+        gap: 0 !important;
+    }
+
+    .terms-conditns, .cont2{
+        order: unset;
+        border-radius: 15px;
+    }
+    
+    .header1{
+        background-image: url(/src/assets/fondos/fondo-header-termsandcdtns-responsive2.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        padding: 12px;
+        width: calc(100% + 32px);
+        margin: 0 -16px 20px;
+    }
+    .header1 h1{
+        font-size: 22px;
+        line-height: 1.02;
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+    }
+    .header1 p{
+        font-size: 9px;
+        margin: 12px 0 0;
+        letter-spacing: 0.01em;
+    }
+
+    .hr3{
+        width: 90%;
+    }
+
+    .our-rules{
+        height: 100%;
+        padding: 9px 10px 15px;
+        border-radius: 10px;
+    }
+    .our-rules p{
+        font-size: 10px;
+    }
+    .our-rules h2{
+        font-size: 12px;
+    }
+    .our-rules .icon-rules{
+        width: 70px;
+        height: 50px;
+        margin-left: auto;
+        margin-right: -20px;
+        transform: translateY(0);
+        top: -35px;
+        opacity: 60%;
+    }
+    .our-rules .hr2{
+        margin: 0;
+        display: none !important;
+    }
+
+    .cont-grande p{
+        display: block;
+        grid-row: auto;
+        margin: 0 0 18px 0;
+        font-size: 12.5px;
+        margin-bottom: 2px;
+        line-height: normal;
+    }
+    .cont-grande b{
+        font-weight: 700;
+        font-size: 11.5px;
         display: inline;
         line-height: 1.2;
         vertical-align: baseline;
@@ -530,13 +925,14 @@ b{
         margin-top: 5px;
     }
     
-    
-    .cont2 p{
+    .cont2 p {
         font-size: 9px;
+        margin: 5px 0 0;
+        line-height: 1.2;
     }
-    
-    /*quedó pendiente arreglar unas cosillas con este contenedor, en el prox push será*/
-
+    .cont2 p:first-of-type {
+        margin-top: 0;
+    }
     .cont2 p b{
         font-size: 9px;
     }
@@ -571,10 +967,6 @@ b{
     .hr5{
         margin: 0%;
     }
-    .hr1{
-        display: none;
-        margin: 0%; 
-    }
 
     .our-rules h2::after {
         content: "";
@@ -599,5 +991,37 @@ b{
         background-size: contain;
         background-position: center;
         margin: auto;
+    }
+}
+@media (max-width: 477px){
+    .our-rules .icon-rules{
+        top: -10px;
+    }
+
+    .cont2 p{
+        line-height: 1.3;
+    }
+}
+@media (max-width: 457px){
+    .our-rules .icon-rules{
+        top: -25px;
+    }
+}
+@media (max-width: 430px){
+    .header1 h1{
+        margin-top: -5px;
+    }   
+}
+@media (max-width: 375px){
+    .about-our-prodts h2, .terms-conditns h2{
+        font-size: 10px;
+    }
+
+    .header1 h1{
+        margin-top: -8px;
+    }
+
+    .our-rules .icon-rules{
+        top: -35px;
     }
 }
