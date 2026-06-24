@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './ListaProd.css';
 import useCarrusel from './hooksCatalogo/UseCarrousel';
 import imagen1 from '../../assets/imagen-catalogo.png'
@@ -37,16 +37,13 @@ const productos = [
 // `productosMostrados` en el .map() y descomentar las flechas de navegación maldito pe causa.
 
 export default function ListaProductos() {
+
+
   const [animando, setAnimando] = useState(false);
+  const esMobileRef = useRef(window.matchMedia('(max-width: 480px)').matches);
+  const [esMobile, setEsMobile] = useState(esMobileRef.current);
 
   // Hook conservado — este lo usamos cuando se active la paginación, por ahora no hace nada
-  const {
-    productosMostrados,
-    irAtras,
-    irAdelante,
-    hayPaginaAnterior,
-    hayPaginaSiguiente,
-  } = useCarrusel(productos);
 
   // const cambiarPagina = (accion) => {
   //   setAnimando(true);
@@ -56,6 +53,27 @@ export default function ListaProductos() {
   //   }, 300);
   // }
 
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 480px)');
+    const handler = (e) => setEsMobile(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
+  const sizeFlechas = esMobile ? 40 : 110;
+
+  const productosPorPagina = esMobile ? 9 : 15;
+  console.log('esMobile:', esMobile, '| productosPorPagina:', productosPorPagina);
+
+
+  const {
+    productosMostrados,
+    irAtras,
+    irAdelante,
+    hayPaginaAnterior,
+    hayPaginaSiguiente,
+  } = useCarrusel(productos, productosPorPagina);
+
   return (
 
     <div className="main-lista" >
@@ -63,8 +81,9 @@ export default function ListaProductos() {
       <div className="lista-productos">
 
         <div className="filtro-contenedor">
-          <p style={{ color: 'white' }}>MOSTRANDO 1-{productos.length} DE {productos.length} PRODUCTOS</p>
-
+          <p className="texto-mostrando desktop-only" style={{ color: 'white' }}>
+            PAGINA 1/{productos.length} - <b>MOSTRANDO</b>: {productos.length} PRODUCTOS
+          </p>
           <div className="filtro-select">
 
             <span style={{ color: 'white' }}>ORDENAR POR:</span>
@@ -97,13 +116,13 @@ export default function ListaProductos() {
         {/* Flechitas pro max deshabilitadas hasta terminar la etapa de enmaquebodrio — descomentar al activar paginación */}
         {/* {hayPaginaAnterior && ( */}
         <button className="prod-flechitas izquierda" onClick={() => cambiarPagina(irAtras)}>
-          <GoChevronLeft size={110} />
+          <GoChevronLeft size={sizeFlechas} />
         </button>
         {/* )} */}
 
 
         <div className={`prod-grid ${animando ? 'animando' : ''}`}>
-          {productos.map((producto) => (
+          {productosMostrados.map((producto) => (
             <div key={producto.id} className="lista-productos_card">
 
               <div className="card-imagen-contenedor">
@@ -122,18 +141,22 @@ export default function ListaProductos() {
                   <span className="card-precio">${producto.precio}</span>
                 </div>
                 <button className="card-btn-agregar">
-                  <AiOutlinePlusCircle size={35} color="#DCDACE" />
+                  <AiOutlinePlusCircle size={esMobile ? 22 : 35} color="#DCDACE" />
                 </button>
               </div>
 
             </div>
           ))}
-        </div>
+        </div><p className="texto-mostrando mobile-only">
+          PAGINA 1/{productos.length} - <b>MOSTRANDO</b>: {productos.length} PRODUCTOS
+        </p>
+
+
 
         {/* Flechita de la derecha deshabilitada hasta terminar la etapa de enmaquebodrio — descomentar al activar paginación */}
         {/* {hayPaginaSiguiente && ( */}
         <button className="prod-flechitas derecha" onClick={() => cambiarPagina(irAdelante)}>
-          <GoChevronRight size={110} />
+          <GoChevronRight size={sizeFlechas} />
         </button>
         {/* )} */}
 
