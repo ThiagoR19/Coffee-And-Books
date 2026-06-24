@@ -15,6 +15,13 @@ import './ProductoCafeDesarrollo.css'
 function ProductoCafeDesarrollo() {
   return (
     <article id='cafe'>
+      <div id='titulos'>
+          <h2 className='titulos__h2'>Caramel Expresso</h2>
+          <div className='titulos__div'>
+            <h3 className='titulos__div-h3'>Starbucks</h3>
+            <h2 className='titulos__div-h2'>$19.000</h2>
+          </div>
+      </div>
       <div id='imagenes'>
         <img className='imagenes__img' src={coffeeExample1} alt="Café de ejemplo" />
         <div className='imagenes__div'>
@@ -24,31 +31,25 @@ function ProductoCafeDesarrollo() {
         </div>
       </div>
       <div id='informacion'>
-        <div id='titulos'>
-          <h2 className='titulos__h2'>Caramel Expresso</h2>
-          <div className='titulos__div'>
-            <h3 className='titulos__div-h3'>Sturbucks</h3>
-            <h2 className='titulos__div-h2'>$19.000</h2>
-          </div>
-        </div>
         <div id='descripcion'>
           <h4 className='descripcion__h4'>DESCRIPCIÓN</h4>
           <p className='descripcion__p'>Disfrutá de la experiencia Starbucks en la comodidad de tu casa. El Caramel Espresso combina la intensidad de granos de café 100% Arábica cuidadosamente seleccionados de América Latina con un perfil sutilmente dulce y un delicioso aroma a caramelo tostado.</p>
+          <div className='underline underline-desc'></div>
+          <ul id='lista'>
+            <li><span>Perfil de sabor:</span> Dulce, equilibrado y con notas a caramelo mantecoso.</li>
+            <li><span>Compatibilidad:</span> Cápsulas totalmente compatibles con el sistema Nespresso®.</li>
+            <li><span>Momento ideal:</span> Perfecto para tomar solo como Espresso (40 ml) o combinado con leche texturizada para crear un Latte Macchiato inolvidable.</li>
+          </ul>
         </div>
-        <div className='underline'></div>
-        <ul id='lista'>
-          <li><span>Perfil de sabor:</span> Dulce, equilibrado y con notas a caramelo mantecoso.</li>
-          <li><span>Compatibilidad:</span> Cápsulas totalmente compatibles con el sistema Nespresso®.</li>
-          <li><span>Momento ideal:</span> Perfecto para tomar solo como Espresso (40 ml) o combinado con leche texturizada para crear un Latte Macchiato inolvidable.</li>
-        </ul>
-        <div className='underline'></div>
+  
+        <div className='underline underline-det'></div>
         <div id='detalles'>
           <h3 className='detalles__h3'>DETALLES DEL CAFÉ</h3>
-          <div className='detalles__div'><img className='detalles__div-img' src={iconMarca} alt="" /><span>Marca:</span><p>Sturbubcks</p></div>
+          <div className='detalles__div'><img className='detalles__div-img' src={iconMarca} alt="" /><span>Marca:</span><p>Starbucks</p></div>
           <div className='detalles__div'><img className='detalles__div-img' src={iconTipo} alt="Icono Tipo" /><span>Tipo:</span><p>Cápsula</p></div>
-          <div className='detalles__div'><img className='detalles__div-img' src={iconIntensidad} alt="Icono Intensidad" /><span>Intensidad:</span><p>Sturbubcks</p></div>
-          <div className='detalles__div'><img className='detalles__div-img' src={iconOrigen} alt="Icono Origen" /><span>Origen:</span><p>America Latina</p></div>
-          <div className='detalles__div'><img className='detalles__div-img' src={iconContenido} alt="Icono Contenido" /><span>Contenido:</span><p>Caja de 10 capsulas</p></div>
+          <div className='detalles__div'><img className='detalles__div-img' src={iconIntensidad} alt="Icono Intensidad" /><span>Intensidad:</span><p>(media)</p></div>
+          <div className='detalles__div'><img className='detalles__div-img' src={iconOrigen} alt="Icono Origen" /><span>Origen:</span><p>América Latina</p></div>
+          <div className='detalles__div'><img className='detalles__div-img' src={iconContenido} alt="Icono Contenido" /><span>Contenido:</span><p>Caja por 10 cápsulas</p></div>
         </div>
         <div id='botones'>
           <button className='botones__button'><img src={iconoCarrito} alt="Icono del Carrito" />AGREGAR AL CARRITO</button>
