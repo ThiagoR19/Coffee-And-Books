@@ -1,15 +1,17 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const PRODUCTOS_POR_PAGINA = 15;
-
-export default function useCarrusel(productos) {
+export default function useCarrusel(productos, productosPorPagina) {
     const [paginaActual, setPaginaActual] = useState(0);
 
-    const totalPaginas = Math.ceil(productos.length / PRODUCTOS_POR_PAGINA);
+    useEffect(() => {
+        setPaginaActual(0);
+    }, [productosPorPagina]);
+
+    const totalPaginas = Math.ceil(productos.length / productosPorPagina);
 
     const productosMostrados = productos.slice(
-        paginaActual * PRODUCTOS_POR_PAGINA,
-        paginaActual * PRODUCTOS_POR_PAGINA + PRODUCTOS_POR_PAGINA
+        paginaActual * productosPorPagina,
+        paginaActual * productosPorPagina + productosPorPagina
     );
 
     const irAtras = () => setPaginaActual(paginaActual - 1);

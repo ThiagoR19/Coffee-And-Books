@@ -2,6 +2,7 @@ import './Catalogo.css'
 import '../../App.css'
 import imagenCatalogo from '../../assets/imagen-catalogo.png'
 import imagenFondo from '../../assets/fondos/fondo3.1.0.png'
+import imagenFondoRes from '../../assets/fondos/fondo2.0.0.svg'
 import ListaProductos from './ListaProd'
 
 export default function Catalogo() {
