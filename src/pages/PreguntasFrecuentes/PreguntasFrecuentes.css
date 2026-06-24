@@ -11,82 +11,86 @@
 }
 
 /*--------------CONTENEDOR---------------------------*/
-.container-faqs{
+.container-faqs {
     background-image: url('../../assets/fondos/fondo3.1.0.png');
     background-size: cover;
     background-position: center;
-    padding-top: 45px;
+    padding-top: clamp(20px, 4vw, 50px);
     padding-bottom: 40px;
     margin-bottom: 40px;
 }
 
 /*--------------"header" y portada---------------*/
-.header-faqs{
+.header-faqs {
     background: linear-gradient(90deg, #713D25 100%, #523325 5%);
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
-.header-faqs-text{
+
+.header-faqs-text {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin-left: 80px;
-}
-.header-faqs h1{
-    font-family: 'Playfair Display';
-    font-weight: bold;
-    font-size: 55px;
-    color: var(--line-color);
-    margin: 0;
-}
-.header-faqs-text p{
-    font-family: 'Playfair Display';
-    font-weight: 100;
-    font-size: 35px;
-    color: var(--line-color);
-    margin: 0;
-}
-.inner-header{
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-left: clamp(40px, 4vw, 80px);
 }
 
-.img-faqs{
+.header-faqs h1 {
+    font-family: 'Playfair Display';
+    font-weight: bold;
+    font-size: clamp(25px, 4vw, 55px);
+    color: var(--line-color);
+    margin: 0;
+}
+
+.header-faqs-text p {
+    font-family: 'Playfair Display';
+    font-weight: 100;
+    font-size: clamp(12px, 2vw, 35px);
+    color: var(--line-color);
+    margin: 0;
+}
+
+.inner-header {
+    margin-top: clamp(0px, 4vw, 50px);
+    margin-bottom: clamp(0px, 4vw, 50px);
+}
+
+.img-faqs {
     width: 508px;
     height: auto;
     margin-right: 0px;
 }
 
 /*------------FAQ LIST------------*/
-.faq-list{
+.faq-list {
     display: flex;
     flex-direction: column;
     gap: 20px;
     margin: 60px 200px 0px 200px;
 }
 
-.container-faqs{
+.container-faqs {
     padding-bottom: 0;
     margin-bottom: 0;
 }
 
 /*-------------------FAQ CARDS------------------*/
-.faq-item-superior{
+.faq-item-superior {
     display: flex;
     flex-direction: row;
     align-items: center;
     flex-wrap: nowrap;
-    gap: 12px;
+    gap: clamp(6px, 2vw, 12px);
 }
 
-.faq-item-superior h2{
+.faq-item-superior h2 {
     flex: 1 1 auto;
     min-width: 0;
 }
 
-.faq-item{
+.faq-item {
     background: var(--faq-item-bg);
     border: 2px solid var(--line-color);
     border-radius: 15px;
@@ -94,26 +98,27 @@
     align-items: center;
     gap: 20px;
 }
-.faq-item hr .faq-item p{
+
+.faq-item hr .faq-item p {
     display: flex;
     flex-direction: column;
 }
 
-.faq-item h2{
+.faq-item h2 {
     font-family: var(--faq-font-family);
     font-weight: normal;
-    font-size: 26px;
+    font-size: clamp(13px, 2vw, 26px);
     color: #FFFFFF;
     margin-left: 20px;
     width: min-content;
 }
 
-.faq-item-superior{
+.faq-item-superior {
     position: relative;
     flex-wrap: nowrap;
 }
 
-.faq-item-icon2{
+.faq-item-icon2 {
     margin-left: auto;
     display: inline-flex;
     align-items: center;
@@ -123,7 +128,7 @@
     flex-shrink: 0;
 }
 
-.faq-answer{
+.faq-answer {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
@@ -131,23 +136,23 @@
     transition: max-height 0.35s ease, opacity 0.35s ease, transform 0.35s ease;
 }
 
-.faq-answer.open{
+.faq-answer.open {
     max-height: 500px;
     opacity: 1;
     transform: translateY(0);
 }
 
-.faq-answer hr{
+.faq-answer hr {
     margin: 20px 0;
     opacity: 0;
     transition: opacity 0.35s ease;
 }
 
-.faq-answer.open hr{
+.faq-answer.open hr {
     opacity: 1;
 }
 
-.faq-answer p{
+.faq-answer p {
     font-family: var(--faq-answer-font-family);
     color: var(--p-color);
     font-size: 26px;
@@ -156,35 +161,37 @@
     margin: 0;
 }
 
-.faq-icon{
+.faq-icon {
     width: 50px;
     height: 50px;
 }
-.faq-icon img{
+
+.faq-icon img {
     width: 50px;
     height: 50px;
     object-fit: cover;
     justify-content: center;
     align-items: center;
 }
-.faq-item-icon2 img{
+
+.faq-item-icon2 img {
     width: 50px;
     height: 50px;
     cursor: pointer;
 }
 
 
-hr{
+hr {
     margin-bottom: 20px;
     margin-top: 20px;
 }
 
 
-.faq-item-superior{
+.faq-item-superior {
     flex-wrap: nowrap !important;
 }
 
-.faq-item-superior h2{
+.faq-item-superior h2 {
     flex: 1 1 auto !important;
     min-width: 0 !important;
     overflow-wrap: break-word;
@@ -192,20 +199,86 @@ hr{
 }
 
 .faq-item-icon,
-.faq-item-icon2{
+.faq-item-icon2 {
     flex: 0 0 60px !important;
     width: 60px !important;
     height: 60px !important;
 }
 
 .faq-item-icon img,
-.faq-item-icon2 img{
+.faq-item-icon2 img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
 }
 
 
-.espacio{
-    height: 100px;
+.espacio {
+    height: clamp(50px, 4vw, 100px);
+}
+
+/* apartado responsive */
+@media screen and (max-width: 1000px) {
+
+    .container-faqs {
+        background: url('../../assets/fondos/fondo3.2 2.png');
+        background-size: cover;
+        background-position: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .faq-list {
+        margin: 20px 15px 0px 15px;
+    }
+
+    .faq-item {
+        padding: 15px 20px 10px;
+    }
+
+    .header-faqs {
+        align-items: stretch;
+        overflow: hidden;
+    }
+
+    .header-faqs-text {
+        margin-left: 20px;
+        margin-right: 10px;
+        flex: 1;
+        justify-content: center;
+    }
+
+    .inner-header {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .img-faqs {
+        width: 45%;
+        height: 150px;
+        object-fit: cover;
+        object-position: center;
+        align-self: stretch;
+        flex-shrink: 0;
+    }
+
+    .faq-item-superior {
+        flex-direction: row !important;
+        align-items: center;
+    }
+
+    .faq-item-superior h2 {
+        margin-left: 0;
+        width: auto;
+        font-size: 15px;
+    }
+
+    .faq-answer p {
+        font-size: 15px;
+        line-height: 1.8rem;
+    }
+
+    .header-faqs h1 {
+        margin-bottom: 10px;
+    }
 }
