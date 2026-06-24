@@ -215,6 +215,140 @@
 }
 
 /*---------------------RESPONSIVE--------------------------*/
+/*------TABLETS-----*/
+@media (max-width: 890px) {
+  #cafe {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  #imagenes {
+    width: 100%;
+    height: auto;
+  }
+  .imagenes__img {
+    height: 350px;
+  }
+  .imagenes__div {
+    height: 90px;
+    margin-bottom: 10px;
+  }
+
+  #informacion {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  #titulos{
+    margin-bottom: 10px;
+  }
+
+  .titulos__h2 {
+    font-size: 32px;
+  }
+  .titulos__div-h3 {
+    font-size: 22px;
+  }
+  .titulos__div-h2 {
+    font-size: 28px;
+  }
+
+  .descripcion__h4 {
+    font-size: 30px;
+    text-align: center;
+    order: 1;
+    margin-bottom: 15px;
+  }
+  #lista{
+    order: 2;
+    font-size: 22px;
+    margin-left: 10px;
+    list-style: none;
+    padding-left: 0%;
+  }
+  #lista li {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 10px;
+  }
+  #lista li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #94F7ED;
+  }
+  .underline-desc{
+    order: 3;
+    width: 80%;
+    align-self: center;
+  }
+  .descripcion__p{
+    font-size: 25px;
+    text-align: center;
+    order: 4;
+  }
+
+  .detalles__h3 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .detalles__div span,
+  .detalles__div p {
+    font-size: 26px;
+    line-height: 1.5;
+  }
+  .detalles__div-img{
+    padding: 5px 5px 5px 0;
+    height: 40px;
+  }
+
+  #botones {
+    flex-direction: row;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+
+  .botones__button {
+    width: 100%;
+    justify-content: center;
+    font-size: 15px;
+    padding: 8px;
+    text-align: left;
+  }
+  .botones__div {
+    width: 100%;
+  }
+  .botones__div-button {
+    margin: 10px;
+  }
+
+  /*ORDEN PARA MOSTRARSE EN CELULAR*/
+  #botones{
+    order: 1;
+  }
+  #detalles{
+    order: 2;
+  }
+  .underline-det{
+    order: 3;
+    width: 80%;
+    align-self: center;
+  }
+  #descripcion{
+    display: flex;
+    flex-direction: column;
+    order: 4;
+  }
+}
+
 @media (max-width: 480px){
   #cafe {
     display: flex;

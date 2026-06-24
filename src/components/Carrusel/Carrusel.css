@@ -43,6 +43,42 @@
 }
 
 /*---------------------------RESPONSIVE--------------------------------*/
+/*-------TABLETS------*/
+@media (max-width: 890px) {
+  #carusel {
+    width: 100%;
+    padding: 15px;
+    order: 4;
+    border-radius: 0;
+    margin-bottom: 45px;
+  }
+
+  .carusel__h3 {
+    font-size: 28px;
+    text-align: start;
+  }
+
+  .carusel__div-img {
+    display: none;
+  }
+
+  .carusel__div-div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .carusel__div-div-img {
+    width: 80%;
+    height: 120px;
+    object-fit: cover;
+    align-items: center;
+  }
+  .carusel__div-div > *:nth-child(n+5) {
+    display: none;
+  }
+}
+/*-------CELULARES------*/
 @media (max-width: 480px){
   #carusel {
     width: 100%;
