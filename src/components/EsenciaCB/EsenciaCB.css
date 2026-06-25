@@ -53,13 +53,15 @@
     width: auto;
     max-width: 100%;
     margin: 10px 20px 0;
-    padding: 20px;
-    border-radius: 10px 10px 0 0;
+    padding: 0;
+    border-radius: 15px;
     align-items: stretch;
+    background: linear-gradient(180deg #523325 100%, #6B3821 5%);
   }
 
   .esencia__div {
     width: 100%;
+    padding: 10px 20px;
   }
 
   .esencia__div-img {
@@ -68,9 +70,10 @@
   }
 
   .esencia__line {
-    width: 100%;
+    width: 90%;
     height: 2px;
-    margin: 15px 0;
+    margin: 0;
+    align-self: center;
   }
 
   .esencia__div-div-h5 {
@@ -80,12 +83,15 @@
   .esencia__div-div-p {
     font-size: 14px;
   }
+  .esencia__div-div-p br{
+    display: none;
+  }
 
   .esencia__img {
     width: 100%;
-    height: 180px;
+    height: 100px;
     object-fit: cover;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 15px 15px;
     margin: 0;
   }
 }

@@ -48,17 +48,17 @@ function Home() {
       <article id="explora">
         <h2 className="explora__h2">Explorá nuestros mundos</h2>
         <div className="explora__div">
-          <div className="explora__div-div">
+          <div className="explora__div-div cafes-origen">
             <h3 className="explora__div-div-h3">CAFÉS DE <br /> ORIGEN</h3>
             <p className="explora__div-div-p">Seleccionamos lo mejor del  <br />mundo para vos.</p>
             <button className="explora__div-div-button">CONOCER MÁS</button>
           </div>
-          <div className="explora__div-div">
+          <div className="explora__div-div novedades">
             <h3 className="explora__div-div-h3">NOVEDADES <br /> LITERARIAS</h3>
             <p className="explora__div-div-p">Descubrí los últimos <br /> lanzamientos.</p>
             <button className="explora__div-div-button">VER NOVEDADES</button>
           </div>
-          <div className="explora__div-div">
+          <div className="explora__div-div combos">
             <h3 className="explora__div-div-h3" >COMBOS <br /> ESPECIALES</h3>
             <p className="explora__div-div-p">Libros + Café <br /> al mejor precio</p>
             <button className="explora__div-div-button" >VER COMBOS</button>
