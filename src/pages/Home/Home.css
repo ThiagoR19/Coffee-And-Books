@@ -88,6 +88,8 @@
   margin: 0 15px;
   color: white;
   font-size: 25px;
+  box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.541);
+  border-image: linear-gradient(to right, #FFFDD0, #656451) 1;
 }
 
 .hero__div-button:last-child {
@@ -100,6 +102,7 @@
   padding: 10px;
   margin: 0 15px;
   cursor: pointer;
+  box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.336);
 }
 
 #explora {
@@ -170,6 +173,7 @@
   box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
   margin-top: 10px;
   cursor: pointer;
+  box-shadow: 4px 4px 3px rgba(255, 255, 255, 0.25);
 }
 
 .explora__slogan {
@@ -408,5 +412,633 @@
   .hero__div-button:first-child,
   .hero__div-button:last-child {
     font-size: 30px;
+  }
+}
+
+/*--------------------MAS VENDIDO: desborde desde ~950px--------------------------*/
+@media (max-width: 950px) and (min-width: 851px) {
+  #masVendido {
+    padding: 20px 20px;
+  }
+
+  .masVendido__div {
+    margin: 10px;
+  }
+
+  .masVendido__div:first-child {
+    margin: 10px 10px 10px 0;
+  }
+
+  .masVendido__div:last-child {
+    margin: 10px 0 10px 10px;
+  }
+
+  .masVendido__div-img {
+    height: 210px;
+  }
+
+  .masVendido__div-div-div-h5 {
+    font-size: 18px;
+  }
+
+  .masVendido__div-div-div-h6 {
+    font-size: 14px;
+  }
+
+  .masVendido__div-div-div-span {
+    font-size: 15px;
+  }
+
+  .masVendido__div-cartel h6 {
+    font-size: 15px;
+  }
+
+  .masVendido__div-cartel {
+    padding: 8px 16px;
+  }
+
+  .iconoPlus {
+    font-size: 40px;
+  }
+
+  .masVendido__div-div {
+    padding: 8px 10px;
+  }
+}
+
+/*--------------------ESTANTERIA: desborde desde ~905px--------------------------*/
+@media (max-width: 905px) and (min-width: 851px) {
+  .estanteria__hero-div {
+    height: 400px;
+  }
+
+  .estanteria__hero-div-div-div {
+    width: 60%;
+  }
+
+  .estanteria__hero-div-div-div-img {
+    height: 68px;
+    margin: 0 4px;
+    border-radius: 12px;
+  }
+
+  .estanteria__hero-img:first-child {
+    height: 310px;
+    top: 16%;
+  }
+
+  .estanteria__hero-img:last-child {
+    height: 155px;
+    top: 68%;
+    left: 77%;
+  }
+
+  .estanteria__hero-div-img {
+    width: 82%;
+  }
+}
+
+.hero__imagen-izquierda--mobile { display: none; }
+.hero__imagen-derecha--mobile { display: none; }
+
+/*-----------------------------------------------CELUS------------------------------------------*/
+@media (max-width: 768px) {
+  #Home {
+    background-image: url(../../assets/fondos/fondo2.0.0.svg);
+    background-position: center;
+  }
+  /* ---------- principal ---------- */
+  #hero {
+    padding: 10px 0;
+  }
+  #hero {
+    overflow: hidden;
+  }
+  .hero__imagen-izquierda,
+  .hero__imagen-derecha {
+    display: block;
+    position: absolute;
+    width: 75%;
+    height: 90px;
+    object-fit: cover;
+    z-index: 1;
+  }
+  /*POR FAVOR: NO MOVER ESTAS CLASES DE ESA LÍNEA (sino no se aplica correctamente el estilo)*/
+  .hero__imagen-izquierda--desktop, .hero__imagen-derecha--desktop { 
+    display: none; 
+  }
+  .hero__imagen-izquierda--mobile,  .hero__imagen-derecha--mobile{ 
+    display: block; 
+  }
+  .hero__imagen-izquierda {
+    top: -10px;
+    left: -10px;
+    border-radius: 0 40px 40px 0;
+    background-image: none;
+  }
+  .hero__imagen-derecha {
+    top: auto;
+    bottom: -10px;
+    right: -10px;
+    border-radius: 40px 0 0 40px;
+  }
+  .hero__div {
+    margin: 30px 0 40px;
+    padding: 0 20px;
+  }
+  .hero__h4 {
+    font-size: 20px;
+    letter-spacing: 4px;
+    text-align: center;
+    margin-top: 30%;
+  }
+  .hero__h1 {
+    font-size: 30px;
+    line-height: 1.3;
+  }
+  .hero__underline {
+    margin: 15px 0;
+    height: 5px;
+    width: 15%;
+  }
+  .hero__p {
+    font-size: 29px;
+    margin-bottom: 20px;
+  }
+  .hero__buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+    margin-bottom: 33%;
+  }
+  .hero__div-button:first-child,
+  .hero__div-button:last-child {
+    font-size: 15px;
+    padding: 6px 18px;
+    margin: 0;
+  }
+  .hero__div-button:first-child{
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.541);
+    border-image: linear-gradient(to right, #FFFDD0, #656451) 1;
+  }
+  .hero__div-button:last-child{
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.336);
+  }
+
+  /* ---------- Componentes ocultos ---------- */
+  #estanteria, .estanteria__hero-div, .estanteria__h2, 
+  .estanteria__hero-div-div-div-img,
+  .estanteria__hero-img, .estanteria__img,
+  #maderaEstanteria, 
+  .hero__h1 br, .hero__p br,
+  .explora__h2, .explora__slogan-img, .explora__div-div-h3 br {
+    display: none;
+  }
+
+  /* ---------- EXPLORA ---------- */
+  #explora {
+    padding: 0 20px;
+  }
+  .explora__div {
+    display: flex;
+    flex-direction: column;
+  }
+  .explora__div-div {
+    width: 100%;
+    margin: 10px 0 !important;
+    padding: 10px 15px 20px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.37);
+  }
+  .novedades{
+    order: 1;
+  }
+  .cafes-origen{
+    order: 2;
+  }
+  .combos{
+    order: 3;
+  }
+  .explora__div-div-h3 {
+    font-size: 22px;
+  }
+  .explora__div-div-button {
+    font-size: 18px;
+    padding: 6px 30px;
+    box-shadow: 4px 4px 3px rgba(255, 255, 255, 0.25);
+  }
+  .explora__slogan {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    background-image: url(/src/assets/fondos/fondo-combos-home-responsive.svg);
+    border-radius: 10px;
+    border: 1px solid white;
+  }
+  .explora__slogan-div-h2 {
+    font-size: 24px;
+  }
+  .explora__slogan-button {
+    align-self: center;
+    margin-top: 10px;
+  }
+
+  #masVendido {
+    padding: 20px;
+  }
+  .masVendido__h2 {
+    font-size: 30px;
+    text-align: center;
+    align-self: center;
+  }
+  .masVendidoP {
+    flex-direction: column;
+  }
+  .masVendido__div,
+  .masVendido__div:first-child,
+  .masVendido__div:last-child {
+    width: 100%;
+    margin: 10px 0;
+  }
+  /* .masVendido__div-img img{
+    height: 200;
+  } */
+}
+
+/*--------------------TABLET--------------------------*/
+@media (min-width: 550px) and (max-width: 660px){
+  .hero__imagen-izquierda,
+  .hero__imagen-derecha {
+    display: block;
+    position: absolute;
+    width: 75%;
+    height: 130px;
+    object-fit: cover;
+    z-index: 1;
+  }
+  .hero__imagen-izquierda--desktop, .hero__imagen-derecha--desktop { 
+    display: none; 
+  }
+  .hero__imagen-izquierda--mobile,  .hero__imagen-derecha--mobile{ 
+    display: block; 
+  }
+}
+@media (min-width: 661px) and (max-width: 769px){
+  .hero__imagen-izquierda,
+  .hero__imagen-derecha {
+    display: block;
+    position: absolute;
+    width: 75%;
+    height: 150px;
+    object-fit: cover;
+    z-index: 1;
+  }
+  .hero__imagen-izquierda--desktop, .hero__imagen-derecha--desktop { 
+    display: none; 
+  }
+  .hero__imagen-izquierda--mobile,  .hero__imagen-derecha--mobile{ 
+    display: block; 
+  }
+  .hero__div-button:last-child{
+    font-size: 20px;
+  }
+  .hero__div-button:first-child{
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 770px) and (max-width: 850px) {
+  .hero__h1{
+    font-size: 35px !important;
+  }
+  .hero__imagen-izquierda {
+    height: 65%;
+    top: 18%;
+  }
+  .hero__imagen-derecha {
+    height: 65%;
+    top: 18%;
+  }
+  .hero__div {
+    margin: 40px 0 60px;
+    padding: 0 30px;
+  }
+  .hero__h4 {
+    font-size: 16px;
+    letter-spacing: 6px;
+  }
+  .hero__h1 {
+    font-size: 42px;
+  }
+  .hero__p {
+    font-size: 18px;
+  }
+  .hero__div-button:first-child,
+  .hero__div-button:last-child {
+    font-size: 20px;
+  }
+
+  #explora {
+    padding: 20px 30px;
+  }
+  .explora__h2 {
+    font-size: 38px;
+  }
+  .explora__div-div {
+    padding: 15px;
+  }
+  .explora__div-div-h3 {
+    font-size: 24px;
+  }
+  .explora__div-div-p {
+    font-size: 14px;
+  }
+  .explora__div-div-button {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+  .explora__slogan-img {
+    height: 100px;
+  }
+  .explora__slogan-div-h2 {
+    font-size: 30px;
+  }
+  .explora__slogan-button {
+    font-size: 16px;
+  }
+
+  #masVendido {
+    padding: 20px 10px;
+  }
+  .masVendido__h2 {
+    font-size: 30px;
+  }
+  .masVendidoP {
+    flex-direction: column;
+  }
+  .masVendido__div,
+  .masVendido__div:first-child,
+  .masVendido__div:last-child {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .masVendido__div-img {
+    height: 220px;
+  }
+  .masVendido__div-div-div-h5 {
+    font-size: 22px;
+  }
+  .masVendido__div-div-div-h6 {
+    font-size: 16px;
+  }
+  .masVendido__div-div-div-span {
+    font-size: 18px;
+  }
+  .iconoPlus {
+    font-size: 48px;
+  }
+  .masVendido__div-cartel h6 {
+    font-size: 18px;
+  }
+
+  .estanteria__h2 {
+    font-size: 38px;
+  }
+  .estanteria__img {
+    width: 80px;
+  }
+  .estanteria__hero-div {
+    height: 380px;
+  }
+  .estanteria__hero-div-div-div {
+    width: 58%;
+    margin-left: -20px;
+  }
+  .estanteria__hero-div-div-div-img {
+    height: 65px;
+    margin: 0 4px;
+    border-radius: 12px;
+  }
+  .estanteria__hero-img:first-child {
+    height: 290px;
+    top: 14%;
+  }
+  .estanteria__hero-img:last-child {
+    height: 150px;
+    left: 77%;
+    top: 68%;
+  }
+  .estanteria__hero-div-img {
+    width: 84%;
+  }
+  #maderaEstanteria span {
+    font-size: 18px;
+  }
+  #maderaEstanteria img {
+    width: 30px;
+  }
+}
+
+
+/*--------------------TABLET GRANDE / iPad (851px - 1200px)--------------------------*/
+@media (min-width: 851px) and (max-width: 1200px) {
+
+  /* ---------- HERO ---------- */
+  .hero__imagen-izquierda,
+  .hero__imagen-derecha {
+    height: 90%;
+    top: 12%;
+  }
+
+  .hero__div {
+    margin: 45px 0 70px;
+    padding: 0 25px;
+  }
+
+  .hero__h4 {
+    font-size: 16px;
+    letter-spacing: 8px;
+  }
+
+  .hero__h1 {
+    font-size: 38px;
+  }
+
+  .hero__p {
+    font-size: 19px;
+  }
+
+  .hero__div-button:first-child,
+  .hero__div-button:last-child {
+    font-size: 22px;
+  }
+
+  /* ---------- EXPLORA ---------- */
+  #explora {
+    padding: 20px 40px;
+  }
+
+  .explora__h2 {
+    font-size: 42px;
+  }
+
+  .explora__div-div {
+    padding: 18px;
+  }
+
+  .explora__div-div-h3 {
+    font-size: 27px;
+  }
+
+  .explora__div-div-p {
+    font-size: 15px;
+  }
+
+  .explora__div-div-button {
+    font-size: 15px;
+    padding: 9px 25px;
+  }
+
+  .explora__slogan-img {
+    height: 115px;
+  }
+
+  .explora__slogan-div-h2 {
+    font-size: 36px;
+  }
+
+  .explora__slogan-button {
+    font-size: 18px;
+  }
+
+  /* ---------- MAS VENDIDO ---------- */
+  #masVendido {
+    padding: 20px 40px;
+  }
+
+  .masVendido__h2 {
+    font-size: 42px;
+  }
+
+  .masVendido__div {
+    margin: 18px;
+  }
+
+  .masVendido__div-img {
+    height: 265px;
+  }
+
+  .masVendido__div-div-div-h5 {
+    font-size: 24px;
+  }
+
+  .masVendido__div-div-div-h6 {
+    font-size: 18px;
+  }
+
+  .masVendido__div-div-div-span {
+    font-size: 19px;
+  }
+
+  .iconoPlus {
+    font-size: 52px;
+  }
+
+  .masVendido__div-cartel h6 {
+    font-size: 20px;
+  }
+
+  /* ---------- MADERA ESTANTERIA ---------- */
+  #maderaEstanteria span {
+    font-size: 22px;
+  }
+
+  #maderaEstanteria img {
+    width: 38px;
+  }
+}
+
+/* masVendido: override para 851–950px (desborde en fila) */
+@media (min-width: 851px) and (max-width: 950px) {
+  #masVendido {
+    padding: 20px 12px;
+  }
+
+  .masVendido__div {
+    margin: 8px;
+  }
+
+  .masVendido__div:first-child {
+    margin: 8px 8px 8px 0;
+  }
+
+  .masVendido__div:last-child {
+    margin: 8px 0 8px 8px;
+  }
+
+  .masVendido__div-img {
+    height: 195px;
+  }
+
+  .masVendido__div-div {
+    padding: 8px 10px;
+  }
+
+  .masVendido__div-div-div-h5 {
+    font-size: 16px;
+  }
+
+  .masVendido__div-div-div-h6 {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+
+  .masVendido__div-div-div-span {
+    font-size: 14px;
+  }
+
+  .masVendido__div-cartel {
+    padding: 7px 12px;
+  }
+
+  .masVendido__div-cartel h6 {
+    font-size: 13px;
+  }
+
+  .iconoPlus {
+    font-size: 36px;
+  }
+}
+
+/* Estantería: override para 851–905px */
+@media (min-width: 851px) and (max-width: 905px) {
+  .estanteria__hero-div {
+    height: 390px;
+  }
+
+  .estanteria__hero-div-div-div {
+    width: 57%;
+    margin-left: -30px;
+  }
+
+  .estanteria__hero-div-div-div-img {
+    height: 63px;
+    margin: 0 3px;
+    border-radius: 10px;
+  }
+
+  .estanteria__hero-img:first-child {
+    height: 295px;
+    top: 13%;
+  }
+
+  .estanteria__hero-img:last-child {
+    height: 145px;
+    top: 68%;
+    left: 76%;
+  }
+
+  .estanteria__hero-div-img {
+    width: 83%;
   }
 }

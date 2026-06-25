@@ -2,6 +2,8 @@ import EsenciaCB from "../../components/EsenciaCB/EsenciaCB"
 import Estanteria from "../../components/Estanteria/Estanteria"
 
 import imagenIzquierda from '../../assets/imagen-home-izquierda.png'
+import imagenIzquierdaMobile from '../../assets/fondos/fondo-img-hero-libro.svg'
+import imagenDerechaMobile from '../../assets/fondos/fondo-img-hero-cafe.svg'
 import imagenDerecha from '../../assets/imagen-home-derecha.png'
 import imagenSlogan from '../../assets/fondos/fondo-tarjeta4.png'
 
@@ -21,7 +23,8 @@ function Home() {
     <section id="Home">
       <article id="hero">
         <div className="hero__div">
-          <img className="hero__imagen-izquierda" src={imagenIzquierda} alt="Imagen principal izquierda" />
+          <img className="hero__imagen-izquierda hero__imagen-izquierda--desktop" src={imagenIzquierda} alt="Imagen principal izquierda" />
+          <img className="hero__imagen-izquierda hero__imagen-izquierda--mobile" src={imagenIzquierdaMobile} alt="Imagen principal izquierda" />
           <h4 className="hero__h4">BIENVENIDO A COFFEE AND BOOKS</h4>
           <h1 className="hero__h1">Libros que cuentan historias. <br /> Café que crea momentos.</h1>
           <div className="hero__underline"></div>
@@ -32,7 +35,8 @@ function Home() {
             <button className="hero__div-button">VER LIBROS</button>
             <button className="hero__div-button">EXPLORAR CAFÉS</button>
           </div>
-          <img className="hero__imagen-derecha" src={imagenDerecha} alt="Imagen principal derecha" />
+          <img className="hero__imagen-derecha hero__imagen-derecha--desktop" src={imagenDerecha} alt="Imagen principal derecha" />
+          <img className="hero__imagen-derecha hero__imagen-derecha--mobile" src={imagenDerechaMobile} alt="Imagen principal derecha" />
         </div>
         <EsenciaCB />
         <Estanteria />
@@ -48,17 +52,17 @@ function Home() {
       <article id="explora">
         <h2 className="explora__h2">Explorá nuestros mundos</h2>
         <div className="explora__div">
-          <div className="explora__div-div">
+          <div className="explora__div-div cafes-origen">
             <h3 className="explora__div-div-h3">CAFÉS DE <br /> ORIGEN</h3>
             <p className="explora__div-div-p">Seleccionamos lo mejor del  <br />mundo para vos.</p>
             <button className="explora__div-div-button">CONOCER MÁS</button>
           </div>
-          <div className="explora__div-div">
+          <div className="explora__div-div novedades">
             <h3 className="explora__div-div-h3">NOVEDADES <br /> LITERARIAS</h3>
             <p className="explora__div-div-p">Descubrí los últimos <br /> lanzamientos.</p>
             <button className="explora__div-div-button">VER NOVEDADES</button>
           </div>
-          <div className="explora__div-div">
+          <div className="explora__div-div combos">
             <h3 className="explora__div-div-h3" >COMBOS <br /> ESPECIALES</h3>
             <p className="explora__div-div-p">Libros + Café <br /> al mejor precio</p>
             <button className="explora__div-div-button" >VER COMBOS</button>
