@@ -12,7 +12,17 @@
 } */
 
 /*-----------------RESPONSIVE-----------------------*/
+/*-------TABLETS----------*/
+@media (max-width: 890px) {
+  #productoCafe {
+    flex-direction: column;
+  }
 
+  #imagenes,
+  #informacion {
+    width: 100%;
+  }
+}
 
 /*--------------------CELULARES---------*/
 @media (max-width: 480px){
