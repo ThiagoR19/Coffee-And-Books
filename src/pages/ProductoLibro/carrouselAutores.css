@@ -341,7 +341,7 @@
 .carrousel-wrapper {
     display: flex;
     align-items: center;
-    padding: 24px 16px;
+    padding: 24px 0px;
     width: 100%;
     box-sizing: border-box;
 }
