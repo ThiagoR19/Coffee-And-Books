@@ -16,8 +16,8 @@ function TerminosYCondiciones() {
         <h1>Términos y condiciones</h1>
         <p className="h-p">Las reglas de nuestro refugio literario, última actualización: Junio, 2026</p>
       </div>
-      <img className="hr1" src={hr1} alt="Separador decorativo" />
       <div className="content">
+        <img className="hr1" src={hr1} alt="Separador decorativo" />
         <div className="about-our-prodts">
           <h2>Sobre nuestros productos</h2>
           <img className="hr5" src={hr5} alt="Línea separadora decorativa" />
@@ -57,9 +57,9 @@ function TerminosYCondiciones() {
               <li>Envíos y Entregas</li>
               <li>Propiedad Intelectual</li>
               <li>Devoluciones y <br/> Reembolsos</li>
-              <li>Privacdad y Protección <br/> de datos</li>
+              <li>Privacidad y Protección <br/> de datos</li>
               <li>Métodos de Pago</li>
-              <li>Disponibilidad de <br/> Productos</li>
+              <li>Disponibilidad de <br/> productos</li>
               <li>Atención al cliente</li>
             </ol>
         </div>
