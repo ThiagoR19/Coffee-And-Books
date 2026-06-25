@@ -554,8 +554,15 @@
   }
 }
 
-/*--------CELUS-----------*/
+.hero__imagen-izquierda--mobile { display: none; }
+.hero__imagen-derecha--mobile { display: none; }
+
+/*-----------------------------------------------CELUS------------------------------------------*/
 @media (max-width: 768px) {
+  #Home {
+    background-image: url(../../assets/fondos/fondo2.0.0.svg);
+    background-position: center;
+  }
   /* ---------- principal ---------- */
   #hero {
     padding: 10px 0;
@@ -568,15 +575,22 @@
     display: block;
     position: absolute;
     width: 75%;
-    /* max-width: 150px; */
     height: 90px;
     object-fit: cover;
     z-index: 1;
+  }
+  /*POR FAVOR: NO MOVER ESTAS CLASES DE ESA LÍNEA (sino no se aplica correctamente el estilo)*/
+  .hero__imagen-izquierda--desktop, .hero__imagen-derecha--desktop { 
+    display: none; 
+  }
+  .hero__imagen-izquierda--mobile,  .hero__imagen-derecha--mobile{ 
+    display: block; 
   }
   .hero__imagen-izquierda {
     top: -10px;
     left: -10px;
     border-radius: 0 40px 40px 0;
+    background-image: none;
   }
   .hero__imagen-derecha {
     top: auto;
@@ -598,9 +612,6 @@
     font-size: 30px;
     line-height: 1.3;
   }
-  .hero__h1 br{
-    display: none;
-  }
   .hero__underline {
     margin: 15px 0;
     height: 5px;
@@ -609,9 +620,6 @@
   .hero__p {
     font-size: 29px;
     margin-bottom: 20px;
-  }
-  .hero__p br{
-    display: none;
   }
   .hero__buttons {
     flex-wrap: wrap;
@@ -628,18 +636,19 @@
   }
   .hero__div-button:first-child{
     box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.541);
+    border-image: linear-gradient(to right, #FFFDD0, #656451) 1;
   }
   .hero__div-button:last-child{
     box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.336);
   }
 
-  /* ---------- ESTANTERIA / MADERA (ocultos en mobile) ---------- */
-  #estanteria, .estanteria__hero-div,
+  /* ---------- Componentes ocultos ---------- */
+  #estanteria, .estanteria__hero-div, .estanteria__h2, 
   .estanteria__hero-div-div-div-img,
-  .estanteria__hero-img,
-  #maderaEstanteria,
-  .estanteria__img,
-  .estanteria__h2, .explora__h2, .explora__slogan-img {
+  .estanteria__hero-img, .estanteria__img,
+  #maderaEstanteria, 
+  .hero__h1 br, .hero__p br,
+  .explora__h2, .explora__slogan-img, .explora__div-div-h3 br {
     display: none;
   }
 
@@ -657,7 +666,6 @@
     padding: 10px 15px 20px;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.37);
   }
-
   .novedades{
     order: 1;
   }
@@ -667,12 +675,8 @@
   .combos{
     order: 3;
   }
-
   .explora__div-div-h3 {
     font-size: 22px;
-  }
-  .explora__div-div-h3 br{
-    display: none;
   }
   .explora__div-div-button {
     font-size: 18px;
@@ -683,7 +687,9 @@
     flex-direction: column;
     padding: 20px;
     text-align: center;
-    /*agregar la imágen de fondo (desde la notebook porque en esta pc no tengo bien las carpetas)*/
+    background-image: url(/src/assets/fondos/fondo-combos-home-responsive.svg);
+    border-radius: 10px;
+    border: 1px solid white;
   }
   .explora__slogan-div-h2 {
     font-size: 24px;
@@ -693,7 +699,6 @@
     margin-top: 10px;
   }
 
-  
   #masVendido {
     padding: 20px;
   }
@@ -714,4 +719,50 @@
   /* .masVendido__div-img img{
     height: 200;
   } */
+}
+
+/*--------------------TABLET--------------------------*/
+@media (min-width: 550px) and (max-width: 660px){
+  .hero__imagen-izquierda,
+  .hero__imagen-derecha {
+    display: block;
+    position: absolute;
+    width: 75%;
+    height: 130px;
+    object-fit: cover;
+    z-index: 1;
+  }
+  .hero__imagen-izquierda--desktop, .hero__imagen-derecha--desktop { 
+    display: none; 
+  }
+  .hero__imagen-izquierda--mobile,  .hero__imagen-derecha--mobile{ 
+    display: block; 
+  }
+}
+@media (min-width: 661px) and (max-width: 769px){
+  .hero__imagen-izquierda,
+  .hero__imagen-derecha {
+    display: block;
+    position: absolute;
+    width: 75%;
+    height: 150px;
+    object-fit: cover;
+    z-index: 1;
+  }
+  .hero__imagen-izquierda--desktop, .hero__imagen-derecha--desktop { 
+    display: none; 
+  }
+  .hero__imagen-izquierda--mobile,  .hero__imagen-derecha--mobile{ 
+    display: block; 
+  }
+  .hero__div-button:last-child{
+    font-size: 20px;
+  }
+  .hero__div-button:first-child{
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 770px) and (max-width: 1100px) {
+  
 }

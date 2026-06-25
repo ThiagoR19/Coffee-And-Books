@@ -56,7 +56,7 @@
     padding: 0;
     border-radius: 15px;
     align-items: stretch;
-    background: linear-gradient(180deg #523325 100%, #6B3821 5%);
+    background: linear-gradient(to right, #523325, #6B3821);
   }
 
   .esencia__div {
