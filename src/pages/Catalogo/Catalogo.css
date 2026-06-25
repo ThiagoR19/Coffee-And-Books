@@ -89,13 +89,13 @@
     }
 
     .btn {
-        font-size: 9px;
+        font-size: 7px;
         padding: 2px 3px;
 
     }
 
     .catalogo-img {
-        width: 40%;
+        width: 43%;
         object-fit: cover;
     }
 
