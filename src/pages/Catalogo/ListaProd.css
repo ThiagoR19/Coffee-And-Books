@@ -1,263 +1,266 @@
 .lista-productos {
-    position: relative;
-    padding: clamp(20px, 5vw, 40px) clamp(40px, 10vw, 80px);
+  position: relative;
+  padding: clamp(20px, 5vw, 40px) clamp(40px, 10vw, 80px);
 }
 
 .prod-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 15px;
-    transition: opacity 0.3s ease;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  transition: opacity 0.3s ease;
 }
 
 .prod-grid.animando {
-    opacity: 0;
+  opacity: 0;
 }
 
 .lista-productos_card {
-    display: flex;
-    flex-direction: column;
-    background: #523325;
-    border-radius: 9px 9px 0px 0px;
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #523325;
+  border-radius: 9px 9px 0px 0px;
+  overflow: hidden;
 }
 
 .card-imagen-contenedor {
-    position: relative;
-    height: 80%;
-    background: #3a2218;
+  position: relative;
+  height: 80%;
+  background: #3a2218;
 }
 
 .card-imagen {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .card-etiqueta {
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: #005E55;
-    color: white;
-    padding: clamp(2px, 0.5vw, 4px) clamp(4px, 1vw, 8px);
-    font-size: clamp(8px, 0.5vw, 11px);
-    border-radius: 8px 0 8px 0;
-    font-family: 'Molengo', sans-serif;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #005E55;
+  color: white;
+  padding: clamp(2px, 0.5vw, 4px) clamp(4px, 1vw, 8px);
+  font-size: 14px;
+  border-radius: 8px 0 8px 0;
+  font-family: 'Molengo', sans-serif;
 }
 
 
 .card-info {
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex: 1;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
 }
 
 .card-info-texto {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .card-nombre {
-    color: #ffffff;
-    font-size: 13px;
-    font-family: 'Momo Trust Sans', sans-serif;
+  color: #ffffff;
+  font-size: 13px;
+  font-family: 'Momo Trust Sans', sans-serif;
 }
 
 .card-especificacion {
-    color: #ffffff;
-    font-size: 11px;
-    font-family: 'Momo Trust Sans', sans-serif;
+  color: #ffffff;
+  font-size: 11px;
+  font-family: 'Momo Trust Sans', sans-serif;
 }
 
 .card-precio {
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 13px;
-    margin-top: 6px;
-    font-family: 'Momo Trust Sans', sans-serif;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 13px;
+  margin-top: 6px;
+  font-family: 'Momo Trust Sans', sans-serif;
 }
 
 
 .card-btn-agregar {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .card-btn-agregar:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 
 .prod-flechitas {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #FFDCCC;
-    z-index: 1;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #FFDCCC;
+  z-index: 1;
 }
 
 .prod-flechitas.izquierda {
-    left: -16px;
+  left: -16px;
 }
 
 .prod-flechitas.derecha {
-    right: -16px;
+  right: -16px;
 }
 
 .filtro-contenedor {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px 0px 15px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 0px 15px 0px;
 }
 
 .filtro-select {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .FiltroDeLista option {
-    background: #523325;
-    color: white;
+  background: #523325;
+  color: white;
 }
 
 .filtro-select-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .FiltroDeLista {
-    background: transparent;
-    border: 1px solid white;
-    color: white;
-    padding: 5px 30px 5px 10px;
-    cursor: pointer;
-    -webkit-appearance: none;
-    appearance: none;
-    border-radius: 5px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 8px center;
-    background-size: 16px;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 5px 30px 5px 10px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 5px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 16px;
 }
 
 /* Contenido responsive */
 
 .texto-mostrando {
-    color: white;
-    font-size: clamp(11px, 2vw, 16px);
-    text-align: center;
-    margin-top: 20px;
+  color: white;
+  font-size: clamp(11px, 2vw, 20px);
+  text-align: center;
+  margin-top: 20px;
 }
 
 .mobile-only {
-    display: none;
+  display: none;
 }
 
+@media (min-width:1000px) and (max-width:1200px) {}
+
 @media (max-width: 480px) {
-    .prod-flechitas.izquierda {
-        left: -2vw;
-    }
+  .prod-flechitas.izquierda {
+    left: -2vw;
+  }
 
-    .prod-flechitas.derecha {
-        right: -2vw;
-    }
+  .prod-flechitas.derecha {
+    right: -2vw;
+  }
 
-    .filtro-contenedor {
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 8px;
-        padding-bottom: 10px;
-    }
+  .filtro-contenedor {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    padding-bottom: 10px;
+  }
 
-    .filtro-contenedor p {
-        font-size: 11px;
-        align-self: flex-start;
-    }
+  .filtro-contenedor p {
+    font-size: 11px;
+    align-self: flex-start;
+  }
 
-    .FiltroDeLista {
-        font-size: 9px;
-        padding: 4px 24px 4px 8px;
-    }
+  .FiltroDeLista {
+    font-size: 9px;
+    padding: 4px 24px 4px 8px;
+  }
 
-    .filtro-select span {
-        font-size: 10px;
-    }
+  .filtro-select span {
+    font-size: 10px;
+  }
 
-    .desktop-only {
-        display: none;
-    }
+  .desktop-only {
+    display: none;
+  }
 
-    .mobile-only {
-        display: block;
-    }
+  .mobile-only {
+    display: block;
+  }
 
-    .prod-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 6px;
-    }
+  .prod-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
 
-    .lista-productos_card:nth-child(n+10) {
-        display: none;
-    }
+  .lista-productos_card:nth-child(n+10) {
+    display: none;
+  }
 
-    /* partecita de las cards */
-    .lista-productos {
-        padding: 20px 30px;
-    }
+  /* partecita de las cards */
 
-    .lista-productos_card {
-        border-radius: 7px 7px 0px 0px;
-        width: 100%;
-    }
+  .lista-productos {
+    padding: 20px 30px;
+  }
 
-    .card-imagen {
-        width: 100%;
-        height: 100%;
-    }
+  .lista-productos_card {
+    border-radius: 7px 7px 0px 0px;
+    width: 100%;
+  }
 
-    .card-imagen-contenedor {
-        height: 100px;
-    }
+  .card-imagen {
+    width: 100%;
+    height: 100%;
+  }
 
-    .card-etiqueta {
-        font-size: 7px;
-        padding: 2px 5px;
-        border-radius: 6px 0 6px 0;
-    }
+  .card-imagen-contenedor {
+    height: 100px;
+  }
 
-    .card-info {
-        padding: 3px 3px;
-        margin: 3px 3px;
-        gap: 1px;
-    }
+  .card-etiqueta {
+    font-size: 7px;
+    padding: 2px 5px;
+    border-radius: 6px 0 6px 0;
+  }
 
-    .card-nombre {
-        font-size: 9px;
-        line-height: 1.2;
-    }
+  .card-info {
+    padding: 3px 3px;
+    margin: 3px 3px;
+    gap: 1px;
+  }
 
-    .card-especificacion {
-        font-size: 8px;
-    }
+  .card-nombre {
+    font-size: 9px;
+    line-height: 1.2;
+  }
 
-    .card-precio {
-        font-size: 9px;
-        margin-top: 2px;
-        font-weight: bold;
-    }
+  .card-especificacion {
+    font-size: 8px;
+  }
+
+  .card-precio {
+    font-size: 9px;
+    margin-top: 2px;
+    font-weight: bold;
+  }
 }
