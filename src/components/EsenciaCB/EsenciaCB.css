@@ -95,3 +95,27 @@
     margin: 0;
   }
 }
+
+/*--------------------TABLET / iPad (769px - 1100px)--------------------------*/
+@media (min-width: 769px) and (max-width: 1100px) {
+  .esencia__div-img {
+    height: 60px;
+    margin: 15px;
+  }
+
+  .esencia__line {
+    height: 60px;
+  }
+
+  .esencia__div-div-h5 {
+    font-size: 20px;
+  }
+
+  .esencia__div-div-p {
+    font-size: 14px;
+  }
+
+  .esencia__img {
+    height: 95px;
+  }
+}
