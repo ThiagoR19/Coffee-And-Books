@@ -41,7 +41,7 @@
 #somosCB {
   display: flex;
   flex-direction: column;
-  max-width: 1200px;
+  max-width: 1400px;
   width: 100%;
   align-self: center;
   justify-self: center;
@@ -58,7 +58,7 @@
 
 .somosCB__p {
   font-family: 'Playfair Display';
-  font-size: clamp(16.5px, 2vw, 25px);
+  font-size: clamp(16.5px, 2vw, 30px);
   color: #FFCFAB;
   margin: 5px 0;
 }

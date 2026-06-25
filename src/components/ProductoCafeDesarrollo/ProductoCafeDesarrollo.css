@@ -16,6 +16,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  position: relative;
 }
 
 .imagenes__img {
@@ -24,6 +25,21 @@
   object-fit: cover;
   border-radius: 10px;
   min-height: 0;
+}
+
+.imagenes__imgs1,
+.imagenes__imgs2 {
+  position: absolute;
+  height: 50px;
+  top: 30%;
+}
+
+.imagenes__imgs1 {
+  left: 88%;
+}
+
+.imagenes__imgs2 {
+  left: 2%;
 }
 
 .imagenes__div {

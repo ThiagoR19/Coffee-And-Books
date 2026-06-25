@@ -10,6 +10,9 @@ import coffeeExample1 from '../../assets/coffee-example1.png'
 import coffeeExample2 from '../../assets/coffee-example2.png'
 import coffeeExample3 from '../../assets/coffee-example3.png'
 
+import iconoFlechaDe from '../../assets/icono-flecha-derecha.png'
+import iconoFlechaIz from '../../assets/icono-flecha-izquierda.png'
+
 import './ProductoCafeDesarrollo.css'
 
 function ProductoCafeDesarrollo() {
@@ -23,6 +26,8 @@ function ProductoCafeDesarrollo() {
         </div>
       </div>
       <div id='imagenes'>
+        <img className='imagenes__imgs1' src={iconoFlechaDe} alt="" />
+        <img className='imagenes__imgs2' src={iconoFlechaIz} alt="" />
         <img className='imagenes__img' src={coffeeExample1} alt="Café de ejemplo" />
         <div className='imagenes__div'>
           <img className='imagenes__div-img' src={coffeeExample1} alt="Café de ejemplo" />
