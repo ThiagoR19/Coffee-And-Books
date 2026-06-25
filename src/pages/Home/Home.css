@@ -393,163 +393,20 @@
   left: 70%;
 } */
 
-@media (max-width:1400px) {
+@media (min-width: 1400px) {
 
-  #maderaEstanteria {
-    top: 93%;
+  .hero__div {
+    margin: 50px 0 150px;
   }
 
-  .estanteria__hero-div {
-    height: 700px;
-  }
-}
-
-@media (max-width:1380px) {
-  .estanteria__hero-img:last-child {
-    top: 60%;
+  .hero__imagen-izquierda,
+  .hero__imagen-derecha {
+    height: 120%;
   }
 
-  .estanteria__hero-div {
-    height: 680px;
-  }
 
-  .estanteria__hero-div-div-div-img {
-    height: 110px;
-  }
-}
-
-@media (max-width:1340px) {
-  .estanteria__hero-img:last-child {
-    top: 64%;
-    height: 220px;
-  }
-
-  .estanteria__hero-img:first-child {
-    top: 17%;
-    height: 420px;
-  }
-
-  .estanteria__hero-div {
-    height: 650px;
-  }
-}
-
-@media (max-width:1300px) {
-  .estanteria__hero-div {
-    height: 630px;
-  }
-}
-
-@media (max-width:1270px) {
-  .estanteria__hero-div {
-    height: 620px;
-  }
-
-  .estanteria__hero-img:last-child {
-    top: 62%;
-    height: 220px;
-  }
-}
-
-@media (max-width:1230px) {
-  .estanteria__hero-img:last-child {
-    top: 65%;
-    height: 200px;
-  }
-
-  .estanteria__hero-div {
-    height: 590px;
-  }
-
-  .estanteria__hero-img:first-child {
-    top: 14%;
-    height: 400px;
-  }
-}
-
-@media (max-width:1200px) {
-  .estanteria__hero-img:last-child {
-    top: 62%;
-  }
-
-  .estanteria__hero-div {
-    height: 570px;
-  }
-
-  .estanteria__hero-div-div-div-img {
-    height: 100px;
-  }
-}
-
-@media (max-width:1150px) {
-
-
-  .estanteria__hero-div {
-    height: 550px;
-  }
-
-  .estanteria__hero-div-div-div-img {
-    height: 95px;
-  }
-}
-
-@media (max-width:1120px) {
-
-  .estanteria__hero-div {
-    height: 520px;
-  }
-
-  .estanteria__hero-div-div-div-img {
-    height: 90px;
-  }
-
-  .estanteria__hero-img:first-child {
-    top: 10%;
-    height: 380px;
-  }
-}
-
-
-@media (max-width:1070px) {
-
-  .estanteria__hero-div {
-    height: 500px;
-  }
-
-  .estanteria__hero-div-div-div-img {
-    height: 90px;
-  }
-}
-
-@media (max-width:1030px) {
-
-  .estanteria__hero-div {
-    height: 480px;
-  }
-
-  .estanteria__hero-div-div-div-img {
-    height: 90px;
-  }
-}
-
-@media (max-width:1000px) {
-
-  .estanteria__hero-div {
-    height: 460px;
-  }
-
-  .estanteria__hero-div-div-div-img {
-    height: 80px;
-  }
-}
-
-@media (max-width:960px) {
-
-  .estanteria__hero-div {
-    height: 440px;
-  }
-
-  .estanteria__hero-div-div-div-img {
-    height: 80px;
+  .hero__div-button:first-child,
+  .hero__div-button:last-child {
+    font-size: 30px;
   }
 }
