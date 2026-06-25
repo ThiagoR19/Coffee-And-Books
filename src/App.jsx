@@ -17,7 +17,6 @@ export default function App() {
   return (
     <div>
       <Header />
-
       <Switch>
         <Route path="/home" component={Home} />
         <Route path="/Catalogo" component={Catalogo} />
@@ -30,7 +29,6 @@ export default function App() {
         <Route path="/" component={Home} />
         <Route>404: ¡Página no encontrada!</Route>
       </Switch>
-
       <Footer />
     </div >
   );

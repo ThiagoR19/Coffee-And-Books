@@ -16,11 +16,11 @@ function ProductoCafeDesarrollo() {
   return (
     <article id='cafe'>
       <div id='titulos'>
-          <h2 className='titulos__h2'>Caramel Expresso</h2>
-          <div className='titulos__div'>
-            <h3 className='titulos__div-h3'>Starbucks</h3>
-            <h2 className='titulos__div-h2'>$19.000</h2>
-          </div>
+        <h2 className='titulos__h2'>Caramel Expresso</h2>
+        <div className='titulos__div'>
+          <h3 className='titulos__div-h3'>Starbucks</h3>
+          <h2 className='titulos__div-h2'>$19.000</h2>
+        </div>
       </div>
       <div id='imagenes'>
         <img className='imagenes__img' src={coffeeExample1} alt="Café de ejemplo" />
@@ -31,13 +31,6 @@ function ProductoCafeDesarrollo() {
         </div>
       </div>
       <div id='informacion'>
-        <div id='titulos'>
-          <h2 className='titulos__h2'>Caramel Expresso</h2>
-          <div className='titulos__div'>
-            <h3 className='titulos__div-h3'>Starbucks</h3>
-            <h2 className='titulos__div-h2'>$19.000</h2>
-          </div>
-        </div>
         <div id='descripcion'>
           <h4 className='descripcion__h4'>DESCRIPCIÓN</h4>
           <p className='descripcion__p'>Disfrutá de la experiencia Starbucks en la comodidad de tu casa. El Caramel Espresso combina la intensidad de granos de café 100% Arábica cuidadosamente seleccionados de América Latina con un perfil sutilmente dulce y un delicioso aroma a caramelo tostado.</p>
@@ -48,7 +41,7 @@ function ProductoCafeDesarrollo() {
             <li><span>Momento ideal:</span> Perfecto para tomar solo como Espresso (40 ml) o combinado con leche texturizada para crear un Latte Macchiato inolvidable.</li>
           </ul>
         </div>
-  
+
         <div className='underline underline-det'></div>
         <div id='detalles'>
           <h3 className='detalles__h3'>DETALLES DEL CAFÉ</h3>

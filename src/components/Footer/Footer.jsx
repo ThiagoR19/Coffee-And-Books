@@ -14,7 +14,7 @@ const CATEGORY_LINKS = [
   { label: "Libros", path: "/productoLibro" },
   { label: "Cafés", path: "/productoCafe" },
   { label: "Novedades", path: "/catalogo" },
-  { label: "Ofertas", path: "/catalogo" },
+  { label: "Ofertas", path: "/home" },
 ];
 
 function Footer() {

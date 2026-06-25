@@ -74,12 +74,14 @@
     object-fit: cover;
     align-items: center;
   }
-  .carusel__div-div > *:nth-child(n+5) {
+
+  .carusel__div-div>*:nth-child(n+5) {
     display: none;
   }
 }
+
 /*-------CELULARES------*/
-@media (max-width: 480px){
+@media (max-width: 480px) {
   #carusel {
     width: 100%;
     padding: 15px;
@@ -108,7 +110,8 @@
     height: 120px;
     object-fit: cover;
   }
-  .carusel__div-div > *:nth-child(n+5) {
+
+  .carusel__div-div>*:nth-child(n+5) {
     display: none;
   }
 }
