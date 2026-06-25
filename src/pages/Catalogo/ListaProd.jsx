@@ -63,8 +63,6 @@ export default function ListaProductos() {
   const sizeFlechas = esMobile ? 40 : 110;
 
   const productosPorPagina = esMobile ? 9 : 15;
-  console.log('esMobile:', esMobile, '| productosPorPagina:', productosPorPagina);
-
 
   const {
     productosMostrados,

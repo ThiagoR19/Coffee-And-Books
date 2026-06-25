@@ -19,7 +19,7 @@
 }
 
 .catalogo-img {
-    width: 35%;
+    width: 34%;
     object-fit: cover;
     object-position: center bottom;
     align-self: flex-end;
