@@ -88,9 +88,9 @@ body {
 .hr1 { max-width: 600px; margin: 35px 0; display: block; }
 .hr2 { width: 100%; max-width: 380px; display: block; height: 20px; margin: 10px 0 20px; justify-content: center; align-self: center;}
 .hr3 { max-width: 390px; justify-self: center; margin: 10px, 0}
-.hr4 { max-width: 390px; }
+.hr4 { max-width: 390px; margin-top: 20px;}
 .hr5 { max-width: 365px; margin: 5px; height: 2px;}
-.hr7 { max-width: 95%; height: 55px; margin-top: 6px; display: block; align-self: center;}
+.hr7 { max-width: 95%; height: 55px; margin-top: 6px; display: block; align-self: center; margin-bottom: 4px;}
 
 .separator-row {
     grid-area: sep;
@@ -121,7 +121,7 @@ body {
 .content h2 {
     font-family: var(--font-rules);
     color: var(--text-medium);
-    font-size: 29.5px;
+    font-size: 27.5px;
     margin: 0;
     text-align: center;
     letter-spacing: 0.01em;
@@ -247,7 +247,7 @@ b{
     margin-bottom: -45px;
     margin-left: 20px;
     position: relative;
-    top: -10px;
+    top: -30px;
     align-self: flex-end;
 }
 
@@ -610,12 +610,6 @@ b{
         background-size: contain;
         background-position: center;
         margin: auto;
-    }
-}
-@media (min-width: 1145px) and (max-width: 1124px){
-    .our-rules .icon-rules {
-        top: -60px;
-        bottom: -20px;
     }
 }
 /*---TABLET HORIZONTAL----*/
@@ -1023,5 +1017,21 @@ b{
 
     .our-rules .icon-rules{
         top: -35px;
+    }
+}
+@media (min-width: 1145px) and (max-width: 1124px){
+    .our-rules .icon-rules {
+        top: -60px;
+        bottom: -20px;
+    }
+}
+@media (min-width: 1382px) and (max-width: 1456px){
+    .our-rules .icon-rules{
+        top: -60px;
+        bottom: -25px;
+        opacity: 80%;
+    }
+    .about-our-prodts li{
+        line-height: 1.5;
     }
 }

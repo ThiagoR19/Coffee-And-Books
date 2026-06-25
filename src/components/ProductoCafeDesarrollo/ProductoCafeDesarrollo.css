@@ -57,7 +57,7 @@
 #titulos {
   grid-area: titulos;
   background-color: #523325;
-  border-radius: 10px 0 10px 0;
+  border-radius: 20px 0 20px 0;
   display: flex;
   flex-direction: column;
   padding: 15px;
