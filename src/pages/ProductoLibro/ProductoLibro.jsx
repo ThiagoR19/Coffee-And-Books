@@ -9,6 +9,7 @@ import IconLibro from "../../assets/productoLibro/iconsPL/icono-libro 5.png"
 import IconIsbn from "../../assets/productoLibro/iconsPL/icon-isbn 2.png"
 import IconEditorial from "../../assets/productoLibro/iconsPL/icon-editorial 2.png"
 import IconDE from "../../assets/productoLibro/iconsPL/descuento-resumen 4.png"
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import CarrouselAutores from "./carrouselAutores";
 
 export default function ProductoLibro() {
@@ -18,7 +19,10 @@ export default function ProductoLibro() {
             <div className="contenedor-de-contenedores">
 
                 <div className="cont-de-imagen-grande">
+                    <FaChevronLeft className="flecha-slider flecha-izq" />
                     <img className="imagen-grande" src={imagenGrande} alt="Imagen de un libro" />
+                    <span className="contador-slider">1/3</span>
+                    <FaChevronRight className="flecha-slider flecha-der" />
                 </div>
 
                 <div className="detalles-libro-1">
@@ -54,7 +58,7 @@ export default function ProductoLibro() {
             <div className="detalles-libro-2">
 
                 <ul className="mi-listilla-pe">
-                    <h3 style={{ color: "white", fontFamily: "molengo" }}>DETALLES DEL LIBRO</h3>
+                    <h3 className="detalle-del-detalle-h3">DETALLES DEL LIBRO</h3>
                     <li>
                         <span className="icono-circulo">
                             <FaRegUser style={{ color: "black" }} className="icono-lista" />
