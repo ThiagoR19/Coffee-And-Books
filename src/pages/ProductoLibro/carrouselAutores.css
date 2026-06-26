@@ -405,3 +405,29 @@
     cursor: not-allowed;
     transform: none;
 }
+
+/*  */
+
+@media (max-width: 1000px) {
+    .carrousel-wrapper {
+        padding: 16px 0px;
+    }
+
+    .carrousel-btn {
+        padding: 0 8px;
+    }
+
+    .carrousel-track {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .carrousel-card img {
+        aspect-ratio: 2 / 3;
+    }
+
+    .carrousel-card p {
+        font-size: 11px;
+    }
+}
