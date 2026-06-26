@@ -1,4 +1,4 @@
-import ProductosCarrito from '../../components/productosCarrito/ProductosCarrito'
+import ProductosCarrito from '../../components/ProductosCarrito/ProductosCarrito'
 import ProductoCarrito from '../../components/ProductoCarrito/ProductoCarrito'
 import ResumenCarrito from '../../components/ResumenCarrito/ResumenCarrito'
 
@@ -19,6 +19,6 @@ function Carrito() {
       <ResumenCarrito />
     </section>
   )
-} 
+}
 
 export default Carrito
