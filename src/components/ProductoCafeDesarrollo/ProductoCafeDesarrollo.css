@@ -256,6 +256,106 @@
 }
 
 /*---------------------RESPONSIVE--------------------------*/
+/*------TABLETS (891px - 1100px)-----*/
+@media (min-width: 891px) and (max-width: 1100px) {
+  #cafe {
+    grid-template-columns: 38% 62%;
+    gap: 16px;
+    width: 94%;
+    padding: 30px 0;
+  }
+
+  .imagenes__img {
+    flex: 10;
+  }
+
+  .imagenes__div {
+    flex: 4;
+    gap: 10px;
+  }
+
+  .imagenes__imgs1,
+  .imagenes__imgs2 {
+    height: 36px;
+  }
+
+  #informacion {
+    margin-left: 16px;
+  }
+
+  #titulos {
+    padding: 12px;
+    margin-right: 12px;
+    margin-left: 16px;
+  }
+
+  .titulos__h2 {
+    font-size: 30px;
+  }
+
+  .titulos__div-h3 {
+    font-size: 20px;
+  }
+
+  .titulos__div-h2 {
+    font-size: 20px;
+  }
+
+  .descripcion__h4 {
+    font-size: 20px;
+  }
+
+  .descripcion__p {
+    font-size: 16px;
+  }
+
+  #lista {
+    margin-left: 14px;
+  }
+
+  #lista li {
+    font-size: 15px;
+  }
+
+  .detalles__h3 {
+    font-size: 20px;
+  }
+
+  .detalles__div {
+    font-size: 16px;
+  }
+
+  .detalles__div-img {
+    height: 30px;
+  }
+
+  .detalles__div span,
+  .detalles__div p {
+    font-size: 16px;
+  }
+
+  #botones {
+    margin-right: 20px;
+  }
+
+  .botones__button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .botones__button img {
+    height: 22px;
+  }
+
+  .botones__div-span {
+    font-size: 22px;
+  }
+
+  .botones__div-button img {
+    height: 22px;
+  }
+}
+
 /*------TABLETS-----*/
 @media (max-width: 890px) {
   #cafe {
