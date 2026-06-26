@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import "./Footer.css";
 import InstagramIcon from "../../assets/icon-instagram.png";
 import WhatsAppIcon from "../../assets/icon-whatsapp.png";
@@ -18,6 +18,8 @@ const CATEGORY_LINKS = [
 ];
 
 function Footer() {
+  const [location] = useLocation();
+
   return (
     <footer className="footer">
       <div className="footer__top">
@@ -54,7 +56,10 @@ function Footer() {
             <ul className="footer__link-list">
               {INFO_LINKS.map((link) => (
                 <li key={link.path}>
-                  <Link href={link.path} className="footer__link">
+                  <Link
+                    href={link.path}
+                    className={`footer__link${location === link.path ? " footer__link--active" : ""}`}
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -67,7 +72,10 @@ function Footer() {
             <ul className="footer__link-list">
               {CATEGORY_LINKS.map((link) => (
                 <li key={link.path}>
-                  <Link href={link.path} className="footer__link">
+                  <Link
+                    href={link.path}
+                    className="footer__link"
+                  >
                     {link.label}
                   </Link>
                 </li>

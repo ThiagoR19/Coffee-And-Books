@@ -304,6 +304,14 @@
   }
 
   .header__nav-mobile .header__nav-link {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
+    align-items: center;
+  }
+}
+
+@media (min-width: 360px) and (max-width: 400px) {
+  .header__nav-mobile .header__nav-link {
+    font-size: 0.55rem;
+    align-items: center;
   }
 }
