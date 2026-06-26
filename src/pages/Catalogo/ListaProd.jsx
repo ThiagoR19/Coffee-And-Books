@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import './ListaProd.css';
-import useCarrusel from './hooksCatalogo/UseCarrousel';
+import useCarrusel from './hooksCatalogo/useCarrousel';
 import imagen1 from '../../assets/imagen-catalogo.png'
 import { AiOutlinePlusCircle } from 'react-icons/ai'
 import { GoChevronRight, GoChevronLeft, } from "react-icons/go";
