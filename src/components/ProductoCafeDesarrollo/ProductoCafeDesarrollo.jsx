@@ -54,7 +54,7 @@ function ProductoCafeDesarrollo() {
           <div className='detalles__div'><img className='detalles__div-img' src={iconTipo} alt="Icono Tipo" /><span>Tipo:</span><p>Cápsula</p></div>
           <div className='detalles__div'><img className='detalles__div-img' src={iconIntensidad} alt="Icono Intensidad" /><span>Intensidad:</span><p>(media)</p></div>
           <div className='detalles__div'><img className='detalles__div-img' src={iconOrigen} alt="Icono Origen" /><span>Origen:</span><p>América Latina</p></div>
-          <div className='detalles__div'><img className='detalles__div-img' src={iconContenido} alt="Icono Contenido" /><span>Contenido:</span><p>Caja por 10 cápsulas</p></div>
+          <div className='detalles__div'><img className='detalles__div-img' src={iconContenido} alt="Icono Contenido" /><span className='span-cont'>Contenido:</span><p><b>Contenido:</b>Caja por 10 cápsulas</p></div>
         </div>
         <div id='botones'>
           <button className='botones__button'><img src={iconoCarrito} alt="Icono del Carrito" />AGREGAR AL CARRITO</button>
