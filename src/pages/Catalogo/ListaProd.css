@@ -113,7 +113,9 @@
 }
 
 .prod-flechitas.derecha {
-  right: -16px;
+  margin-left: -100px;
+  right: 0px;
+
 }
 
 .filtro-contenedor {
@@ -176,7 +178,7 @@
   }
 
   .prod-flechitas.derecha {
-    right: -2vw;
+    right: 0vw;
   }
 
   .filtro-contenedor {

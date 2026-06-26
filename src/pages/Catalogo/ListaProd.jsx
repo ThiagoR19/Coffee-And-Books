@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import './ListaProd.css';
 import useCarrusel from './hooksCatalogo/useCarrousel';
-import imagen1 from '../../assets/imagen-catalogo.png'
+
 import { AiOutlinePlusCircle } from 'react-icons/ai'
 import { GoChevronRight, GoChevronLeft, } from "react-icons/go";
 import cafe1 from '../../assets/catalogo/productos/colombia.png'
@@ -13,7 +13,6 @@ import cafe6 from '../../assets/catalogo/productos/maus.png'
 import cafe7 from '../../assets/catalogo/productos/unCafe.png'
 import cafe8 from '../../assets/catalogo/productos/verdeYblanco.png'
 import cafe9 from '../../assets/catalogo/productos/laInvencion.png'
-import { GoChevronDown } from "react-icons/go";
 
 const productos = [
   { etiqueta: 'CAFE PREMIUM', especificacion: 'algo del prod', id: 1, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe3 },
