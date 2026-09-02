@@ -1,4 +1,4 @@
-export default function getPodium(productos) {
-  const top = productos.sort((a, b) => a.ventas - b.ventas).slice(0, 3)
-  return top
+export default function obtenerPodio(productos) {
+  const top = productos.sort((a, b) => b.cant_vendida - a.cant_vendida).slice(0, 3);
+  return top;
 }
