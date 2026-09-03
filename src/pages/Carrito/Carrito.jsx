@@ -2,21 +2,26 @@ import ProductosCarrito from '../../components/ProductosCarrito/ProductosCarrito
 import ProductoCarrito from '../../components/ProductoCarrito/ProductoCarrito'
 import ResumenCarrito from '../../components/ResumenCarrito/ResumenCarrito'
 
+import db from '../../db/db.json'
+import { useState } from 'react'
 import './Carrito.css'
 
-const productos = [
-  { id: 1, nombre: 'Nombre Producto', precio: 100000 },
-  { id: 2, nombre: 'Nombre Producto', precio: 100000 },
-  { id: 3, nombre: 'Nombre Producto', precio: 100000 },
-  { id: 4, nombre: 'Nombre Producto', precio: 100000 },
-]
 
 function Carrito() {
+  const [productosCarrito, setProductosCarrito] = useState(db.Productos)
+  const [prodSeleccionado, setProdSeleccionado] = useState(db.Productos[0])
+
+  const borrarDelCarrito = (id) => {
+    console.log('hola')
+    setProductosCarrito(productosCarrito.filter(producto => producto.id !== id));
+    console.log('chau')
+  }
+
   return (
     <section className='Carrito'>
-      <ProductosCarrito productos={productos} />
-      <ProductoCarrito />
-      <ResumenCarrito />
+      <ProductosCarrito productos={productosCarrito} setProdSeleccionado={setProdSeleccionado} />
+      <ProductoCarrito prodSeleccionado={prodSeleccionado} borrarDelCarrito={borrarDelCarrito} />
+      <ResumenCarrito productosCarrito={productosCarrito} />
     </section>
   )
 }
