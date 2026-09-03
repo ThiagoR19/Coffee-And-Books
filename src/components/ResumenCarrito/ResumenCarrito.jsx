@@ -3,30 +3,40 @@ import iconoBolsa from '../../assets/icon-bolsa.png'
 
 import './ResumenCarrito.css'
 
-function ResumenCarrito() {
+function ResumenCarrito({ productosCarrito }) {
+
+  function sumarPrecios(productos) {
+    return productos.reduce((total, producto) => {
+      return total + producto.precio;
+    }, 0);
+  }
+
+  const subtotal = sumarPrecios(productosCarrito);
+  const descuento = productosCarrito.length > 0 ? 10000 : 0;
+  const total = Math.max(0, subtotal - descuento);
+
   return (
     <article id="resumen">
       <div className='resumen__div'>
         <h3 className='resumen__h3'>Resumen de Compra</h3>
       </div>
       <div className='resumen__div'>
-        <div className='resumen__div-div'>
-          <h5 className='resumen__div-div-h5'>Café Colombiano...</h5>
-          <span className='resumen__div-div-span'>$75.000</span>
-        </div>
+        {productosCarrito.map((producto) => {
+          return <ItemResumen producto={producto} key={producto.id_prod} />
+        })}
         <div className='resumen__div-div'>
           <h5 className='resumen__div-div-h5'>Subtotal</h5>
-          <span className='resumen__div-div-span'>$75.000</span>
+          <span className='resumen__div-div-span'>${subtotal}</span>
         </div>
         <div className='resumen__div-div'>
           <h5 className='resumen__div-div-h5 descuento'>Descuentos</h5>
-          <span className='resumen__div-div-span descuento-precio'>$-10.000</span>
+          <span className='resumen__div-div-span descuento-precio'>$-{descuento}</span>
         </div>
       </div>
       <div className='resumen__underline'></div>
       <div className='resumen__div-total'>
         <h5 className='resumen__div-h5 total'>Total</h5>
-        <span className='resumen__div-span total-precio'>$65.000</span>
+        <span className='resumen__div-span total-precio'>${total}</span>
       </div>
       <button className='resumen__button'>Finalizar compra <img src={iconoBolsa} alt="" /></button>
       <div className='resumen__div-segura'>
@@ -41,3 +51,12 @@ function ResumenCarrito() {
 }
 
 export default ResumenCarrito
+
+function ItemResumen({ producto }) {
+  return (
+    <div className='resumen__div-div'>
+      <h5 className='resumen__div-div-h5'>{producto.nombre}</h5>
+      <span className='resumen__div-div-span'>${producto.precio}</span>
+    </div>
+  )
+}
