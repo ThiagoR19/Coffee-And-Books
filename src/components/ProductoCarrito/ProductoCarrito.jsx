@@ -6,7 +6,20 @@ import iconoTrash from '../../assets/icon-trash.png'
 
 import './ProductoCarrito.css'
 
-function ProductoCarrito({ prodSeleccionado, borrarDelCarrito }) {
+function ProductoCarrito({ prodSeleccionado, borrarDelCarrito, handleAdd, handleSustract }) {
+
+  if (!prodSeleccionado) {
+    return (
+      <article id="producto">
+        <div className='producto__div'>
+          <div className='producto__div-div-titulo'>
+            <h2 className='producto__div-div-h2-titulo'>Sin producto seleccionado</h2>
+          </div>
+        </div>
+      </article>
+    )
+  }
+
   return (
     <article id="producto">
       <div className='producto__div'>
@@ -21,13 +34,13 @@ function ProductoCarrito({ prodSeleccionado, borrarDelCarrito }) {
         </div>
         <div className='producto__div-div-botones'>
           <button className='producto__div-div-button'>
-            <img className='producto__div-div-button-img' src={buttonMinus} alt="" />
+            <img className='producto__div-div-button-img' onClick={() => handleSustract()} src={buttonMinus} alt="" />
           </button>
           <div className='producto__div-div-div'>
-            <h3 className='producto__div-div-div-h3'>3</h3>
+            <h3 className='producto__div-div-div-h3'>{prodSeleccionado.cantidad}</h3>
           </div>
           <button className='producto__div-div-button'>
-            <img className='producto__div-div-button-img' src={buttonPlus} alt="" />
+            <img className='producto__div-div-button-img' onClick={() => handleAdd()} src={buttonPlus} alt="" />
           </button>
         </div>
       </div>
