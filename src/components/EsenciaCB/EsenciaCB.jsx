@@ -1,6 +1,6 @@
-import iconoSloganCafe from '../../assets/icono-esencia-cafe.png'
-import iconoSloganLibro from '../../assets/icono-esencia-libro.png'
-import imagenEsencia from '../../assets/imagen-esencia.png'
+import iconoSloganCafe from '../../assets/icono-esencia-cafe.svg'
+import iconoSloganLibro from '../../assets/icono-esencia-libro.svg'
+import imagenEsencia from '../../assets/imagen-esencia.webp'
 
 import './EsenciaCB.css'
 

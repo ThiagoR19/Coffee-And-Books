@@ -1,8 +1,8 @@
 import { Link, useLocation } from "wouter";
 import "./Footer.css";
-import InstagramIcon from "../../assets/icon-instagram.png";
-import WhatsAppIcon from "../../assets/icon-whatsapp.png";
-import LogoFooter from "../../assets/logo-footer.png";
+import InstagramIcon from "../../assets/icon-instagram.svg";
+import WhatsAppIcon from "../../assets/icon-whatsapp.svg";
+import LogoFooter from "../../assets/logo-footer.svg";
 
 const INFO_LINKS = [
   { label: "Sobre nosotros", path: "/sobrenosotros" },
@@ -11,8 +11,10 @@ const INFO_LINKS = [
 ];
 
 const CATEGORY_LINKS = [
-  { label: "Libros", path: "/productoLibro" },
-  { label: "Cafés", path: "/productoCafe" },
+  { label: "Libros", path: "/catalogo" },
+  // { label: "Libros", path: "/productoLibro" },
+  { label: "Cafés", path: "/catalogo" },
+  //{ label: "Cafés", path: "/productoCafe" },
   { label: "Novedades", path: "/catalogo" },
   { label: "Ofertas", path: "/home" },
 ];

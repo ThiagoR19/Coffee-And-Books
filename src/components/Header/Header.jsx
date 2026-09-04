@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import "./Header.css";
 
-import WhatsappIcon from "../../assets/icon-whatsapp.png";
-import InstagramIcon from "../../assets/icon-instagram.png";
-import LogoHeader from "../../assets/logo-header.png";
-import SearchIcon from "../../assets/icon-search.png";
-import CartIcon from "../../assets/carrito-icon.png";
-import CartIconActive from "../../assets/carrito-icon-seleccionado.png";
+import WhatsappIcon from "../../assets/icon-whatsapp.svg";
+import InstagramIcon from "../../assets/icon-instagram.svg";
+import LogoHeader from "../../assets/logo-header.svg";
+import SearchIcon from "../../assets/icon-search.svg";
+import CartIcon from "../../assets/carrito/carrito-icon.svg";
+import CartIconActive from "../../assets/carrito/carrito-icon-seleccionado.svg";
 
 const NAV_LINKS = [
   { label: "HOME", path: "/" },

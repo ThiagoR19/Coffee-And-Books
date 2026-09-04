@@ -1,16 +1,16 @@
 import EsenciaCB from "../../components/EsenciaCB/EsenciaCB"
 import Estanteria from "../../components/Estanteria/Estanteria"
 
-import imagenIzquierda from '../../assets/imagen-home-izquierda.png'
+import imagenIzquierda from '../../assets/home/imagen-home-izquierda.webp'
 import imagenIzquierdaMobile from '../../assets/fondos/fondo-img-hero-libro.svg'
 import imagenDerechaMobile from '../../assets/fondos/fondo-img-hero-cafe.svg'
-import imagenDerecha from '../../assets/imagen-home-derecha.png'
-import imagenSlogan from '../../assets/fondos/fondo-tarjeta4.png'
+import imagenDerecha from '../../assets/home/imagen-home-derecha.webp'
+import imagenSlogan from '../../assets/fondos/fondo-tarjeta4.webp'
 
 import { CiCirclePlus } from "react-icons/ci";
-import cafeEjemplo1 from '../../assets/coffee-example1.png'
-import cafeEjemplo2 from '../../assets/coffee-example2.png'
-import cafeEjemplo3 from '../../assets/coffee-example3.png'
+import cafeEjemplo1 from '../../assets/coffees/coffee-example1.webp'
+import cafeEjemplo2 from '../../assets/coffees/coffee-example2.webp'
+import cafeEjemplo3 from '../../assets/coffees/coffee-example3.webp'
 
 // import sombraEstanteria from '../../assets/sombra-estanteria.svg'
 

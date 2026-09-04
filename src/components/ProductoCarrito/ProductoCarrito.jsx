@@ -1,8 +1,8 @@
-import cafeDefault from '../../assets/imagen-cafe-default.png'
-import cafeDefault2 from '../../assets/imagen-cafe-default2.png'
-import buttonMinus from '../../assets/icon-minus-carrito.png'
-import buttonPlus from '../../assets/icon-plus-carrito.png'
-import iconoTrash from '../../assets/icon-trash.png'
+import cafeDefault from '../../assets/coffees/imagen-cafe-default.webp'
+import cafeDefault2 from '../../assets/coffees/imagen-cafe-default2.webp'
+import buttonMinus from '../../assets/carrito/icon-minus-carrito.svg'
+import buttonPlus from '../../assets/carrito/icon-plus-carrito.svg'
+import iconoTrash from '../../assets/icon-trash.svg'
 
 import './ProductoCarrito.css'
 

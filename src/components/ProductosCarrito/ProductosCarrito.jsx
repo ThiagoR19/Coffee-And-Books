@@ -1,5 +1,5 @@
-import cafeDefault from '../../assets/imagen-cafe-default.png'
-import iconoWhatsapp from '../../assets/icon-whatsapp.png'
+import cafeDefault from '../../assets/coffees/imagen-cafe-default.webp'
+import iconoWhatsapp from '../../assets/icon-whatsapp.svg'
 
 import './ProductosCarrito.css'
 

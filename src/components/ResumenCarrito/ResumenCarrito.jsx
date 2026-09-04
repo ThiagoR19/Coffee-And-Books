@@ -1,5 +1,5 @@
-import iconoCheck from '../../assets/icon-check.png'
-import iconoBolsa from '../../assets/icon-bolsa.png'
+import iconoCheck from '../../assets/icon-check.svg'
+import iconoBolsa from '../../assets/icon-bolsa.svg'
 
 import './ResumenCarrito.css'
 

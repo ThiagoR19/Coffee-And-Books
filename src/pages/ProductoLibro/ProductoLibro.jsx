@@ -1,14 +1,14 @@
 import "./ProductoLibro.css"
 import { FaCartShopping } from "react-icons/fa6"
-import imagenGrande from "../../assets/productoLibro/grande.png"
-import chiquita1 from "../../assets/productoLibro/chiquita1.png"
-import chiquita2 from "../../assets/productoLibro/chiquita2.png"
-import chiquita3 from "../../assets/productoLibro/chiquita3.png"
+import imagenGrande from "../../assets/productoLibro/grande.webp"
+import chiquita1 from "../../assets/productoLibro/chiquita1.webp"
+import chiquita2 from "../../assets/productoLibro/chiquita2.webp"
+import chiquita3 from "../../assets/productoLibro/chiquita3.webp"
 import { FaRegUser } from "react-icons/fa6";
-import IconLibro from "../../assets/productoLibro/iconsPL/icono-libro 5.png"
-import IconIsbn from "../../assets/productoLibro/iconsPL/icon-isbn 2.png"
-import IconEditorial from "../../assets/productoLibro/iconsPL/icon-editorial 2.png"
-import IconDE from "../../assets/productoLibro/iconsPL/descuento-resumen 4.png"
+import IconLibro from "../../assets/productoLibro/iconsPL/icono-libro-5.webp"
+import IconIsbn from "../../assets/productoLibro/iconsPL/icon-isbn-2.webp"
+import IconEditorial from "../../assets/productoLibro/iconsPL/icon-editorial-2.webp"
+import IconDE from "../../assets/productoLibro/iconsPL/descuento-resumen-4.webp"
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import CarrouselAutores from "./carrouselAutores";
 

@@ -1,7 +1,7 @@
-import imagenNuestraHistoria from '../../assets/img-portada.png'
-import iconBag from '../../assets/icon-bag-estadisticas.png'
-import iconPeople from '../../assets/icon-people-estadisticas.png'
-import iconCoffee from '../../assets/icon-coffee-estadisticas.png'
+import imagenNuestraHistoria from '../../assets/img-portada.webp'
+import iconBag from '../../assets/icon-bag-estadisticas.svg'
+import iconPeople from '../../assets/icon-people-estadisticas.svg'
+import iconCoffee from '../../assets/icon-coffee-estadisticas.svg'
 
 import './SobreNosotros.css'
 

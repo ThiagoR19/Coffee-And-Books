@@ -1,8 +1,8 @@
-import leftArrow from '../../assets/left-arrow.png'
-import rightArrow from '../../assets/right-arrow.png'
-import coffeeExample1 from '../../assets/coffee-example1.png'
-import coffeeExample2 from '../../assets/coffee-example2.png'
-import coffeeExample3 from '../../assets/coffee-example3.png'
+import leftArrow from '../../assets/left-arrow.svg'
+import rightArrow from '../../assets/right-arrow.svg'
+import coffeeExample1 from '../../assets/coffees/coffee-example1.webp'
+import coffeeExample2 from '../../assets/coffees/coffee-example2.webp'
+import coffeeExample3 from '../../assets/coffees/coffee-example3.webp'
 
 import './Carrusel.css'
 

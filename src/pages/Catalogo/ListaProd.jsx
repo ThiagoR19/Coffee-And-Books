@@ -15,7 +15,7 @@ import cafe8 from '../../assets/catalogo/productos/verdeYblanco.png'
 import cafe9 from '../../assets/catalogo/productos/laInvencion.png'
 
 const productos = [
-  { etiqueta: 'CAFE PREMIUM', especificacion: 'algo del prod', id: 1, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe3 },
+  { etiqueta: 'CAFE PREMIUM', especificacion: 'algo del prod', id: 1, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe3, categoria: 4 },
   { etiqueta: 'OFERTA', especificacion: 'Especificacion', id: 2, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe8 },
   { etiqueta: 'NUEVO', especificacion: 'Especificacion', id: 3, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe5 },
   { etiqueta: 'DESTACADO', especificacion: 'Especificacion', id: 4, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe1 },
@@ -90,14 +90,14 @@ export default function ListaProductos() {
                 <option value="1">MÁS RECIENTES</option>
                 <option value="2">MÁS VENDIDOS</option>
                 <option value="3">NOVEDADES</option>
-                <option value="4">CAFÉ</option>
+                <option value="4">CAFÉS</option>
                 <option value="5">PREMIUM</option>
                 <option value="6">EN GRANO</option>
                 <option value="7">MOLIDO</option>
                 <option value="8">CÁPSULA</option>
                 <option value="9">DE ORIGEN</option>
                 <option value="10">COMBOS ESPECIALES</option>
-                <option value="11">LIBROS</option>
+                <option value="11" >LIBROS</option>
                 <option value="12">NOVELAS</option>
                 <option value="13">DE CIENCIA FICCIÓN</option>
                 <option value="14">CÓMICS</option>

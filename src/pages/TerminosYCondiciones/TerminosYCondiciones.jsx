@@ -1,11 +1,11 @@
 import "./TerminosYCondiciones.css";
-import hr1 from "../../assets/hr-decoracion1.png";
-import hr2 from "../../assets/hr-decoracionxs.png";
-import hr3 from "../../assets/hr-decoracion-blanco.png";
-import iconRules from "../../assets/icons-our-rules.png";
-import hr4 from "../../assets/hr-punteado.png";
-import hr5 from "../../assets/hr-punteado-negro.png";
-import hr7 from "../../assets/hr-decoracion2.png";
+import hr1 from "../../assets/hrs/hr-decoracion1.webp";
+import hr2 from "../../assets/hrs/hr-decoracionxs.webp";
+import hr3 from "../../assets/hrs/hr-decoracion-blanco.svg";
+import iconRules from "../../assets/icons-our-rules.svg";
+import hr4 from "../../assets/hrs/hr-punteado.webp";
+import hr5 from "../../assets/hrs/hr-punteado-negro.webp";
+import hr7 from "../../assets/hrs/hr-decoracion2.webp";
 
 
 

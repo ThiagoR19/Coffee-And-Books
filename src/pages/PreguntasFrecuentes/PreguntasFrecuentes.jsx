@@ -1,8 +1,8 @@
 import './PreguntasFrecuentes.css';
-import portadaFaq from '../../assets/img-portada.png';
-import iconFaqItem from '../../assets/icon-faq-item.png';
-import iconMinusFaqs from '../../assets/icon-minus-faqs.png';
-import iconPlusFaqs from '../../assets/icon-plus-faqs.png';
+import portadaFaq from '../../assets/img-portada.webp';
+import iconFaqItem from '../../assets/icon-faq-item.svg';
+import iconMinusFaqs from '../../assets/icon-minus-faqs.svg';
+import iconPlusFaqs from '../../assets/icon-plus-faqs.svg';
 
 const FAQS = [
     {
