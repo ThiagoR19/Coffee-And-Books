@@ -32,8 +32,8 @@ function TerminosYCondiciones() {
         <div className="our-rules">
           <h2>Nuestras reglas</h2>
           <img className="hr2" src={hr2} alt="Línea separadora decorativa" />
-          <p>En esta sección nos enfocaremos en aclarar nuestras condiciones para evitar confusiones y mantener una buena relación con nuestros clientes.</p>
-          <img className="icon-rules" src={iconRules} alt="iconos"/>
+          <p className="out-rules__p">En esta sección nos enfocaremos en aclarar nuestras condiciones para evitar confusiones y mantener una buena relación con nuestros clientes.</p>
+          <img className="icon-rules" src={iconRules} alt="iconos" />
         </div>
         <div className="cont-grande">
           <h2>Condiciones Generales</h2>
@@ -52,16 +52,16 @@ function TerminosYCondiciones() {
         <div className="terms-conditns">
           <h2>Términos y condiciones</h2>
           <img className="hr5" src={hr5} alt="Línea separadora decorativa" />
-            <ol>
-              <li>Disposiciones Generales</li>
-              <li>Envíos y Entregas</li>
-              <li>Propiedad Intelectual</li>
-              <li>Devoluciones y <br/> Reembolsos</li>
-              <li>Privacidad y Protección <br/> de datos</li>
-              <li>Métodos de Pago</li>
-              <li>Disponibilidad de <br/> productos</li>
-              <li>Atención al cliente</li>
-            </ol>
+          <ol>
+            <li>Disposiciones Generales</li>
+            <li>Envíos y Entregas</li>
+            <li>Propiedad Intelectual</li>
+            <li>Devoluciones y <br /> Reembolsos</li>
+            <li>Privacidad y Protección <br /> de datos</li>
+            <li>Métodos de Pago</li>
+            <li>Disponibilidad de <br /> productos</li>
+            <li>Atención al cliente</li>
+          </ol>
         </div>
         <div className="cont2">
           <h2>Envíos y Entregas</h2>

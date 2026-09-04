@@ -3,12 +3,16 @@ import iconoWhatsapp from '../../assets/icon-whatsapp.svg'
 
 import './ProductosCarrito.css'
 
-function ProductosCarrito({ productos }) {
+function ProductosCarrito({ productos, setProdSeleccionado }) {
   return (
     <article id="productos">
       <h3 className='productos__h3'>Productos</h3>
       <div className='productos__div'>
-        {productos.map((producto) => <ProductoCarritoLateral key={producto.id} producto={producto} />)}
+        {productos.length > 0 ? (
+          productos.map((producto) => <ProductoCarritoLateral key={producto.id_prod} producto={producto} setProdSeleccionado={setProdSeleccionado} />)
+        ) : (
+          <p className='productos__div-div-span' style={{ padding: '1rem' }}>No hay productos en el carrito.</p>
+        )}
       </div>
       <div className='productos__div'>
         <img className='productosL__div-img' src={iconoWhatsapp} alt="Icono de Whatsapp" />
@@ -21,10 +25,15 @@ function ProductosCarrito({ productos }) {
   )
 }
 
-function ProductoCarritoLateral({ producto }) {
+function ProductoCarritoLateral({ producto, setProdSeleccionado }) {
+
+  const handleClick = () => {
+    setProdSeleccionado(producto)
+  }
+
   return (
     <>
-      <div className="productoL">
+      <div onClick={handleClick} className="productoL">
         <img className='productoL__img' src={cafeDefault} alt="Café por defecto" />
         <div className='productoL__div'>
           <h4 className='productoL__div-h4'>{producto.nombre}</h4>
