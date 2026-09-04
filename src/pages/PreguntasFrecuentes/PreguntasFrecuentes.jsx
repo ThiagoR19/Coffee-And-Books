@@ -1,16 +1,10 @@
 import './PreguntasFrecuentes.css';
-<<<<<<< HEAD
 import portadaFaq from '../../assets/img-portada.webp';
 import iconFaqItem from '../../assets/icon-faq-item.svg';
 import iconMinusFaqs from '../../assets/icon-minus-faqs.svg';
 import iconPlusFaqs from '../../assets/icon-plus-faqs.svg';
-=======
-import portadaFaq from '../../assets/img-portada.png';
-import iconFaqItem from '../../assets/icon-faq-item.png';
-import iconMinusFaqs from '../../assets/icon-minus-faqs.png';
-import iconPlusFaqs from '../../assets/icon-plus-faqs.png';
+
 import { useState } from 'react';
->>>>>>> 5e819c9c3d170cc473a168f3f2529bd67590ef1f
 
 const FAQS = [
   {
