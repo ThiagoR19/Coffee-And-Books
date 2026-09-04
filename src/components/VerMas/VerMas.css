@@ -1,0 +1,30 @@
+.ver-mas-texto {
+  display: inline-block;
+  width: 100%;
+}
+
+.ver-mas-btn {
+  background: none;
+  border: none;
+  color: #94F7ED;
+  font-weight: 600;
+  font-family: inherit;
+  font-size: 0.9em;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 6px;
+  text-decoration: underline;
+  transition: opacity 0.2s ease, color 0.2s ease;
+  display: inline;
+}
+
+.ver-mas-btn:hover {
+  opacity: 0.85;
+  color: #ffffff;
+}
+
+.ver-mas-btn:focus-visible {
+  outline: 2px solid #94F7ED;
+  outline-offset: 2px;
+  border-radius: 2px;
+}

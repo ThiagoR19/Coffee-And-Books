@@ -13,6 +13,8 @@ import coffeeExample3 from '../../assets/coffee-example3.png'
 import iconoFlechaDe from '../../assets/icono-flecha-derecha.png'
 import iconoFlechaIz from '../../assets/icono-flecha-izquierda.png'
 
+import VerMas from '../VerMas/VerMas'
+
 import './ProductoCafeDesarrollo.css'
 
 function ProductoCafeDesarrollo() {
@@ -38,7 +40,11 @@ function ProductoCafeDesarrollo() {
       <div id='informacion'>
         <div id='descripcion'>
           <h4 className='descripcion__h4'>DESCRIPCIÓN</h4>
-          <p className='descripcion__p'>Disfrutá de la experiencia Starbucks en la comodidad de tu casa. El Caramel Espresso combina la intensidad de granos de café 100% Arábica cuidadosamente seleccionados de América Latina con un perfil sutilmente dulce y un delicioso aroma a caramelo tostado.</p>
+          <VerMas
+            className='descripcion__p'
+            limite={150}
+            texto="Disfrutá de la experiencia Starbucks en la comodidad de tu casa. El Caramel Espresso combina la intensidad de granos de café 100% Arábica cuidadosamente seleccionados de América Latina con un perfil sutilmente dulce y un delicioso aroma a caramelo tostado."
+          />
           <div className='underline underline-desc'></div>
           <ul id='lista'>
             <li><span>Perfil de sabor:</span> Dulce, equilibrado y con notas a caramelo mantecoso.</li>
