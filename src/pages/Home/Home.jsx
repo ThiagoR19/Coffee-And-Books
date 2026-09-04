@@ -8,15 +8,9 @@ import imagenDerecha from '../../assets/home/imagen-home-derecha.webp'
 import imagenSlogan from '../../assets/fondos/fondo-tarjeta4.webp'
 
 import { CiCirclePlus } from "react-icons/ci";
-<<<<<<< HEAD
-import cafeEjemplo1 from '../../assets/coffees/coffee-example1.webp'
-import cafeEjemplo2 from '../../assets/coffees/coffee-example2.webp'
-import cafeEjemplo3 from '../../assets/coffees/coffee-example3.webp'
-=======
-// import cafeEjemplo1 from '../../assets/coffee-example1.png'
+import cafeEjemplo1 from '../../assets/coffee-example1.png'
 import cafeEjemplo2 from '../../assets/coffee-example2.png'
-// import cafeEjemplo3 from '../../assets/coffee-example3.png'
->>>>>>> 5e819c9c3d170cc473a168f3f2529bd67590ef1f
+import cafeEjemplo3 from '../../assets/coffee-example3.png'
 
 // import sombraEstanteria from '../../assets/sombra-estanteria.svg'
 
