@@ -11,7 +11,7 @@ import CartIconActive from "../../assets/carrito-icon-seleccionado.png";
 
 const NAV_LINKS = [
   { label: "HOME", path: "/" },
-  { label: "CATÁLOGO", path: "/catalogo" },
+  { label: "CATÁLOGO", path: "/catalogo/todos" },
   { label: "CAFÉ IMPORTADO", path: "/productoCafe" },
   { label: "LIBROS", path: "/productoLibro" },
 ];

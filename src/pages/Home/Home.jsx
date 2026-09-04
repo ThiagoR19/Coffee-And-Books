@@ -1,6 +1,8 @@
 import EsenciaCB from "../../components/EsenciaCB/EsenciaCB"
 import Estanteria from "../../components/Estanteria/Estanteria"
 
+import { useLocation } from "wouter"
+
 import imagenIzquierda from '../../assets/imagen-home-izquierda.png'
 import imagenDerecha from '../../assets/imagen-home-derecha.png'
 import imagenSlogan from '../../assets/fondos/fondo-tarjeta4.png'
@@ -16,7 +18,10 @@ import iconoFlecha from '../../assets/icono-flecha.svg'
 
 import './Home.css'
 
+
+
 function Home() {
+  const [location, setLocation] = useLocation();
   return (
     <section id="Home">
       <article id="hero">
@@ -28,10 +33,12 @@ function Home() {
           <p className="hero__p">Tu tienda online de libros y café importado. <br />
             Elegí tu próxima lectura y acompañala con <br />
             el mejor café del mundo.</p>
+
           <div className="hero__buttons">
-            <button className="hero__div-button">VER LIBROS</button>
-            <button className="hero__div-button">EXPLORAR CAFÉS</button>
+            <button className="hero__div-button" onClick={() => setLocation("/catalogo/libro")}>VER LIBROS</button>
+            <button className="hero__div-button" onClick={() => setLocation("/catalogo/cafe")}>EXPLORAR CAFÉS</button>
           </div>
+
           <img className="hero__imagen-derecha" src={imagenDerecha} alt="Imagen principal derecha" />
         </div>
         <EsenciaCB />
