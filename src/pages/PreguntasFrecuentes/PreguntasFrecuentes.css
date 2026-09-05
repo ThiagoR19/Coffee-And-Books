@@ -12,7 +12,7 @@
 
 /*--------------CONTENEDOR---------------------------*/
 .container-faqs {
-    background-image: url('../../assets/fondos/fondo3.1.0.png');
+    background-image: url('../../assets/fondos/fondo3.1.0.webp');
     background-size: cover;
     background-position: center;
     padding-top: clamp(20px, 4vw, 50px);
@@ -221,7 +221,7 @@ hr {
 @media screen and (max-width: 1000px) {
 
     .container-faqs {
-        background: url('../../assets/fondos/fondo3.2 2.png');
+        background: url('../../assets/fondos/fondo3.2 2.webp');
         background-size: cover;
         background-position: center;
         padding-top: 20px;

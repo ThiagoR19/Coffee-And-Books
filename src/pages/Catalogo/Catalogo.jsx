@@ -1,8 +1,8 @@
 import './Catalogo.css'
 import '../../App.css'
-import imagenCatalogo from '../../assets/imagen-catalogo.png'
-import imagenFondo from '../../assets/fondos/fondo3.1.0.png'
-import imagenFondoRes from '../../assets/fondos/fondo2.0.0.svg'
+import imagenCatalogo from '../../assets/catalogo/imagen-catalogo.webp'
+// import imagenFondo from '../../assets/fondos/fondo3.1.0.png' esto no se usa acá
+// import imagenFondoRes from '../../assets/fondos/fondo2.0.0.svg' esto tampoco
 import ListaProductos from './ListaProd'
 
 export default function Catalogo() {

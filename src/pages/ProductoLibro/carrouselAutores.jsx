@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "./carrouselAutores.css";
-import cafe9 from '../../assets/catalogo/productos/laInvencion.png';
-import cafe5 from '../../assets/catalogo/productos/habitosAtom.png';
-import cafe6 from '../../assets/catalogo/productos/maus.png';
+import cafe9 from '../../assets/catalogo/productos/laInvencion.webp';
+import cafe5 from '../../assets/catalogo/productos/habitosAtom.webp';
+import cafe6 from '../../assets/catalogo/productos/maus.webp';
 
 const librosEjemplo = [
     { id: 1, titulo: "La Invención de Morel", portada: cafe9 },

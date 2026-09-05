@@ -1,7 +1,7 @@
 import estanteria from '../../assets/estanteria/Estanteria2.svg'
 import cafeEstanteria from '../../assets/estanteria/imagen-cafe-estanteria.webp'
 
-import lineEstanteria from '../../assets/imagen-line-estanteria.webp'
+import lineEstanteria from '../../assets/estanteria/imagen-line-estanteria.webp'
 import sloganEstanteria from '../../assets/home/imagen-slogan-estanteria.webp'
 import cafeEjemplo from '../../assets/coffees/coffee-example1.webp'
 import cafeEjemplo4 from '../../assets/coffees/coffee-example4.webp'

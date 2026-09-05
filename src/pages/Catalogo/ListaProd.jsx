@@ -1,35 +1,35 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import './ListaProd.css';
 import useCarrusel from './hooksCatalogo/useCarrousel';
 
 import { AiOutlinePlusCircle } from 'react-icons/ai'
 import { GoChevronRight, GoChevronLeft, } from "react-icons/go";
-import cafe1 from '../../assets/catalogo/productos/colombia.png'
-import cafe2 from '../../assets/catalogo/productos/expresso.png'
-import cafe3 from '../../assets/catalogo/productos/cositas.png'
-import cafe4 from '../../assets/catalogo/productos/georgeOrwel.png'
-import cafe5 from '../../assets/catalogo/productos/habitosAtom.png'
-import cafe6 from '../../assets/catalogo/productos/maus.png'
-import cafe7 from '../../assets/catalogo/productos/unCafe.png'
-import cafe8 from '../../assets/catalogo/productos/verdeYblanco.png'
-import cafe9 from '../../assets/catalogo/productos/laInvencion.png'
+import cafe1 from '../../assets/catalogo/productos/colombia.webp'
+import cafe2 from '../../assets/catalogo/productos/expresso.webp'
+import cafe3 from '../../assets/catalogo/productos/cositas.webp'
+import cafe4 from '../../assets/catalogo/productos/georgeOrwel.webp'
+import cafe5 from '../../assets/catalogo/productos/habitosAtom.webp'
+import cafe6 from '../../assets/catalogo/productos/maus.webp'
+import cafe7 from '../../assets/catalogo/productos/unCafe.webp'
+import cafe8 from '../../assets/catalogo/productos/verdeYblanco.webp'
+import cafe9 from '../../assets/catalogo/productos/laInvencion.webp'
 
 const productos = [
-  { etiqueta: 'CAFE PREMIUM', especificacion: 'algo del prod', id: 1, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe3, categoria: 4 },
-  { etiqueta: 'OFERTA', especificacion: 'Especificacion', id: 2, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe8 },
-  { etiqueta: 'NUEVO', especificacion: 'Especificacion', id: 3, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe5 },
-  { etiqueta: 'DESTACADO', especificacion: 'Especificacion', id: 4, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe1 },
-  { etiqueta: 'OFERTA ESPECIAL', especificacion: 'Especificacion', id: 5, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe3 },
-  { etiqueta: 'POPULAR', especificacion: 'Especificacion', id: 6, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe2 },
-  { etiqueta: 'NUEVO', especificacion: 'Especificacion', id: 7, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe9 },
-  { etiqueta: 'DESTACADO', especificacion: 'Especificacion', id: 8, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe7 },
-  { etiqueta: 'OFERTA', especificacion: 'Especificacion', id: 9, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe4 },
-  { etiqueta: 'POPULAR', especificacion: 'Especificacion', id: 10, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe6 },
-  { etiqueta: 'NUEVO', especificacion: 'Especificacion', id: 11, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe3 },
-  { etiqueta: 'DESTACADO', especificacion: 'Especificacion', id: 12, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe8 },
-  { etiqueta: 'OFERTA ESPECIAL', especificacion: 'Especificacion', id: 13, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe5 },
-  { etiqueta: 'POPULAR', especificacion: 'Especificacion', id: 14, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe1 },
-  { etiqueta: 'NUEVO', especificacion: 'Especificacion', id: 15, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe3 },
+  { etiqueta: 'CAFE PREMIUM', especificacion: 'En grano', id: 1, nombre: 'Café Colombia', precio: '100.000', imagen: cafe3, categoria: 'cafe', origen: true, premium: true, vendidos: 42, fecha: 15 },
+  { etiqueta: 'OFERTA', especificacion: 'Molido', id: 2, nombre: 'Café Espresso', precio: '100.000', imagen: cafe8, categoria: 'cafe', molido: true, vendidos: 67, fecha: 18 },
+  { etiqueta: 'NUEVO', especificacion: 'Novela', id: 3, nombre: 'El Principito', precio: '100.000', imagen: cafe5, categoria: 'libro', novela: true, fecha: 20 },
+  { etiqueta: 'DESTACADO', especificacion: 'Novela', id: 4, nombre: 'Cien años de soledad', precio: '100.000', imagen: cafe1, categoria: 'libro', novela: true, fecha: 22 },
+  { etiqueta: 'OFERTA ESPECIAL', especificacion: 'Combo especial', id: 5, nombre: 'Combo lectura y café', precio: '100.000', imagen: cafe3, categoria: 'combo', oferta: true, fecha: 25 },
+  { etiqueta: 'POPULAR', especificacion: 'En grano', id: 6, nombre: 'Café de origen', precio: '100.000', imagen: cafe2, categoria: 'cafe', origen: true, vendidos: 80, fecha: 12 },
+  { etiqueta: 'NUEVO', especificacion: 'Ciencia ficción', id: 7, nombre: '1984', precio: '100.000', imagen: cafe9, categoria: 'libro', cienciaFiccion: true, fecha: 27 },
+  { etiqueta: 'DESTACADO', especificacion: 'Cómic', id: 8, nombre: 'Maus', precio: '100.000', imagen: cafe7, categoria: 'libro', comic: true, fecha: 10 },
+  { etiqueta: 'OFERTA', especificacion: 'Cápsula', id: 9, nombre: 'Café cápsula', precio: '100.000', imagen: cafe4, categoria: 'cafe', capsula: true, oferta: true, fecha: 8 },
+  { etiqueta: 'POPULAR', especificacion: 'Policial', id: 10, nombre: 'Novela policial', precio: '100.000', imagen: cafe6, categoria: 'libro', policial: true, vendidos: 55, fecha: 6 },
+  { etiqueta: 'NUEVO', especificacion: 'Café', id: 11, nombre: 'Café especial', precio: '100.000', imagen: cafe3, categoria: 'cafe', fecha: 30 },
+  { etiqueta: 'DESTACADO', especificacion: 'Libro', id: 12, nombre: 'Novedad literaria', precio: '100.000', imagen: cafe8, categoria: 'libro', fecha: 29 },
+  { etiqueta: 'OFERTA ESPECIAL', especificacion: 'Combo especial', id: 13, nombre: 'Combo de regalo', precio: '100.000', imagen: cafe5, categoria: 'combo', oferta: true, fecha: 5 },
+  { etiqueta: 'POPULAR', especificacion: 'En grano', id: 14, nombre: 'Café intenso', precio: '100.000', imagen: cafe1, categoria: 'cafe', vendidos: 60, fecha: 3 },
+  { etiqueta: 'NUEVO', especificacion: 'Libro', id: 15, nombre: 'Última novedad', precio: '100.000', imagen: cafe3, categoria: 'libro', fecha: 31 },
 ]
 
 // cuando se active la paginación,hayque reemplazar `productos` por
@@ -39,8 +39,8 @@ export default function ListaProductos() {
 
 
   const [animando, setAnimando] = useState(false);
-  const esMobileRef = useRef(window.matchMedia('(max-width: 480px)').matches);
-  const [esMobile, setEsMobile] = useState(esMobileRef.current);
+  const [esMobile, setEsMobile] = useState(() => window.matchMedia('(max-width: 480px)').matches);
+  const [filtro, setFiltro] = useState('16');
 
   // Hook conservado — este lo usamos cuando se active la paginación, por ahora no hace nada
 
@@ -63,13 +63,58 @@ export default function ListaProductos() {
 
   const productosPorPagina = esMobile ? 9 : 15;
 
+  const productosFiltrados = useMemo(() => {
+    const resultado = [...productos];
+
+    switch (filtro) {
+      case '1':
+        return resultado.sort((a, b) => b.fecha - a.fecha);
+      case '2':
+        return resultado.sort((a, b) => (b.vendidos || 0) - (a.vendidos || 0));
+      case '3':
+        return resultado.filter((producto) => producto.etiqueta === 'NUEVO');
+      case '4':
+        return resultado.filter((producto) => producto.categoria === 'cafe');
+      case '5':
+        return resultado.filter((producto) => producto.premium);
+      case '6':
+        return resultado.filter((producto) => producto.especificacion === 'En grano');
+      case '7':
+        return resultado.filter((producto) => producto.molido);
+      case '8':
+        return resultado.filter((producto) => producto.capsula);
+      case '9':
+        return resultado.filter((producto) => producto.origen);
+      case '10':
+        return resultado.filter((producto) => producto.categoria === 'combo');
+      case '11':
+        return resultado.filter((producto) => producto.categoria === 'libro');
+      case '12':
+        return resultado.filter((producto) => producto.novela);
+      case '13':
+        return resultado.filter((producto) => producto.cienciaFiccion);
+      case '14':
+        return resultado.filter((producto) => producto.comic);
+      case '15':
+        return resultado.filter((producto) => producto.policial);
+      default:
+        return resultado;
+    }
+  }, [filtro]);
+
   const {
     productosMostrados,
     irAtras,
     irAdelante,
     hayPaginaAnterior,
     hayPaginaSiguiente,
-  } = useCarrusel(productos, productosPorPagina);
+  } = useCarrusel(productosFiltrados, productosPorPagina);
+
+  const cambiarPagina = (accion) => {
+    setAnimando(true);
+    accion();
+    window.setTimeout(() => setAnimando(false), 300);
+  };
 
   return (
 
@@ -79,14 +124,14 @@ export default function ListaProductos() {
 
         <div className="filtro-contenedor">
           <p className="texto-mostrando desktop-only" style={{ color: 'white' }}>
-            PAGINA 1/{productos.length} - <b>MOSTRANDO</b>: {productos.length} PRODUCTOS
+            MOSTRANDO: {productosFiltrados.length} PRODUCTOS
           </p>
           <div className="filtro-select">
 
             <span style={{ color: 'white' }}>ORDENAR POR:</span>
 
             <div className="filtro-select-wrapper">
-              <select className="FiltroDeLista">
+              <select className="FiltroDeLista" value={filtro} onChange={(event) => setFiltro(event.target.value)}>
                 <option value="1">MÁS RECIENTES</option>
                 <option value="2">MÁS VENDIDOS</option>
                 <option value="3">NOVEDADES</option>
@@ -112,7 +157,7 @@ export default function ListaProductos() {
 
         {/* Flechitas pro max deshabilitadas hasta terminar la etapa de enmaquebodrio — descomentar al activar paginación */}
         {/* {hayPaginaAnterior && ( */}
-        <button className="prod-flechitas izquierda" onClick={() => cambiarPagina(irAtras)}>
+        <button className="prod-flechitas izquierda" onClick={() => cambiarPagina(irAtras)} disabled={!hayPaginaAnterior}>
           <GoChevronLeft size={sizeFlechas} />
         </button>
         {/* )} */}
@@ -145,14 +190,14 @@ export default function ListaProductos() {
             </div>
           ))}
         </div><p className="texto-mostrando mobile-only">
-          PAGINA 1/{productos.length} - <b>MOSTRANDO</b>: {productos.length} PRODUCTOS
+          MOSTRANDO: {productosFiltrados.length} PRODUCTOS
         </p>
 
 
 
         {/* Flechita de la derecha deshabilitada hasta terminar la etapa de enmaquebodrio — descomentar al activar paginación */}
         {/* {hayPaginaSiguiente && ( */}
-        <button className="prod-flechitas derecha" onClick={() => cambiarPagina(irAdelante)}>
+        <button className="prod-flechitas derecha" onClick={() => cambiarPagina(irAdelante)} disabled={!hayPaginaSiguiente}>
           <GoChevronRight size={sizeFlechas} />
         </button>
         {/* )} */}

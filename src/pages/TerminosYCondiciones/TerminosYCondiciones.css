@@ -20,7 +20,7 @@ body {
 
 /*-------------CONTENEDOR GENERAL--------------*/
 .container-main {
-  background-image: url('../../assets/fondos/fondo3.1.0.png');
+  background-image: url('../../assets/fondos/fondo3.1.0.webp');
   background-size: cover;
   background-position: center;
   padding: 36px 24px 56px;
@@ -69,7 +69,7 @@ body {
 
 /*----------"header"-------------------*/
 .header1 {
-  background-image: url('/src/assets/fondos/fondo-header-termsAndConditions.png');
+  background-image: url('/src/assets/fondos/fondo-header-termsAndConditions.webp');
   display: flex;
   background-repeat: no-repeat;
   background-size: cover;
@@ -250,7 +250,7 @@ b {
   top: 10px;
   height: 28px;
   width: 18px;
-  background-image: url(/src/assets/grano-cafe-li.png);
+  background-image: url(/src/assets/grano-cafe-li.svg);
   background-size: contain;
   background-repeat: no-repeat;
   line-height: 1.8;
@@ -298,7 +298,7 @@ b {
   max-height: 100%;
   height: 360px;
   background-color: #ffcfab;
-  background-image: url(/src/assets/fondos/img-fondo-rect2.png);
+  background-image: url(/src/assets/fondos/img-fondo-rect2.webp);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -340,7 +340,7 @@ b {
 
 /*-------------------------CARTEL: "envíos y entregas"-----------------------*/
 .cont2 {
-  background-image: url(/src/assets/fondos/img-fondo-rect2.2.png);
+  background-image: url(/src/assets/fondos/img-fondo-rect2.2.webp);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 24px;
@@ -709,7 +709,7 @@ b {
     width: 90%;
     max-width: 250px;
     height: 20px;
-    background-image: url(/src/assets/hr-decoracion1.png);
+    background-image: url(/src/assets/hrs/hr-decoracion1.webp);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -722,7 +722,7 @@ b {
     width: 90%;
     max-width: 250px;
     height: 20px;
-    background-image: url(/src/assets/hr-decoracion1.png);
+    background-image: url(/src/assets/hrs/hr-decoracion1.webp);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -935,7 +935,7 @@ b {
 
   .separator-row {
     grid-area: sep;
-    background-image: url(/src/assets/hr-decorativo-responsive.svg) !important;
+    background-image: url(/src/assets/hrs/hr-decorativo-responsive.svg) !important;
     background-repeat: no-repeat !important;
     background-size: 100% auto !important;
     background-position: center !important;
@@ -1160,7 +1160,7 @@ b {
     width: 90%;
     max-width: 150px;
     height: 10px;
-    background-image: url(/src/assets/hr-decoracionxs.png);
+    background-image: url(/src/assets/hrs/hr-decoracionxs.webp);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -1173,7 +1173,7 @@ b {
     width: 90%;
     max-width: 150px;
     height: 10px;
-    background-image: url(/src/assets/hr-decoracionxs.png);
+    background-image: url(/src/assets/hrs/hr-decoracionxs.webp);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;

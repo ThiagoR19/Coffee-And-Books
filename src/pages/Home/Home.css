@@ -149,17 +149,17 @@
 }
 
 .explora__div-div:first-child {
-  background-image: url(../../assets/fondos/fondo-tarjeta1.png);
+  background-image: url(../../assets/fondos/fondo-tarjeta1.webp);
   margin: 10px 10px 10px 0;
 }
 
 .explora__div-div:nth-child(2) {
-  background-image: url(../../assets/fondos/fondo-tarjeta2.png);
+  background-image: url(../../assets/fondos/fondo-tarjeta2.webp);
 }
 
 .explora__div-div:last-child {
   margin: 10px 0px 10px 10px;
-  background-image: url(../../assets/fondos/fondo-tarjeta3.png);
+  background-image: url(../../assets/fondos/fondo-tarjeta3.webp);
 }
 
 .explora__div-div-h3 {
@@ -190,7 +190,7 @@
   border: 2px solid transparent;
   background-image:
     linear-gradient(to right, rgba(89, 58, 43, 0.2), rgba(73, 43, 27, 0.2)),
-    url('../../assets/fondos/img-fondo-rect3.png'),
+    url('../../assets/fondos/img-fondo-rect3.webp'),
     linear-gradient(to right, #FFECDE, #998E85);
   background-position: center;
   background-repeat: no-repeat;
@@ -360,7 +360,7 @@
 }
 
 #maderaEstanteria {
-  background-image: url('../../assets/imagen-madera-estanteria.png');
+  background-image: url('../../assets/estanteria/imagen-madera-estanteria.svg');
   background-position: center;
   background-size: cover;
   display: flex;
