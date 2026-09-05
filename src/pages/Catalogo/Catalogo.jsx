@@ -4,8 +4,21 @@ import imagenCatalogo from '../../assets/catalogo/imagen-catalogo.webp'
 // import imagenFondo from '../../assets/fondos/fondo3.1.0.png' esto no se usa acá
 // import imagenFondoRes from '../../assets/fondos/fondo2.0.0.svg' esto tampoco
 import ListaProductos from './ListaProd'
+import {useRoute,useLocation} from 'wouter';
+  
 
 export default function Catalogo() {
+  const [, route] = useRoute(':vista/:filtro')
+  const [setLocation] = useLocation()
+
+  function clase(tipo) {
+    if (route.filtro == tipo) {
+      return ("btn active")
+    } else {
+      return ("btn")
+    }
+  }
+  
   return (
     <div className="catalogo">
       <div className="catalogo-barra">
@@ -14,9 +27,9 @@ export default function Catalogo() {
           <p className="p-Cat" >Libros y cafés importados <br /> para inspirar tus <br /> mejores momentos.</p>
 
           <div className="catalogo-botones">
-            <button className="btn active">TODOS LOS PRODUCTOS</button>
-            <button className="btn">LIBROS</button>
-            <button className="btn">CAFÉS IMPORTADOS</button>
+            <button className={clase("todos")}  onClick={() => setLocation("/catalogo/todos")} >TODOS LOS PRODUCTOS</button>
+            <button className={clase("libro")}  onClick={() => setLocation("/catalogo/libro")} >LIBROS</button>
+            <button className={clase("cafe")}  onClick={() => setLocation("/catalogo/cafe")} >CAFÉS IMPORTADOS</button>
           </div>
         </div>
 

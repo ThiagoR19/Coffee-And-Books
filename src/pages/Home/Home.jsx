@@ -11,7 +11,6 @@ import { CiCirclePlus } from "react-icons/ci";
 // import cafeEjemplo1 from '../../assets/coffee-example1.png'
 import cafeEjemplo2 from '../../assets/coffees/coffee-example2.webp'
 // import cafeEjemplo3 from '../../assets/coffee-example3.png'
-
 // import sombraEstanteria from '../../assets/sombra-estanteria.svg'
 
 import obtenerPodio from "../../context/obtenerPodio"
@@ -19,11 +18,12 @@ import obtenerPodio from "../../context/obtenerPodio"
 import iconoFlecha from '../../assets/icono-flecha.svg'
 
 import './Home.css'
+import { useLocation } from "wouter"
 
 import db from '../../db/db.json'
 
 function Home() {
-
+  const [setLocation] = useLocation();
   const top3 = obtenerPodio(db.Productos)
 
   return (
@@ -39,8 +39,8 @@ function Home() {
             Elegí tu próxima lectura y acompañala con <br />
             el mejor café del mundo.</p>
           <div className="hero__buttons">
-            <button className="hero__div-button">VER LIBROS</button>
-            <button className="hero__div-button">EXPLORAR CAFÉS</button>
+            <button className="hero__div-button" onClick={() => setLocation("/catalogo/libro")}>VER LIBROS</button>
+            <button className="hero__div-button" onClick={() => setLocation("/catalogo/cafe")}>EXPLORAR CAFÉS</button>
           </div>
           <img className="hero__imagen-derecha hero__imagen-derecha--desktop" src={imagenDerecha} alt="Imagen principal derecha" />
           <img className="hero__imagen-derecha hero__imagen-derecha--mobile" src={imagenDerechaMobile} alt="Imagen principal derecha" />
