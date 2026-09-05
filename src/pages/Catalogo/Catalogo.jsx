@@ -14,7 +14,7 @@ export default function Catalogo() {
           <p className="p-Cat" >Libros y cafés importados <br /> para inspirar tus <br /> mejores momentos.</p>
 
           <div className="catalogo-botones">
-            <button className="btn active">TODOS LOS LIBROS</button>
+            <button className="btn active">TODOS LOS PRODUCTOS</button>
             <button className="btn">LIBROS</button>
             <button className="btn">CAFÉS IMPORTADOS</button>
           </div>

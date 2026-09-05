@@ -19,7 +19,7 @@ export default function App() {
       <Header />
       <Switch>
         <Route path="/home" component={Home} />
-          <Route path="/Catalogo" component={Catalogo} />
+        <Route path="/catalogo" component={Catalogo} />
         <Route path="/sobrenosotros" component={SobreNosotros} />
         <Route path="/faqs" component={PreguntasFrecuentes} />
         <Route path="/terminos" component={TerminosYCondiciones} />

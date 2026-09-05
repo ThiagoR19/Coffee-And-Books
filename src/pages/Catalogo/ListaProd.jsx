@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
+import { useLocation } from 'wouter';
 import './ListaProd.css';
 import useCarrusel from './hooksCatalogo/useCarrousel';
 
@@ -38,9 +39,11 @@ const productos = [
 export default function ListaProductos() {
 
 
+  const [location] = useLocation();
+  const filtroInicial = new URLSearchParams(location.split('?')[1]).get('filtro');
   const [animando, setAnimando] = useState(false);
   const [esMobile, setEsMobile] = useState(() => window.matchMedia('(max-width: 480px)').matches);
-  const [filtro, setFiltro] = useState('16');
+  const [filtro, setFiltro] = useState(filtroInicial || '16');
 
   // Hook conservado — este lo usamos cuando se active la paginación, por ahora no hace nada
 
