@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import './ListaProd.css';
 import useCarrusel from './hooksCatalogo/useCarrousel';
-import { useLocation } from 'wouter';
 
 import { AiOutlinePlusCircle } from 'react-icons/ai'
 import { GoChevronRight, GoChevronLeft, } from "react-icons/go";
@@ -16,34 +15,38 @@ import cafe8 from '../../assets/catalogo/productos/verdeYblanco.webp'
 import cafe9 from '../../assets/catalogo/productos/laInvencion.webp'
 
 const productos = [
-  { etiqueta: 'CAFE PREMIUM', especificacion: 'algo del prod', id: 1, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe3, tipo: "libro" },
-  { etiqueta: 'OFERTA', especificacion: 'Especificacion', id: 2, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe8, tipo: "libro" },
-  { etiqueta: 'NUEVO', especificacion: 'Especificacion', id: 3, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe5, tipo: "libro" },
-  { etiqueta: 'DESTACADO', especificacion: 'Especificacion', id: 4, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe1, tipo: "libro" },
-  { etiqueta: 'OFERTA ESPECIAL', especificacion: 'Especificacion', id: 5, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe3, tipo: "libro" },
-  { etiqueta: 'POPULAR', especificacion: 'Especificacion', id: 6, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe2, tipo: "libro" },
-  { etiqueta: 'NUEVO', especificacion: 'Especificacion', id: 7, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe9, tipo: "libro" },
-  { etiqueta: 'DESTACADO', especificacion: 'Especificacion', id: 8, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe7, tipo: "libro" },
-  { etiqueta: 'OFERTA', especificacion: 'Especificacion', id: 9, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe4, tipo: "libro" },
-  { etiqueta: 'POPULAR', especificacion: 'Especificacion', id: 10, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe6, tipo: "libro" },
-  { etiqueta: 'NUEVO', especificacion: 'Especificacion', id: 11, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe3, tipo: "cafe" },
-  { etiqueta: 'DESTACADO', especificacion: 'Especificacion', id: 12, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe8, tipo: "cafe" },
-  { etiqueta: 'OFERTA ESPECIAL', especificacion: 'Especificacion', id: 13, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe5, tipo: "cafe" },
-  { etiqueta: 'POPULAR', especificacion: 'Especificacion', id: 14, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe1, tipo: "cafe" },
-  { etiqueta: 'NUEVO', especificacion: 'Especificacion', id: 15, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe3, tipo: "cafe" },
+  { etiqueta: 'CAFE PREMIUM', especificacion: 'algo del prod', id: 1, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe3, tipo: "libro", subcategoria: "novela" },
+  { etiqueta: 'OFERTA', especificacion: 'Especificacion', id: 2, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe8, tipo: "libro", subcategoria: "novela" },
+  { etiqueta: 'NUEVO', especificacion: 'Especificacion', id: 3, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe5, tipo: "libro", subcategoria: "ciencia-ficcion" },
+  { etiqueta: 'DESTACADO', especificacion: 'Especificacion', id: 4, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe1, tipo: "libro", subcategoria: "novela" },
+  { etiqueta: 'OFERTA ESPECIAL', especificacion: 'Especificacion', id: 5, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe3, tipo: "libro", subcategoria: "comic" },
+  { etiqueta: 'POPULAR', especificacion: 'Especificacion', id: 6, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe2, tipo: "libro", subcategoria: "policial" },
+  { etiqueta: 'NUEVO', especificacion: 'Especificacion', id: 7, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe9, tipo: "libro", subcategoria: "ciencia-ficcion" },
+  { etiqueta: 'DESTACADO', especificacion: 'Especificacion', id: 8, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe7, tipo: "libro", subcategoria: "comic" },
+  { etiqueta: 'OFERTA', especificacion: 'Especificacion', id: 9, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe4, tipo: "libro", subcategoria: "novela" },
+  { etiqueta: 'POPULAR', especificacion: 'Especificacion', id: 10, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe6, tipo: "libro", subcategoria: "policial" },
+  { etiqueta: 'NUEVO', especificacion: 'Especificacion', id: 11, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe3, tipo: "cafe", subcategoria: "premium" },
+  { etiqueta: 'DESTACADO', especificacion: 'Especificacion', id: 12, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe8, tipo: "cafe", subcategoria: "grano" },
+  { etiqueta: 'OFERTA ESPECIAL', especificacion: 'Especificacion', id: 13, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe5, tipo: "cafe", subcategoria: "molido" },
+  { etiqueta: 'POPULAR', especificacion: 'Especificacion', id: 14, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe1, tipo: "cafe", subcategoria: "origen" },
+  { etiqueta: 'NUEVO', especificacion: 'Especificacion', id: 15, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe3, tipo: "cafe", subcategoria: "capsula" },
 ]
 
 // cuando se active la paginación,hayque reemplazar `productos` por
 // `productosMostrados` en el .map() y descomentar las flechas de navegación maldito pe causa.
 
 export default function ListaProductos({ filtroRuta }) {
-  const [, navigate] = useLocation();
+  const [filtroEspecifico, setFiltroEspecifico] = useState('todos');
 
-  const productosFiltrados = filtroRuta === 'libro'
+  const productosPorAmbito = filtroRuta === 'libro'
     ? productos.filter((producto) => producto.tipo === 'libro')
     : filtroRuta === 'cafe'
       ? productos.filter((producto) => producto.tipo === 'cafe')
       : productos;
+
+  const productosFiltrados = filtroEspecifico === 'todos'
+    ? productosPorAmbito
+    : productosPorAmbito.filter((producto) => producto.subcategoria === filtroEspecifico);
 
   function mostrar(productosParaMostrar) {
     return productosParaMostrar.map((producto) => (
@@ -99,7 +102,35 @@ export default function ListaProductos({ filtroRuta }) {
 
   const productosPorPagina = esMobile ? 9 : 15;
 
-  const filtroSelect = filtroRuta === 'cafe' ? '4' : filtroRuta === 'libro' ? '11' : '16';
+  const opcionesFiltro = filtroRuta === 'cafe'
+    ? [
+      { value: 'todos', label: 'TODOS LOS CAFÉS' },
+      { value: 'premium', label: 'PREMIUM' },
+      { value: 'grano', label: 'EN GRANO' },
+      { value: 'molido', label: 'MOLIDO' },
+      { value: 'capsula', label: 'CÁPSULA' },
+      { value: 'origen', label: 'DE ORIGEN' },
+    ]
+    : filtroRuta === 'libro'
+      ? [
+        { value: 'todos', label: 'TODOS LOS LIBROS' },
+        { value: 'novela', label: 'NOVELAS' },
+        { value: 'ciencia-ficcion', label: 'DE CIENCIA FICCIÓN' },
+        { value: 'comic', label: 'CÓMICS' },
+        { value: 'policial', label: 'POLICIALES' },
+      ]
+      : [
+        { value: 'todos', label: 'TODOS LOS PRODUCTOS' },
+        { value: 'premium', label: 'PREMIUM' },
+        { value: 'grano', label: 'EN GRANO' },
+        { value: 'molido', label: 'MOLIDO' },
+        { value: 'capsula', label: 'CÁPSULA' },
+        { value: 'origen', label: 'DE ORIGEN' },
+        { value: 'novela', label: 'NOVELAS' },
+        { value: 'ciencia-ficcion', label: 'DE CIENCIA FICCIÓN' },
+        { value: 'comic', label: 'CÓMICS' },
+        { value: 'policial', label: 'POLICIALES' },
+      ];
 
   const {
     productosMostrados,
@@ -126,30 +157,14 @@ export default function ListaProductos({ filtroRuta }) {
             <div className="filtro-select-wrapper">
               <select
                 className="FiltroDeLista"
-                value={filtroSelect}
-                onChange={(event) => {
-                  const filtro = event.target.value;
-                  if (filtro === '4') navigate('/catalogo/cafe');
-                  if (filtro === '11') navigate('/catalogo/libro');
-                  if (filtro === '16') navigate('/catalogo/todos');
-                }}
+                value={filtroEspecifico}
+                onChange={(event) => setFiltroEspecifico(event.target.value)}
               >
-                <option value="1">MÁS RECIENTES</option>
-                <option value="2">MÁS VENDIDOS</option>
-                <option value="3">NOVEDADES</option>
-                <option value="4">CAFÉ</option>
-                <option value="5">PREMIUM</option>
-                <option value="6">EN GRANO</option>
-                <option value="7">MOLIDO</option>
-                <option value="8">CÁPSULA</option>
-                <option value="9">DE ORIGEN</option>
-                <option value="10">COMBOS ESPECIALES</option>
-                <option value="11">LIBROS</option>
-                <option value="12">NOVELAS</option>
-                <option value="13">DE CIENCIA FICCIÓN</option>
-                <option value="14">CÓMICS</option>
-                <option value="15">POLICIALES</option>
-                <option value="16">TODOS</option>
+                {opcionesFiltro.map((opcion) => (
+                  <option key={opcion.value} value={opcion.value}>
+                    {opcion.label}
+                  </option>
+                ))}
               </select>
             </div>
           </div>

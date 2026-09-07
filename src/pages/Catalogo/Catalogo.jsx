@@ -39,7 +39,7 @@ export default function Catalogo() {
 
       <div className="container-productos">
         <div className="productos">
-          <ListaProductos filtroRuta={filtroActual} />
+          <ListaProductos key={filtroActual} filtroRuta={filtroActual} />
         </div>
       </div>
     </div>
