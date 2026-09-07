@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './ListaProd.css';
 import useCarrusel from './hooksCatalogo/useCarrousel';
-import { useRoute } from 'wouter';
+import { useLocation } from 'wouter';
 
 import { AiOutlinePlusCircle } from 'react-icons/ai'
 import { GoChevronRight, GoChevronLeft, } from "react-icons/go";
@@ -36,12 +36,17 @@ const productos = [
 // cuando se active la paginación,hayque reemplazar `productos` por
 // `productosMostrados` en el .map() y descomentar las flechas de navegación maldito pe causa.
 
-export default function ListaProductos() {
-  const [, route] = useRoute(':vista/:filtro'); // pagina/catalogo/libros
-  function mostrar() {
-    if (route.filtro == "todos") {
-      return (
-        productos.map((producto) => (
+export default function ListaProductos({ filtroRuta }) {
+  const [, navigate] = useLocation();
+
+  const productosFiltrados = filtroRuta === 'libro'
+    ? productos.filter((producto) => producto.tipo === 'libro')
+    : filtroRuta === 'cafe'
+      ? productos.filter((producto) => producto.tipo === 'cafe')
+      : productos;
+
+  function mostrar(productosParaMostrar) {
+    return productosParaMostrar.map((producto) => (
           <div key={producto.id} className="lista-productos_card">
 
             <div className="card-imagen-contenedor">
@@ -66,38 +71,7 @@ export default function ListaProductos() {
 
           </div>
         ))
-
-      )
-    } else {
-      return (
-        productos.filter((p) => p.tipo == route.filtro).map((producto) => (
-          <div key={producto.id} className="lista-productos_card">
-
-            <div className="card-imagen-contenedor">
-              {producto.etiqueta && (
-                <span className="card-etiqueta">{producto.etiqueta}</span>
-              )}
-              {producto.imagen && (
-                <img className="card-imagen" src={producto.imagen} alt={producto.nombre} />
-              )}
-            </div>
-
-            <div className="card-info">
-              <div className="card-info-texto">
-                <h3 className="card-nombre">{producto.nombre}</h3>
-                <span className="card-especificacion">{producto.especificacion}</span>
-                <span className="card-precio">${producto.precio}</span>
-              </div>
-              <button className="card-btn-agregar">
-                <AiOutlinePlusCircle size={35} color="#DCDACE" />
-              </button>
-            </div>
-          </div>
-        ))
-      )
-    }
   }
-  console.log(route);
 
   const [animando, setAnimando] = useState(false);
   // const esMobileRef = useRef(window.matchMedia('(max-width: 480px)').matches);
@@ -125,13 +99,15 @@ export default function ListaProductos() {
 
   const productosPorPagina = esMobile ? 9 : 15;
 
+  const filtroSelect = filtroRuta === 'cafe' ? '4' : filtroRuta === 'libro' ? '11' : '16';
+
   const {
-    // productosMostrados,
+    productosMostrados,
     irAtras,
     irAdelante,
     hayPaginaAnterior,
     hayPaginaSiguiente,
-  } = useCarrusel(productos, productosPorPagina);
+  } = useCarrusel(productosFiltrados, productosPorPagina);
 
   return (
 
@@ -141,14 +117,23 @@ export default function ListaProductos() {
 
         <div className="filtro-contenedor">
           <p className="texto-mostrando desktop-only" style={{ color: 'white' }}>
-            PAGINA 1/{productos.length} - <b>MOSTRANDO</b>: {productos.length} PRODUCTOS
+            PAGINA 1/{Math.ceil(productosFiltrados.length / productosPorPagina)} - <b>MOSTRANDO</b>: {productosFiltrados.length} PRODUCTOS
           </p>
           <div className="filtro-select">
 
             <span style={{ color: 'white' }}>ORDENAR POR:</span>
 
             <div className="filtro-select-wrapper">
-              <select className="FiltroDeLista">
+              <select
+                className="FiltroDeLista"
+                value={filtroSelect}
+                onChange={(event) => {
+                  const filtro = event.target.value;
+                  if (filtro === '4') navigate('/catalogo/cafe');
+                  if (filtro === '11') navigate('/catalogo/libro');
+                  if (filtro === '16') navigate('/catalogo/todos');
+                }}
+              >
                 <option value="1">MÁS RECIENTES</option>
                 <option value="2">MÁS VENDIDOS</option>
                 <option value="3">NOVEDADES</option>
@@ -178,11 +163,11 @@ export default function ListaProductos() {
         )} 
 
         <div className={`prod-grid ${animando ? 'animando' : ''}`}>
-          {mostrar()}
+          {mostrar(productosMostrados)}
         </div>
 
         <p className="texto-mostrando mobile-only">
-          PAGINA 1/{productos.length} - <b>MOSTRANDO</b>: {productos.length} PRODUCTOS
+          PAGINA 1/{Math.ceil(productosFiltrados.length / productosPorPagina)} - <b>MOSTRANDO</b>: {productosFiltrados.length} PRODUCTOS
         </p>
 
         {/* Flechita de la derecha deshabilitada hasta terminar la etapa de enmaquebodrio — descomentar al activar paginación */}

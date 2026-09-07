@@ -8,11 +8,12 @@ import {useRoute,useLocation} from 'wouter';
   
 
 export default function Catalogo() {
-  const [, route] = useRoute(':vista/:filtro')
-  const [setLocation] = useLocation()
+  const [, route] = useRoute('/:vista/:filtro?')
+  const [, setLocation] = useLocation()
+  const filtroActual = route?.filtro || "todos"
 
   function clase(tipo) {
-    if (route.filtro == tipo) {
+    if (filtroActual == tipo) {
       return ("btn active")
     } else {
       return ("btn")
@@ -38,7 +39,7 @@ export default function Catalogo() {
 
       <div className="container-productos">
         <div className="productos">
-          <ListaProductos />
+          <ListaProductos filtroRuta={filtroActual} />
         </div>
       </div>
     </div>
