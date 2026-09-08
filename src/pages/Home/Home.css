@@ -277,6 +277,8 @@
   display: flex;
   flex: 1;
   flex-direction: column;
+  color: inherit;
+  text-decoration: none;
   background-color: #523325;
   margin: 20px 40px;
   border-radius: 10px 10px 0 10px;

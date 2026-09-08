@@ -1,42 +1,36 @@
 import { useState, useEffect } from 'react';
 import './ListaProd.css';
 import useCarrusel from './hooksCatalogo/useCarrousel';
+import obtenerProductos from '../../context/obtenerProductos';
+import { Link } from 'wouter';
 
 import { AiOutlinePlusCircle } from 'react-icons/ai'
 import { GoChevronRight, GoChevronLeft, } from "react-icons/go";
-import cafe1 from '../../assets/catalogo/productos/colombia.webp'
-import cafe2 from '../../assets/catalogo/productos/expresso.webp'
-import cafe3 from '../../assets/catalogo/productos/cositas.webp'
-import cafe4 from '../../assets/catalogo/productos/georgeOrwel.webp'
-import cafe5 from '../../assets/catalogo/productos/habitosAtom.webp'
-import cafe6 from '../../assets/catalogo/productos/maus.webp'
-import cafe7 from '../../assets/catalogo/productos/unCafe.webp'
-import cafe8 from '../../assets/catalogo/productos/verdeYblanco.webp'
-import cafe9 from '../../assets/catalogo/productos/laInvencion.webp'
-
-const productos = [
-  { etiqueta: 'CAFE PREMIUM', especificacion: 'algo del prod', id: 1, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe3, tipo: "libro", subcategoria: "novela" },
-  { etiqueta: 'OFERTA', especificacion: 'Especificacion', id: 2, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe8, tipo: "libro", subcategoria: "novela" },
-  { etiqueta: 'NUEVO', especificacion: 'Especificacion', id: 3, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe5, tipo: "libro", subcategoria: "ciencia-ficcion" },
-  { etiqueta: 'DESTACADO', especificacion: 'Especificacion', id: 4, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe1, tipo: "libro", subcategoria: "novela" },
-  { etiqueta: 'OFERTA ESPECIAL', especificacion: 'Especificacion', id: 5, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe3, tipo: "libro", subcategoria: "comic" },
-  { etiqueta: 'POPULAR', especificacion: 'Especificacion', id: 6, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe2, tipo: "libro", subcategoria: "policial" },
-  { etiqueta: 'NUEVO', especificacion: 'Especificacion', id: 7, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe9, tipo: "libro", subcategoria: "ciencia-ficcion" },
-  { etiqueta: 'DESTACADO', especificacion: 'Especificacion', id: 8, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe7, tipo: "libro", subcategoria: "comic" },
-  { etiqueta: 'OFERTA', especificacion: 'Especificacion', id: 9, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe4, tipo: "libro", subcategoria: "novela" },
-  { etiqueta: 'POPULAR', especificacion: 'Especificacion', id: 10, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe6, tipo: "libro", subcategoria: "policial" },
-  { etiqueta: 'NUEVO', especificacion: 'Especificacion', id: 11, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe3, tipo: "cafe", subcategoria: "premium" },
-  { etiqueta: 'DESTACADO', especificacion: 'Especificacion', id: 12, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe8, tipo: "cafe", subcategoria: "grano" },
-  { etiqueta: 'OFERTA ESPECIAL', especificacion: 'Especificacion', id: 13, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe5, tipo: "cafe", subcategoria: "molido" },
-  { etiqueta: 'POPULAR', especificacion: 'Especificacion', id: 14, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe1, tipo: "cafe", subcategoria: "origen" },
-  { etiqueta: 'NUEVO', especificacion: 'Especificacion', id: 15, nombre: 'Nombre del Cafe', precio: '100.000', imagen: cafe3, tipo: "cafe", subcategoria: "capsula" },
-]
-
-// cuando se active la paginación,hayque reemplazar `productos` por
-// `productosMostrados` en el .map() y descomentar las flechas de navegación maldito pe causa.
 
 export default function ListaProductos({ filtroRuta }) {
+  const [productos, setProductos] = useState([]);
+  const [cargando, setCargando] = useState(true);
+  const [error, setError] = useState('');
   const [filtroEspecifico, setFiltroEspecifico] = useState('todos');
+
+  useEffect(() => {
+    let activo = true;
+
+    obtenerProductos()
+      .then((productosObtenidos) => {
+        if (activo) setProductos(productosObtenidos);
+      })
+      .catch(() => {
+        if (activo) setError('No se pudieron cargar los productos.');
+      })
+      .finally(() => {
+        if (activo) setCargando(false);
+      });
+
+    return () => {
+      activo = false;
+    };
+  }, []);
 
   const productosPorAmbito = filtroRuta === 'libro'
     ? productos.filter((producto) => producto.tipo === 'libro')
@@ -50,7 +44,7 @@ export default function ListaProductos({ filtroRuta }) {
 
   function mostrar(productosParaMostrar) {
     return productosParaMostrar.map((producto) => (
-          <div key={producto.id} className="lista-productos_card">
+          <Link key={producto.id} href={producto.tipo === 'cafe' ? `/productoCafe/${producto.id}` : `/productoLibro/${producto.id}`} className="lista-productos_card">
 
             <div className="card-imagen-contenedor">
               {producto.etiqueta && (
@@ -72,7 +66,7 @@ export default function ListaProductos({ filtroRuta }) {
               </button>
             </div>
 
-          </div>
+          </Link>
         ))
   }
 
@@ -139,6 +133,14 @@ export default function ListaProductos({ filtroRuta }) {
     hayPaginaAnterior,
     hayPaginaSiguiente,
   } = useCarrusel(productosFiltrados, productosPorPagina);
+
+  if (cargando) {
+    return <p className="texto-mostrando">CARGANDO PRODUCTOS...</p>;
+  }
+
+  if (error) {
+    return <p className="texto-mostrando">{error}</p>;
+  }
 
   return (
 

@@ -24,8 +24,8 @@ export default function App() {
         <Route path="/faqs" component={PreguntasFrecuentes} />
         <Route path="/terminos" component={TerminosYCondiciones} />
         <Route path="/carrito" component={Carrito} />
-          <Route path="/productoCafe" component={ProductoCafe} />
-          <Route path="/productoLibro" component={ProductoLibro} />
+          <Route path="/productoCafe/:id?" component={ProductoCafe} />
+          <Route path="/productoLibro/:id?" component={ProductoLibro} />
         <Route path="/" component={Home} />
         <Route>404: ¡Página no encontrada!</Route>
       </Switch>

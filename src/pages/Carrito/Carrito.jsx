@@ -44,7 +44,7 @@ function Carrito() {
     <section className='Carrito'>
       <ProductosCarrito productos={productosCarrito} setProdSeleccionado={setProdSeleccionado} />
       <ProductoCarrito prodSeleccionado={prodSeleccionado} borrarDelCarrito={borrarDelCarrito} handleAdd={handleAdd} handleSustrac={handleSustract} />
-      <ResumenCarrito productosCarrito={productosCarrito} />
+      <ResumenCarrito productosCarrito={productosCarrito} onCompraFinalizada={() => alert('Compra registrada correctamente.')} />
     </section>
   )
 }

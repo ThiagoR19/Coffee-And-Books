@@ -18,12 +18,12 @@ import obtenerPodio from "../../context/obtenerPodio"
 import iconoFlecha from '../../assets/icono-flecha.svg'
 
 import './Home.css'
-import { useLocation } from "wouter"
+import { Link, useLocation } from "wouter"
 
 import db from '../../db/db.json'
 
 function Home() {
-  const [setLocation] = useLocation();
+  const [, setLocation] = useLocation();
   const top3 = obtenerPodio(db.Productos)
 
   return (
@@ -99,9 +99,12 @@ function Home() {
 export default Home
 
 function ProductoTop({ producto }) {
-  console.log(producto)
+  const detallePath = producto.id_cat === 1
+    ? `/productoCafe/${producto.id_prod}`
+    : `/productoLibro/${producto.id_prod}`;
+
   return (
-    < div className="masVendido__div" >
+    <Link href={detallePath} className="masVendido__div" >
       <div className="masVendido__div-cartel cartel2"><h6>NUEVO</h6></div>
       <img className="masVendido__div-img" src={cafeEjemplo2} alt="" />
       <div className="masVendido__div-div">
@@ -112,6 +115,6 @@ function ProductoTop({ producto }) {
         </div>
         <CiCirclePlus className="iconoPlus" />
       </div>
-    </div >
+    </Link >
   )
 } 

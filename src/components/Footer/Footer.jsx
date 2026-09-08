@@ -12,9 +12,7 @@ const INFO_LINKS = [
 
 const CATEGORY_LINKS = [
   { label: "Libros", path: "/catalogo/libro" },
-  // { label: "Libros", path: "/productoLibro" },
   { label: "Cafés", path: "/catalogo/cafe" },
-  //{ label: "Cafés", path: "/productoCafe" },
   { label: "Novedades", path: "/catalogo" },
   { label: "Ofertas", path: "/home" },
 ];

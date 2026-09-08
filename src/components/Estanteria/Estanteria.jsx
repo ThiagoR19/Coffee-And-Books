@@ -1,23 +1,55 @@
+import { useEffect, useState } from 'react'
+import { Link } from 'wouter'
 import estanteria from '../../assets/estanteria/Estanteria2.svg'
 import cafeEstanteria from '../../assets/estanteria/imagen-cafe-estanteria.webp'
+import obtenerProductos from '../../context/obtenerProductos'
 
 import lineEstanteria from '../../assets/estanteria/imagen-line-estanteria.webp'
 import sloganEstanteria from '../../assets/home/imagen-slogan-estanteria.webp'
-import cafeEjemplo from '../../assets/coffees/coffee-example1.webp'
-import cafeEjemplo4 from '../../assets/coffees/coffee-example4.webp'
-import cafeEjemplo5 from '../../assets/coffees/coffee-example5.webp'
-import cafeEjemplo6 from '../../assets/coffees/coffee-example6.webp'
-import cafeEjemplo7 from '../../assets/coffees/coffee-example7.webp'
-import cafeEjemplo8 from '../../assets/coffees/coffee-example8.webp'
-
-import libroEjemplo1 from '../../assets/books/libro-example1.webp'
-import libroEjemplo2 from '../../assets/books/libro-example2.webp'
-import libroEjemplo3 from '../../assets/books/libro-example3.webp'
-import libroEjemplo4 from '../../assets/books/libro-example4.webp'
 
 import './Estanteria.css'
 
 function Estanteria() {
+  const [productos, setProductos] = useState([])
+
+  useEffect(() => {
+    let activo = true
+
+    obtenerProductos().then((productosObtenidos) => {
+      if (activo) setProductos(productosObtenidos)
+    })
+
+    return () => {
+      activo = false
+    }
+  }, [])
+
+  const masVendidos = [...productos]
+    .sort((a, b) => b.vendidos - a.vendidos)
+    .slice(0, 4)
+  const nuevos = [...productos]
+    .sort((a, b) => new Date(b.fecha) - new Date(a.fecha))
+    .slice(0, 4)
+  const enDescuento = productos.filter((producto) => producto.enDescuento).slice(0, 6)
+
+  const rutaDetalle = (producto) => producto.tipo === 'cafe'
+    ? `/productoCafe/${producto.id}`
+    : `/productoLibro/${producto.id}`
+
+  const mostrarProductos = (productosDelGrupo) => productosDelGrupo.map((producto) => (
+    <Link
+      key={producto.id}
+      href={rutaDetalle(producto)}
+      className='estanteria__hero-div-div-div-link'
+    >
+      <img
+        className='estanteria__hero-div-div-div-img'
+        src={producto.imagen}
+        alt={producto.nombre}
+      />
+    </Link>
+  ))
+
   return (
     <article id="estanteria">
       <h2 className='estanteria__h2'>La estantería del mes</h2>
@@ -28,28 +60,17 @@ function Estanteria() {
           <img className='estanteria__hero-div-img' src={estanteria} alt="" />
           <div className='estanteria__hero-div-div'>
             <div className='estanteria__hero-div-div-div nuevos'>
-              <img className='estanteria__hero-div-div-div-img' src={cafeEjemplo4} alt="" />
-              <img className='estanteria__hero-div-div-div-img' src={cafeEjemplo} alt="" />
-              <img className='estanteria__hero-div-div-div-img' src={cafeEjemplo5} alt="" />
-              <img className='estanteria__hero-div-div-div-img' src={cafeEjemplo6} alt="" />
+              {mostrarProductos(nuevos)}
             </div>
           </div>
           <div className='estanteria__hero-div-div'>
             <div className='estanteria__hero-div-div-div enDescuento'>
-              <img className='estanteria__hero-div-div-div-img' src={cafeEjemplo} alt="" />
-              <img className='estanteria__hero-div-div-div-img' src={cafeEjemplo5} alt="" />
-              <img className='estanteria__hero-div-div-div-img' src={cafeEjemplo6} alt="" />
-              <img className='estanteria__hero-div-div-div-img' src={cafeEjemplo7} alt="" />
-              <img className='estanteria__hero-div-div-div-img' src={cafeEjemplo8} alt="" />
-              <img className='estanteria__hero-div-div-div-img' src={cafeEjemplo4} alt="" />
+              {mostrarProductos(enDescuento)}
             </div>
           </div>
           <div className='estanteria__hero-div-div'>
             <div className='estanteria__hero-div-div-div masPedidos'>
-              <img className='estanteria__hero-div-div-div-img' src={libroEjemplo1} alt="" />
-              <img className='estanteria__hero-div-div-div-img' src={libroEjemplo2} alt="" />
-              <img className='estanteria__hero-div-div-div-img' src={libroEjemplo3} alt="" />
-              <img className='estanteria__hero-div-div-div-img' src={libroEjemplo4} alt="" />
+              {mostrarProductos(masVendidos)}
             </div>
           </div>
           <img className='estanteria__hero-img' src={cafeEstanteria} alt="" />
