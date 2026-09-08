@@ -1,80 +1,7 @@
-<<<<<<< HEAD
-import { useState, useEffect } from 'react';
-=======
 import { useEffect, useMemo, useState } from 'react';
->>>>>>> main
 import './ListaProd.css';
 import useCarrusel from './hooksCatalogo/useCarrousel';
-import obtenerProductos from '../../context/obtenerProductos';
-import { Link } from 'wouter';
 
-<<<<<<< HEAD
-import { AiOutlinePlusCircle } from 'react-icons/ai'
-import { GoChevronRight, GoChevronLeft, } from "react-icons/go";
-
-export default function ListaProductos({ filtroRuta }) {
-  const [productos, setProductos] = useState([]);
-  const [cargando, setCargando] = useState(true);
-  const [error, setError] = useState('');
-  const [filtroEspecifico, setFiltroEspecifico] = useState('todos');
-
-  useEffect(() => {
-    let activo = true;
-
-    obtenerProductos()
-      .then((productosObtenidos) => {
-        if (activo) setProductos(productosObtenidos);
-      })
-      .catch(() => {
-        if (activo) setError('No se pudieron cargar los productos.');
-      })
-      .finally(() => {
-        if (activo) setCargando(false);
-      });
-
-    return () => {
-      activo = false;
-    };
-  }, []);
-
-  const productosPorAmbito = filtroRuta === 'libro'
-    ? productos.filter((producto) => producto.tipo === 'libro')
-    : filtroRuta === 'cafe'
-      ? productos.filter((producto) => producto.tipo === 'cafe')
-      : productos;
-
-  const productosFiltrados = filtroEspecifico === 'todos'
-    ? productosPorAmbito
-    : productosPorAmbito.filter((producto) => producto.subcategoria === filtroEspecifico);
-
-  function mostrar(productosParaMostrar) {
-    return productosParaMostrar.map((producto) => (
-          <Link key={producto.id} href={producto.tipo === 'cafe' ? `/productoCafe/${producto.id}` : `/productoLibro/${producto.id}`} className="lista-productos_card">
-
-            <div className="card-imagen-contenedor">
-              {producto.etiqueta && (
-                <span className="card-etiqueta">{producto.etiqueta}</span>
-              )}
-              {producto.imagen && (
-                <img className="card-imagen" src={producto.imagen} alt={producto.nombre} />
-              )}
-            </div>
-
-            <div className="card-info">
-              <div className="card-info-texto">
-                <h3 className="card-nombre">{producto.nombre}</h3>
-                <span className="card-especificacion">{producto.especificacion}</span>
-                <span className="card-precio">${producto.precio}</span>
-              </div>
-              <button className="card-btn-agregar">
-                <AiOutlinePlusCircle size={35} color="#DCDACE" />
-              </button>
-            </div>
-
-          </Link>
-        ))
-  }
-=======
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 import { GoChevronRight, GoChevronLeft } from 'react-icons/go';
 import { formatPrice, useShop } from '../../context/ShopContext';
@@ -97,29 +24,12 @@ function ordenarProductos(productos, orden) {
   if (orden === 'policiales') return copia.filter((producto) => producto.libro?.genero?.toLowerCase().includes('policial'));
   return copia;
 }
->>>>>>> main
 
 export default function ListaProductos({ categoryFilter = 'todos' }) {
   const { filteredProducts, isLoading, error, addToCart, getProductImage } = useShop();
   const [animando, setAnimando] = useState(false);
-<<<<<<< HEAD
-  // const esMobileRef = useRef(window.matchMedia('(max-width: 480px)').matches);
-  // const [esMobile, setEsMobile] = useState(esMobileRef.current);
-  const [esMobile, setEsMobile] = useState(() => window.matchMedia('(max-width: 480px)').matches);
-
-
-  // Hook conservado — este lo usamos cuando se active la paginación, por ahora no hace nada
-  const cambiarPagina = (accion) => {
-    setAnimando(true);
-    setTimeout(() => {
-      accion();
-      setAnimando(false);
-    }, 300);
-  }
-=======
   const [orden, setOrden] = useState('todos');
   const [esMobile, setEsMobile] = useState(() => window.matchMedia('(max-width: 480px)').matches);
->>>>>>> main
 
   useEffect(() => {
     const mq = window.matchMedia('(max-width: 480px)');
@@ -138,53 +48,6 @@ export default function ListaProductos({ categoryFilter = 'todos' }) {
   const productosPorPagina = esMobile ? 9 : 15;
   const { productosMostrados, irAtras, irAdelante, hayPaginaAnterior, hayPaginaSiguiente } = useCarrusel(productosFiltrados, productosPorPagina);
 
-<<<<<<< HEAD
-  const opcionesFiltro = filtroRuta === 'cafe'
-    ? [
-      { value: 'todos', label: 'TODOS LOS CAFÉS' },
-      { value: 'premium', label: 'PREMIUM' },
-      { value: 'grano', label: 'EN GRANO' },
-      { value: 'molido', label: 'MOLIDO' },
-      { value: 'capsula', label: 'CÁPSULA' },
-      { value: 'origen', label: 'DE ORIGEN' },
-    ]
-    : filtroRuta === 'libro'
-      ? [
-        { value: 'todos', label: 'TODOS LOS LIBROS' },
-        { value: 'novela', label: 'NOVELAS' },
-        { value: 'ciencia-ficcion', label: 'DE CIENCIA FICCIÓN' },
-        { value: 'comic', label: 'CÓMICS' },
-        { value: 'policial', label: 'POLICIALES' },
-      ]
-      : [
-        { value: 'todos', label: 'TODOS LOS PRODUCTOS' },
-        { value: 'premium', label: 'PREMIUM' },
-        { value: 'grano', label: 'EN GRANO' },
-        { value: 'molido', label: 'MOLIDO' },
-        { value: 'capsula', label: 'CÁPSULA' },
-        { value: 'origen', label: 'DE ORIGEN' },
-        { value: 'novela', label: 'NOVELAS' },
-        { value: 'ciencia-ficcion', label: 'DE CIENCIA FICCIÓN' },
-        { value: 'comic', label: 'CÓMICS' },
-        { value: 'policial', label: 'POLICIALES' },
-      ];
-
-  const {
-    productosMostrados,
-    irAtras,
-    irAdelante,
-    hayPaginaAnterior,
-    hayPaginaSiguiente,
-  } = useCarrusel(productosFiltrados, productosPorPagina);
-
-  if (cargando) {
-    return <p className="texto-mostrando">CARGANDO PRODUCTOS...</p>;
-  }
-
-  if (error) {
-    return <p className="texto-mostrando">{error}</p>;
-  }
-=======
   const cambiarPagina = (accion) => {
     setAnimando(true);
     window.setTimeout(() => {
@@ -197,34 +60,17 @@ export default function ListaProductos({ categoryFilter = 'todos' }) {
 
   if (isLoading) return <p className="catalogo-estado">Cargando productos desde Google Sheets…</p>;
   if (error) return <p className="catalogo-estado">{error}</p>;
->>>>>>> main
 
   return (
     <div className="main-lista">
       <div className="lista-productos">
         <div className="filtro-contenedor">
           <p className="texto-mostrando desktop-only" style={{ color: 'white' }}>
-<<<<<<< HEAD
-            PAGINA 1/{Math.ceil(productosFiltrados.length / productosPorPagina)} - <b>MOSTRANDO</b>: {productosFiltrados.length} PRODUCTOS
-=======
             MOSTRANDO: <b>{cantidad}</b> PRODUCTOS
->>>>>>> main
           </p>
           <div className="filtro-select">
             <span style={{ color: 'white' }}>ORDENAR POR:</span>
             <div className="filtro-select-wrapper">
-<<<<<<< HEAD
-              <select
-                className="FiltroDeLista"
-                value={filtroEspecifico}
-                onChange={(event) => setFiltroEspecifico(event.target.value)}
-              >
-                {opcionesFiltro.map((opcion) => (
-                  <option key={opcion.value} value={opcion.value}>
-                    {opcion.label}
-                  </option>
-                ))}
-=======
               <select className="FiltroDeLista" value={orden} onChange={(event) => setOrden(event.target.value)}>
                 <option value="todos">TODOS</option>
                 <option value="recientes">MÁS RECIENTES</option>
@@ -242,35 +88,11 @@ export default function ListaProductos({ categoryFilter = 'todos' }) {
                 <option value="ciencia">DE CIENCIA FICCIÓN</option>
                 <option value="comics">CÓMICS</option>
                 <option value="policiales">POLICIALES</option>
->>>>>>> main
               </select>
             </div>
           </div>
         </div>
 
-<<<<<<< HEAD
-        {/* Flechitas pro max deshabilitadas hasta terminar la etapa de enmaquebodrio — descomentar al activar paginación */}
-        {hayPaginaAnterior && (
-        <button className="prod-flechitas izquierda" onClick={() => cambiarPagina(irAtras)}>
-          <GoChevronLeft size={sizeFlechas} />
-        </button>
-        )} 
-
-        <div className={`prod-grid ${animando ? 'animando' : ''}`}>
-          {mostrar(productosMostrados)}
-        </div>
-
-        <p className="texto-mostrando mobile-only">
-          PAGINA 1/{Math.ceil(productosFiltrados.length / productosPorPagina)} - <b>MOSTRANDO</b>: {productosFiltrados.length} PRODUCTOS
-        </p>
-
-        {/* Flechita de la derecha deshabilitada hasta terminar la etapa de enmaquebodrio — descomentar al activar paginación */}
-        {hayPaginaSiguiente && (
-        <button className="prod-flechitas derecha" onClick={() => cambiarPagina(irAdelante)}>
-          <GoChevronRight size={sizeFlechas} />
-        </button>
-        )} 
-=======
         {hayPaginaAnterior && (
           <button className="prod-flechitas izquierda" onClick={() => cambiarPagina(irAtras)} aria-label="Página anterior">
             <GoChevronLeft size={esMobile ? 40 : 110} />
@@ -309,7 +131,6 @@ export default function ListaProductos({ categoryFilter = 'todos' }) {
             <GoChevronRight size={esMobile ? 40 : 110} />
           </button>
         )}
->>>>>>> main
       </div>
     </div>
   );
