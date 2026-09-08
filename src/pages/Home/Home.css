@@ -81,6 +81,13 @@
   padding: 10px;
 }
 
+.hero__div-button {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .hero__div-button:first-child {
   background: linear-gradient(to right, #005E55, #243836);
   padding: 10px 30px;
@@ -149,17 +156,17 @@
 }
 
 .explora__div-div:first-child {
-  background-image: url(../../assets/fondos/fondo-tarjeta1.png);
+  background-image: url(../../assets/fondos/fondo-tarjeta1.webp);
   margin: 10px 10px 10px 0;
 }
 
 .explora__div-div:nth-child(2) {
-  background-image: url(../../assets/fondos/fondo-tarjeta2.png);
+  background-image: url(../../assets/fondos/fondo-tarjeta2.webp);
 }
 
 .explora__div-div:last-child {
   margin: 10px 0px 10px 10px;
-  background-image: url(../../assets/fondos/fondo-tarjeta3.png);
+  background-image: url(../../assets/fondos/fondo-tarjeta3.webp);
 }
 
 .explora__div-div-h3 {
@@ -190,7 +197,7 @@
   border: 2px solid transparent;
   background-image:
     linear-gradient(to right, rgba(89, 58, 43, 0.2), rgba(73, 43, 27, 0.2)),
-    url('../../assets/fondos/img-fondo-rect3.png'),
+    url('../../assets/fondos/img-fondo-rect3.webp'),
     linear-gradient(to right, #FFECDE, #998E85);
   background-position: center;
   background-repeat: no-repeat;
@@ -315,6 +322,22 @@
   font-size: 60px;
 }
 
+.iconoPlus-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #DCDACE;
+  cursor: pointer;
+}
+
+.iconoPlus-button:hover {
+  background-color: rgba(255, 236, 222, 0.12);
+}
+
 .masVendido__div-div-div-h5 {
   font-family: 'Momo Trust Sans';
   font-size: 27px;
@@ -360,7 +383,7 @@
 }
 
 #maderaEstanteria {
-  background-image: url('../../assets/imagen-madera-estanteria.png');
+  background-image: url('../../assets/estanteria/imagen-madera-estanteria.svg');
   background-position: center;
   background-size: cover;
   display: flex;
@@ -670,7 +693,7 @@
     flex-direction: column;
     padding: 20px;
     text-align: center;
-    background-image: url(/src/assets/fondos/fondo-combos-home-responsive.svg);
+    background-image: url('../../assets/fondos/fondo-combos-home-responsive.svg');
     border-radius: 10px;
     border: 1px solid white;
   }

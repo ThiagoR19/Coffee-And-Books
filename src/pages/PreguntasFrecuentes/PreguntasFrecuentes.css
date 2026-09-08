@@ -12,8 +12,9 @@
 
 /*--------------CONTENEDOR---------------------------*/
 .container-faqs {
-    background-image: url('../../assets/fondos/fondo3.1.0.png');
-    background-size: cover;
+    background-image: url('../../assets/fondos/fondo3.1.0.webp');
+    background-size: 100% auto;
+    background-repeat: repeat-y;
     background-position: center;
     padding-top: clamp(20px, 4vw, 50px);
     padding-bottom: 40px;
@@ -126,6 +127,10 @@
     width: 70px;
     height: 70px;
     flex-shrink: 0;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
 }
 
 .faq-answer {
@@ -134,12 +139,14 @@
     overflow: hidden;
     transform: translateY(-10px);
     transition: max-height 0.35s ease, opacity 0.35s ease, transform 0.35s ease;
+    pointer-events: none;
 }
 
 .faq-answer.open {
     max-height: 500px;
     opacity: 1;
     transform: translateY(0);
+    pointer-events: auto;
 }
 
 .faq-answer hr {
@@ -221,8 +228,9 @@ hr {
 @media screen and (max-width: 1000px) {
 
     .container-faqs {
-        background: url('../../assets/fondos/fondo3.2 2.png');
-        background-size: cover;
+        background: url('../../assets/fondos/fondo3.2 2.webp');
+        background-size: 100% auto;
+        background-repeat: repeat-y;
         background-position: center;
         padding-top: 20px;
         padding-bottom: 0px;

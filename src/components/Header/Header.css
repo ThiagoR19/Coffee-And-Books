@@ -25,7 +25,7 @@
 
 /* ── Barra superior ── */
 .header__topbar {
-  background: url(../../assets/fondos/fondo-pre-nav.png);
+  background: url(../../assets/fondos/fondo-pre-nav.webp);
   height: 40px;
   display: flex;
   justify-content: space-between;

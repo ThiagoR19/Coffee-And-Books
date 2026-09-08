@@ -8,6 +8,7 @@ import LogoHeader from "../../assets/logo-header.svg";
 import SearchIcon from "../../assets/icon-search.svg";
 import CartIcon from "../../assets/carrito/carrito-icon.svg";
 import CartIconActive from "../../assets/carrito/carrito-icon-seleccionado.svg";
+import { useShop } from "../../context/ShopContext";
 
 const NAV_LINKS = [
   { label: "HOME", path: "/" },
@@ -16,11 +17,11 @@ const NAV_LINKS = [
   { label: "PREGUNTAS FRECUENTES", path: "/faqs" },
 ];
 
-function Header({ cartCount = 0 }) {
+function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
-  const [searchValue, setSearchValue] = useState("");
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [location] = useLocation();
+  const { cartCount, searchQuery, setSearchQuery } = useShop();
 
   useEffect(() => {
     function handleResize() {
@@ -89,8 +90,10 @@ function Header({ cartCount = 0 }) {
               <input
                 type="text"
                 placeholder="Buscar..."
-                value={searchValue}
-                onChange={(e) => setSearchValue(e.target.value)}
+                value={searchQuery}
+                onChange={(e) => {
+                  setSearchQuery(e.target.value);
+                }}
               />
             </form>
           ) : searchOpen ? (
@@ -100,8 +103,10 @@ function Header({ cartCount = 0 }) {
                 type="text"
                 className="header__search-input"
                 placeholder="Buscar..."
-                value={searchValue}
-                onChange={(e) => setSearchValue(e.target.value)}
+                value={searchQuery}
+                onChange={(e) => {
+                  setSearchQuery(e.target.value);
+                }}
                 autoFocus
               />
               <button
@@ -109,7 +114,7 @@ function Header({ cartCount = 0 }) {
                 className="header__search-close"
                 onClick={() => {
                   setSearchOpen(false);
-                  setSearchValue("");
+                  setSearchQuery("");
                 }}
               >
                 ✕

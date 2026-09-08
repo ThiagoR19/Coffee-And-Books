@@ -1,52 +1,31 @@
-import ProductosCarrito from '../../components/ProductosCarrito/ProductosCarrito'
-import ProductoCarrito from '../../components/ProductoCarrito/ProductoCarrito'
-import ResumenCarrito from '../../components/ResumenCarrito/ResumenCarrito'
-
-import db from '../../db/db.json'
-import { useState } from 'react'
-import './Carrito.css'
-
+import { useState } from 'react';
+import ProductosCarrito from '../../components/ProductosCarrito/ProductosCarrito';
+import ProductoCarrito from '../../components/ProductoCarrito/ProductoCarrito';
+import ResumenCarrito from '../../components/ResumenCarrito/ResumenCarrito';
+import { useShop } from '../../context/ShopContext';
+import './Carrito.css';
 
 function Carrito() {
+  const { cartItems, isLoading, error, updateQuantity, removeFromCart, getProductImage } = useShop();
+  const [selectedId, setSelectedId] = useState(null);
+  const prodSeleccionado = cartItems.find((item) => item.id_prod === selectedId) || cartItems[0] || null;
 
-  const productos = db.Productos
-
-  const productosConCantidad = productos.map((producto) => ({
-    ...producto,
-    cantidad: 1
-  }))
-
-  const [productosCarrito, setProductosCarrito] = useState(productosConCantidad)
-  const [prodSeleccionado, setProdSeleccionado] = useState(productosConCantidad[0])
-
-  const borrarDelCarrito = (id) => {
-    const nuevosProductos = productosCarrito.filter(producto => producto.id_prod !== id);
-    setProductosCarrito(nuevosProductos);
-
-    if (prodSeleccionado?.id_prod === id) {
-      setProdSeleccionado(nuevosProductos.length > 0 ? nuevosProductos[0] : null);
-    }
-  }
-
-  const handleAdd = () => {
-    setProdSeleccionado(prodSeleccionado.cantidad + 1)
-  }
-
-  const handleSustract = () => {
-    // if (prodSeleccionado.cantidad == 0) return
-    // console.log(prodSeleccionado.cantidad)
-    // const nuevosProductos = productosCarrito.filter(producto => producto.id_prod !== id);
-    // setProductosCarrito(nuevosProductos)
-  }
-
+  if (isLoading) return <section className="Carrito"><p className="carrito-estado">Cargando catálogo…</p></section>;
+  if (error) return <section className="Carrito"><p className="carrito-estado">{error}</p></section>;
 
   return (
-    <section className='Carrito'>
-      <ProductosCarrito productos={productosCarrito} setProdSeleccionado={setProdSeleccionado} />
-      <ProductoCarrito prodSeleccionado={prodSeleccionado} borrarDelCarrito={borrarDelCarrito} handleAdd={handleAdd} handleSustrac={handleSustract} />
-      <ResumenCarrito productosCarrito={productosCarrito} />
+    <section className="Carrito">
+      <ProductosCarrito productos={cartItems} productoSeleccionado={prodSeleccionado} setProdSeleccionado={(product) => setSelectedId(product.id_prod)} getProductImage={getProductImage} />
+      <ProductoCarrito
+        prodSeleccionado={prodSeleccionado}
+        borrarDelCarrito={removeFromCart}
+        handleAdd={() => prodSeleccionado && updateQuantity(prodSeleccionado.id_prod, 1)}
+        handleSustract={() => prodSeleccionado && updateQuantity(prodSeleccionado.id_prod, -1)}
+        getProductImage={getProductImage}
+      />
+      <ResumenCarrito productosCarrito={cartItems} />
     </section>
-  )
+  );
 }
 
-export default Carrito
+export default Carrito;

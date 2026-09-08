@@ -1,6 +1,6 @@
 import iconoSloganCafe from '../../assets/icono-esencia-cafe.svg'
 import iconoSloganLibro from '../../assets/icono-esencia-libro.svg'
-import imagenEsencia from '../../assets/imagen-esencia.webp'
+import imagenEsencia from '../../assets/home/imagen-esencia.webp'
 
 import './EsenciaCB.css'
 

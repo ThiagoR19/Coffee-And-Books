@@ -57,7 +57,7 @@ function Footer() {
             <h3 className="footer__col-title">INFORMACIÓN</h3>
             <ul className="footer__link-list">
               {INFO_LINKS.map((link) => (
-                <li key={link.path}>
+                <li key={link.label}>
                   <Link
                     href={link.path}
                     className={`footer__link${location === link.path ? " footer__link--active" : ""}`}
@@ -73,7 +73,7 @@ function Footer() {
             <h3 className="footer__col-title">CATEGORÍAS</h3>
             <ul className="footer__link-list">
               {CATEGORY_LINKS.map((link) => (
-                <li key={link.path}>
+                <li key={link.label}>
                   <Link
                     href={link.path}
                     className="footer__link"

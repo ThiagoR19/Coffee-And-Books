@@ -1,24 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export default function useCarrusel(productos, productosPorPagina) {
     const [paginaActual, setPaginaActual] = useState(0);
 
-    useEffect(() => {
-        setPaginaActual(0);
-    }, [productosPorPagina]);
-
     const totalPaginas = Math.ceil(productos.length / productosPorPagina);
+    const ultimaPagina = Math.max(0, totalPaginas - 1);
+    const paginaSegura = Math.min(paginaActual, ultimaPagina);
 
     const productosMostrados = productos.slice(
-        paginaActual * productosPorPagina,
-        paginaActual * productosPorPagina + productosPorPagina
+        paginaSegura * productosPorPagina,
+        paginaSegura * productosPorPagina + productosPorPagina
     );
 
-    const irAtras = () => setPaginaActual(paginaActual - 1);
-    const irAdelante = () => setPaginaActual(paginaActual + 1);
+    const irAtras = () => setPaginaActual((pagina) => Math.max(0, Math.min(pagina, ultimaPagina) - 1));
+    const irAdelante = () => setPaginaActual((pagina) => Math.min(ultimaPagina, pagina + 1));
 
-    const hayPaginaAnterior = paginaActual > 0;
-    const hayPaginaSiguiente = paginaActual < totalPaginas - 1;
+    const hayPaginaAnterior = paginaSegura > 0;
+    const hayPaginaSiguiente = paginaSegura < ultimaPagina;
 
     return {
         productosMostrados,
