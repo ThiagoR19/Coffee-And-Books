@@ -13,12 +13,8 @@
 /*--------------CONTENEDOR---------------------------*/
 .container-faqs {
     background-image: url('../../assets/fondos/fondo3.1.0.webp');
-<<<<<<< HEAD
-    background-size: cover;
-=======
     background-size: 100% auto;
     background-repeat: repeat-y;
->>>>>>> main
     background-position: center;
     padding-top: clamp(20px, 4vw, 50px);
     padding-bottom: 40px;
@@ -233,12 +229,8 @@ hr {
 
     .container-faqs {
         background: url('../../assets/fondos/fondo3.2 2.webp');
-<<<<<<< HEAD
-        background-size: cover;
-=======
         background-size: 100% auto;
         background-repeat: repeat-y;
->>>>>>> main
         background-position: center;
         padding-top: 20px;
         padding-bottom: 0px;

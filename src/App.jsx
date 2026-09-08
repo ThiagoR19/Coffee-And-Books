@@ -16,24 +16,6 @@ import './App.css'
 
 export default function App() {
   return (
-<<<<<<< HEAD
-    <div>
-      <Header />
-      <Switch>
-        <Route path="/home" component={Home} />
-        <Route path="/catalogo/:filtro?" component={Catalogo} />
-        <Route path="/sobrenosotros" component={SobreNosotros} />
-        <Route path="/faqs" component={PreguntasFrecuentes} />
-        <Route path="/terminos" component={TerminosYCondiciones} />
-        <Route path="/carrito" component={Carrito} />
-          <Route path="/productoCafe/:id?" component={ProductoCafe} />
-          <Route path="/productoLibro/:id?" component={ProductoLibro} />
-        <Route path="/" component={Home} />
-        <Route>404: ¡Página no encontrada!</Route>
-      </Switch>
-      <Footer />
-    </div >
-=======
     <ShopProvider>
       <div>
         <Header />
@@ -53,6 +35,5 @@ export default function App() {
         <Footer />
       </div>
     </ShopProvider>
->>>>>>> main
   );
 }

@@ -14,12 +14,6 @@ function Carrito() {
   if (error) return <section className="Carrito"><p className="carrito-estado">{error}</p></section>;
 
   return (
-<<<<<<< HEAD
-    <section className='Carrito'>
-      <ProductosCarrito productos={productosCarrito} setProdSeleccionado={setProdSeleccionado} />
-      <ProductoCarrito prodSeleccionado={prodSeleccionado} borrarDelCarrito={borrarDelCarrito} handleAdd={handleAdd} handleSustrac={handleSustract} />
-      <ResumenCarrito productosCarrito={productosCarrito} onCompraFinalizada={() => alert('Compra registrada correctamente.')} />
-=======
     <section className="Carrito">
       <ProductosCarrito productos={cartItems} productoSeleccionado={prodSeleccionado} setProdSeleccionado={(product) => setSelectedId(product.id_prod)} getProductImage={getProductImage} />
       <ProductoCarrito
@@ -30,7 +24,6 @@ function Carrito() {
         getProductImage={getProductImage}
       />
       <ResumenCarrito productosCarrito={cartItems} />
->>>>>>> main
     </section>
   );
 }

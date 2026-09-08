@@ -17,22 +17,12 @@ import obtenerPodio from "../../context/obtenerPodio"
 import iconoFlecha from '../../assets/icono-flecha.svg'
 
 import './Home.css'
-<<<<<<< HEAD
-import { Link, useLocation } from "wouter"
-
-import db from '../../db/db.json'
-
-function Home() {
-  const [, setLocation] = useLocation();
-  const top3 = obtenerPodio(db.Productos)
-=======
 import { Link } from "wouter";
 import { formatPrice, useShop } from "../../context/ShopContext";
 
 function Home() {
   const { products, isLoading, error, addToCart, getProductImage } = useShop();
   const top3 = obtenerPodio(products);
->>>>>>> main
 
   return (
     <section id="Home">
@@ -47,13 +37,8 @@ function Home() {
             Elegí tu próxima lectura y acompañala con <br />
             el mejor café del mundo.</p>
           <div className="hero__buttons">
-<<<<<<< HEAD
-            <button className="hero__div-button" onClick={() => setLocation("/catalogo/libro")}>VER LIBROS</button>
-            <button className="hero__div-button" onClick={() => setLocation("/catalogo/cafe")}>EXPLORAR CAFÉS</button>
-=======
           <Link href="/catalogo" className="hero__div-button">VER LIBROS</Link>
             <Link href="/catalogo" className="hero__div-button">EXPLORAR CAFÉS</Link>
->>>>>>> main
           </div>
           <img className="hero__imagen-derecha hero__imagen-derecha--desktop" src={imagenDerecha} alt="Imagen principal derecha" />
           <img className="hero__imagen-derecha hero__imagen-derecha--mobile" src={imagenDerechaMobile} alt="Imagen principal derecha" />
@@ -115,23 +100,11 @@ function Home() {
 
 export default Home
 
-<<<<<<< HEAD
-function ProductoTop({ producto }) {
-  const detallePath = producto.id_cat === 1
-    ? `/productoCafe/${producto.id_prod}`
-    : `/productoLibro/${producto.id_prod}`;
-
-  return (
-    <Link href={detallePath} className="masVendido__div" >
-      <div className="masVendido__div-cartel cartel2"><h6>NUEVO</h6></div>
-      <img className="masVendido__div-img" src={cafeEjemplo2} alt="" />
-=======
 function ProductoTop({ producto, addToCart, getProductImage }) {
   return (
     < div className="masVendido__div" >
       <div className="masVendido__div-cartel cartel2"><h6>{producto.etiqueta || 'MÁS VENDIDO'}</h6></div>
       <img className="masVendido__div-img" src={getProductImage(producto)} alt={producto.nombre} />
->>>>>>> main
       <div className="masVendido__div-div">
         <div className="masVendido__div-div-div">
           <h5 className="masVendido__div-div-div-h5">{producto.nombre}</h5>
@@ -142,6 +115,6 @@ function ProductoTop({ producto, addToCart, getProductImage }) {
           <CiCirclePlus className="iconoPlus" />
         </button>
       </div>
-    </Link >
+    </div>
   )
 } 
