@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "./carrouselAutores.css";
 import cafe9 from '../../assets/catalogo/productos/laInvencion.webp';

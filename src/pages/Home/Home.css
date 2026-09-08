@@ -81,6 +81,13 @@
   padding: 10px;
 }
 
+.hero__div-button {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .hero__div-button:first-child {
   background: linear-gradient(to right, #005E55, #243836);
   padding: 10px 30px;
@@ -315,6 +322,22 @@
 
 .iconoPlus {
   font-size: 60px;
+}
+
+.iconoPlus-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #DCDACE;
+  cursor: pointer;
+}
+
+.iconoPlus-button:hover {
+  background-color: rgba(255, 236, 222, 0.12);
 }
 
 .masVendido__div-div-div-h5 {
@@ -672,7 +695,7 @@
     flex-direction: column;
     padding: 20px;
     text-align: center;
-    background-image: url(/src/assets/fondos/fondo-combos-home-responsive.svg);
+    background-image: url('../../assets/fondos/fondo-combos-home-responsive.svg');
     border-radius: 10px;
     border: 1px solid white;
   }

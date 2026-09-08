@@ -11,6 +11,7 @@
     display: flex;
     align-items: stretch;
     overflow: hidden;
+    height: clamp(220px, 25vw, 300px);
 }
 
 .catalogo-texto {
@@ -20,6 +21,7 @@
 
 .catalogo-img {
     width: 29%;
+    height: 100%;
     object-fit: cover;
     object-position: center bottom;
     align-self: flex-end;

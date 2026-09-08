@@ -95,7 +95,6 @@
 
 .estadisticas__div-img {
   height: 80px;
-  box-shadow: clamp(5px, 1.5vw, 10px) clamp(5px, 1.5vw, 10px) clamp(5px, 1.5vw, 10px) rgba(0, 0, 0, 0.25);
   border-radius: 100%;
   margin: 0 10px;
 }

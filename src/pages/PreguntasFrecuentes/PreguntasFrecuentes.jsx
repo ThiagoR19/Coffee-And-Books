@@ -70,17 +70,21 @@ function Pregunta({ faq }) {
           <img src={iconFaqItem} alt="Icono FAQ" className="faq-icon" />
         </div>
         <h2>{faq.pregunta}</h2>
-        <div className="faq-item-icon2">
-          <img src={open ? iconMinusFaqs : iconPlusFaqs} alt={open ? "Cerrar" : "Abrir"} onClick={handleClick} />
-        </div>
+        <button
+          type="button"
+          className="faq-item-icon2"
+          onClick={handleClick}
+          aria-expanded={open}
+          aria-label={open ? `Cerrar ${faq.pregunta}` : `Abrir ${faq.pregunta}`}
+        >
+          <img src={open ? iconMinusFaqs : iconPlusFaqs} alt="" />
+        </button>
       </div>
 
-      {open && (
-        <div className="faq-answer open">
-          <hr />
-          <p>{faq.respuesta}</p>
-        </div>
-      )}
+      <div className={`faq-answer ${open ? 'open' : ''}`} aria-hidden={!open}>
+        <hr />
+        <p>{faq.respuesta}</p>
+      </div>
     </div>
   )
 }

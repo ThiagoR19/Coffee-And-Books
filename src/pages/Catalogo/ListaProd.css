@@ -24,7 +24,8 @@
 
 .card-imagen-contenedor {
   position: relative;
-  height: 80%;
+  height: clamp(140px, 14vw, 200px);
+  flex-shrink: 0;
   background: #3a2218;
 }
 
@@ -265,4 +266,11 @@
     margin-top: 2px;
     font-weight: bold;
   }
+}
+
+.catalogo-estado {
+  color: #DCDACE;
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 18px;
 }
