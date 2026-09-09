@@ -12,7 +12,7 @@ function ordenarProductos(productos, orden) {
   if (orden === 'recientes' || orden === 'novedades') return copia.sort((a, b) => String(b.fecha_subida).localeCompare(String(a.fecha_subida)));
   if (orden === 'cafes') return copia.filter((producto) => producto.id_cat === 1);
   if (orden === 'libros') return copia.filter((producto) => producto.id_cat === 2);
-  if (orden === 'premium') return copia.filter((producto) => producto.etiquetas.includes('PREMIUM'));
+  if (orden === 'premium') return copia.filter((producto) => producto.etiquetas?.includes('PREMIUM') || producto.nombre?.toLowerCase().includes('premium'));
   if (orden === 'grano') return copia.filter((producto) => producto.cafe?.tipo?.toLowerCase().includes('grano'));
   if (orden === 'molido') return copia.filter((producto) => producto.cafe?.tipo?.toLowerCase().includes('molido'));
   if (orden === 'capsula') return copia.filter((producto) => producto.cafe?.tipo?.toLowerCase().includes('cápsula'));
@@ -58,6 +58,36 @@ export default function ListaProductos({ categoryFilter = 'todos' }) {
 
   const cantidad = productosFiltrados.length;
 
+  const opcionesFiltro = categoryFilter === 'cafe'
+    ? [
+      { value: 'todos', label: 'TODOS LOS CAFÉS' },
+      { value: 'premium', label: 'PREMIUM' },
+      { value: 'grano', label: 'EN GRANO' },
+      { value: 'molido', label: 'MOLIDO' },
+      { value: 'capsula', label: 'CÁPSULA' },
+      { value: 'origen', label: 'DE ORIGEN' },
+    ]
+    : categoryFilter === 'libro'
+      ? [
+        { value: 'todos', label: 'TODOS LOS LIBROS' },
+        { value: 'novelas', label: 'NOVELAS' },
+        { value: 'ciencia', label: 'DE CIENCIA FICCIÓN' },
+        { value: 'comics', label: 'CÓMICS' },
+        { value: 'policiales', label: 'POLICIALES' },
+      ]
+      : [
+        { value: 'todos', label: 'TODOS LOS PRODUCTOS' },
+        { value: 'premium', label: 'PREMIUM' },
+        { value: 'grano', label: 'EN GRANO' },
+        { value: 'molido', label: 'MOLIDO' },
+        { value: 'capsula', label: 'CÁPSULA' },
+        { value: 'origen', label: 'DE ORIGEN' },
+        { value: 'novelas', label: 'NOVELAS' },
+        { value: 'ciencia', label: 'DE CIENCIA FICCIÓN' },
+        { value: 'comics', label: 'CÓMICS' },
+        { value: 'policiales', label: 'POLICIALES' },
+      ];
+
   if (isLoading) return <p className="catalogo-estado">Cargando productos desde Google Sheets…</p>;
   if (error) return <p className="catalogo-estado">{error}</p>;
 
@@ -72,22 +102,9 @@ export default function ListaProductos({ categoryFilter = 'todos' }) {
             <span style={{ color: 'white' }}>ORDENAR POR:</span>
             <div className="filtro-select-wrapper">
               <select className="FiltroDeLista" value={orden} onChange={(event) => setOrden(event.target.value)}>
-                <option value="todos">TODOS</option>
-                <option value="recientes">MÁS RECIENTES</option>
-                <option value="vendidos">MÁS VENDIDOS</option>
-                <option value="novedades">NOVEDADES</option>
-                <option value="cafes">CAFÉS</option>
-                <option value="premium">PREMIUM</option>
-                <option value="grano">EN GRANO</option>
-                <option value="molido">MOLIDO</option>
-                <option value="capsula">CÁPSULA</option>
-                <option value="origen">DE ORIGEN</option>
-                <option value="combos">COMBOS ESPECIALES</option>
-                <option value="libros">LIBROS</option>
-                <option value="novelas">NOVELAS</option>
-                <option value="ciencia">DE CIENCIA FICCIÓN</option>
-                <option value="comics">CÓMICS</option>
-                <option value="policiales">POLICIALES</option>
+                {opcionesFiltro.map((opcion) => (
+                  <option key={opcion.value} value={opcion.value}>{opcion.label}</option>
+                ))}
               </select>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import iconoCheck from '../../assets/icon-check.svg';
 import iconoBolsa from '../../assets/icon-bolsa.svg';
 import { formatPrice } from '../../context/ShopContext';
+import { registrarCompra } from '../../context/estadisticasPedidos';
 import './ResumenCarrito.css';
 
 function ResumenCarrito({ productosCarrito }) {
@@ -10,6 +11,7 @@ function ResumenCarrito({ productosCarrito }) {
 
   const finalizarCompra = () => {
     if (!productosCarrito.length) return;
+    registrarCompra(productosCarrito);
     const detalle = productosCarrito.map((producto) => `• ${producto.nombre} x${producto.cantidad} - $${formatPrice(producto.precio * producto.cantidad)}`).join('\n');
     const mensaje = `Hola, quiero realizar este pedido:\n${detalle}\n\nTotal: $${formatPrice(total)}`;
     window.open(`https://wa.me/5400000000?text=${encodeURIComponent(mensaje)}`, '_blank', 'noopener,noreferrer');
@@ -37,5 +39,5 @@ function ResumenCarrito({ productosCarrito }) {
 export default ResumenCarrito;
 
 function ItemResumen({ producto }) {
-  return <div className="resumen__div-div"><h5 className="resumen__div-div-h5">{producto.nombre} ×{producto.cantidad}</h5><span className="resumen__div-div-span">${formatPrice(producto.precio * producto.cantidad)}</span></div>;
+  return <div className="resumen__div-div"><h5 className="resumen__div-div-h5">{producto.nombre} {producto.cantidad}</h5><span className="resumen__div-div-span">${formatPrice(producto.precio * producto.cantidad)}</span></div>;
 }

@@ -2,10 +2,21 @@ import imagenNuestraHistoria from '../../assets/img-portada.webp'
 import iconBag from '../../assets/icon-bag-estadisticas.svg'
 import iconPeople from '../../assets/icon-people-estadisticas.svg'
 import iconCoffee from '../../assets/icon-coffee-estadisticas.svg'
+import { useShop } from '../../context/ShopContext'
+import { obtenerEstadisticas } from '../../context/estadisticasPedidos'
+import { useState } from 'react'
 
 import './SobreNosotros.css'
 
 function SobreNosotros() {
+  const { products } = useShop();
+  const [estadisticas] = useState(obtenerEstadisticas);
+  const paisesDeCafe = products
+    .filter((producto) => producto.id_cat === 1 && producto.cafe?.origen)
+    .map((producto) => producto.cafe.origen)
+    .filter((origen, indice, paises) => paises.indexOf(origen) === indice)
+    .length;
+
   return (
     <section id="sobreNosotros">
       <article id="nuestraHistoria">
@@ -23,7 +34,7 @@ function SobreNosotros() {
         <div className='estadisticas__div'>
           <div className='estadisticas__div-div'>
             <img className='estadisticas__div-img' src={iconBag} alt="Icono Productos Vendidos" />
-            <span className='estadisticas__div-div-span'>600+</span>
+            <span className='estadisticas__div-div-span'>{estadisticas.productosVendidos}+</span>
           </div>
           <span className='estadisticas__div-span'>Productos vendidos</span>
         </div>
@@ -31,7 +42,7 @@ function SobreNosotros() {
         <div className='estadisticas__div'>
           <div className='estadisticas__div-div'>
             <img className='estadisticas__div-img' src={iconPeople} alt="Icono Clientes Satisfechos" />
-            <span className='estadisticas__div-div-span'>120+</span>
+            <span className='estadisticas__div-div-span'>{estadisticas.pedidosCompletados}+</span>
           </div>
           <span className='estadisticas__div-span'>Clientes satisfechos</span>
         </div>
@@ -39,7 +50,7 @@ function SobreNosotros() {
         <div className='estadisticas__div'>
           <div className='estadisticas__div-div'>
             <img className='estadisticas__div-img' src={iconCoffee} alt="Icono Café" />
-            <span className='estadisticas__div-div-span'>19+</span>
+            <span className='estadisticas__div-div-span'>{paisesDeCafe}+</span>
           </div>
           <span className='estadisticas__div-span'>Países de Cafés</span>
         </div>
