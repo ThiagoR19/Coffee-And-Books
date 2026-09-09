@@ -22,8 +22,8 @@ function Estanteria() {
   }), [products])
 
   const rutaDetalle = (producto) => producto.id_cat === 1
-    ? `/productoCafe/${producto.id_prod}`
-    : `/productoLibro/${producto.id_prod}`
+    ? `/producto/cafe/${producto.id_prod}`
+    : `/producto/libro/${producto.id_prod}`
 
   const mostrarProductos = (grupo) => grupo.map((producto) => (
     <Link key={producto.id_prod} href={rutaDetalle(producto)} className="estanteria__hero-div-div-div-link">

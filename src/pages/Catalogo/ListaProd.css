@@ -20,6 +20,8 @@
   background: #523325;
   border-radius: 9px 9px 0px 0px;
   overflow: hidden;
+  text-decoration: none;
+  color: inherit;
 }
 
 .card-imagen-contenedor {

@@ -82,6 +82,8 @@
 
 .estanteria__hero-div-div-div-link {
   display: contents;
+  text-decoration: none;
+  color: inherit;
 }
 
 .estanteria__hero-div-div-div-h4 {

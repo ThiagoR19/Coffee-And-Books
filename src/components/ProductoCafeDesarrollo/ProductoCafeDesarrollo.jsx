@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import iconoCarrito from '../../assets/icon-trolley.svg';
 import iconMinus from '../../assets/icon-minus.svg';
 import iconPlus from '../../assets/icon-plus.svg';
@@ -18,6 +19,10 @@ function ProductoCafeDesarrollo({ product }) {
   const cantidad = cartItems.find((item) => item.id_prod === product.id_prod)?.cantidad || 0;
   const cafe = product.cafe || {};
 
+  const galeria = [getProductImage(product), coffeeExample2, coffeeExample3];
+  const [indiceImagen, setIndiceImagen] = useState(0);
+  const cambiarImagen = (paso) => setIndiceImagen((valor) => (valor + paso + galeria.length) % galeria.length);
+
   return (
     <article id="cafe">
       <div id="titulos">
@@ -25,13 +30,19 @@ function ProductoCafeDesarrollo({ product }) {
         <div className="titulos__div"><h3 className="titulos__div-h3">{cafe.marca || 'Café'}</h3><h2 className="titulos__div-h2">${formatPrice(product.precio)}</h2></div>
       </div>
       <div id="imagenes">
-        <img className="imagenes__imgs1" src={iconoFlechaDe} alt="" />
-        <img className="imagenes__imgs2" src={iconoFlechaIz} alt="" />
-        <img className="imagenes__img" src={getProductImage(product)} alt={product.nombre} />
+        <img className="imagenes__imgs1" src={iconoFlechaDe} alt="Imagen siguiente" onClick={() => cambiarImagen(1)} />
+        <img className="imagenes__imgs2" src={iconoFlechaIz} alt="Imagen anterior" onClick={() => cambiarImagen(-1)} />
+        <img className="imagenes__img" src={galeria[indiceImagen]} alt={product.nombre} />
         <div className="imagenes__div">
-          <img className="imagenes__div-img" src={getProductImage(product)} alt={product.nombre} />
-          <img className="imagenes__div-img" src={coffeeExample2} alt="Café de ejemplo" />
-          <img className="imagenes__div-img" src={coffeeExample3} alt="Café de ejemplo" />
+          {galeria.map((imagen, indice) => (
+            <img
+              key={indice}
+              className={`imagenes__div-img ${indice === indiceImagen ? 'imagenes__div-img--activa' : ''}`}
+              src={imagen}
+              alt={`${product.nombre} vista ${indice + 1}`}
+              onClick={() => setIndiceImagen(indice)}
+            />
+          ))}
         </div>
       </div>
       <div id="informacion">

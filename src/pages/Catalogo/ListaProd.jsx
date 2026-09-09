@@ -122,7 +122,7 @@ export default function ListaProductos({ categoryFilter = 'todos' }) {
             {productosMostrados.map((producto) => (
               <Link
                 key={producto.id_prod}
-                href={producto.id_cat === 1 ? `/productoCafe/${producto.id_prod}` : `/productoLibro/${producto.id_prod}`}
+                href={producto.id_cat === 1 ? `/producto/cafe/${producto.id_prod}` : `/producto/libro/${producto.id_prod}`}
                 className="lista-productos_card"
               >
                 <div className="card-imagen-contenedor">
