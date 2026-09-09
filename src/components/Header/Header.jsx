@@ -13,8 +13,6 @@ import { useShop } from "../../context/ShopContext";
 const NAV_LINKS = [
   { label: "HOME", path: "/" },
   { label: "CATÁLOGO", path: "/catalogo/todos" },
-  { label: "CAFÉ IMPORTADO", path: "/productoCafe" },
-  { label: "LIBROS", path: "/productoLibro" },
   { label: "SOBRE NOSOTROS", path: "/sobrenosotros" },
   { label: "PREGUNTAS FRECUENTES", path: "/faqs" },
 ];
