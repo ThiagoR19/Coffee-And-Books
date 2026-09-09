@@ -6,12 +6,13 @@ import { getColorEtiqueta } from '../../context/etiquetaColores';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 import { GoChevronRight, GoChevronLeft } from 'react-icons/go';
 import { formatPrice, useShop } from '../../context/ShopContext';
-import { Link, useSearch } from 'wouter';
+import { Link, useLocation, useSearch } from 'wouter';
 
 function ordenarProductos(productos, orden) {
   const copia = [...productos];
   if (orden === 'vendidos') return copia.sort((a, b) => b.cant_vendida - a.cant_vendida);
   if (orden === 'recientes' || orden === 'novedades') return copia.sort((a, b) => String(b.fecha_subida).localeCompare(String(a.fecha_subida)));
+  if (orden === 'ofertas') return copia.filter((producto) => producto.enDescuento);
   if (orden === 'cafes') return copia.filter((producto) => producto.id_cat === 1);
   if (orden === 'libros') return copia.filter((producto) => producto.id_cat === 2);
   if (orden === 'premium') return copia.filter((producto) => producto.etiquetas?.includes('PREMIUM') || producto.nombre?.toLowerCase().includes('premium'));
@@ -29,8 +30,10 @@ function ordenarProductos(productos, orden) {
 
 export default function ListaProductos({ categoryFilter = 'todos' }) {
   const search = useSearch(); // te da el string después del "?"
-  const ordenInicial = new URLSearchParams(search).get('orden') || 'todos';
-  const [orden, setOrden] = useState(ordenInicial);
+  const [location, setLocation] = useLocation();
+  // la URL es la única fuente de verdad del filtro (permite links como /catalogo/todos?orden=ofertas)
+  const orden = new URLSearchParams(search).get('orden') || 'todos';
+  const setOrden = (valor) => setLocation(`${location}?orden=${valor}`, { replace: true });
 
   const { filteredProducts, isLoading, error, addToCart, getProductImage, cartItems } = useShop();
   const [avisoStock, setAvisoStock] = useState(null);
@@ -76,6 +79,7 @@ export default function ListaProductos({ categoryFilter = 'todos' }) {
   const opcionesFiltro = categoryFilter === 'cafe'
     ? [
       { value: 'todos', label: 'TODOS LOS CAFÉS' },
+      { value: 'ofertas', label: 'OFERTAS' },
       { value: 'premium', label: 'PREMIUM' },
       { value: 'grano', label: 'EN GRANO' },
       { value: 'molido', label: 'MOLIDO' },
@@ -85,6 +89,7 @@ export default function ListaProductos({ categoryFilter = 'todos' }) {
     : categoryFilter === 'libro'
       ? [
         { value: 'todos', label: 'TODOS LOS LIBROS' },
+        { value: 'ofertas', label: 'OFERTAS' },
         { value: 'novelas', label: 'NOVELAS' },
         { value: 'ciencia', label: 'DE CIENCIA FICCIÓN' },
         { value: 'comics', label: 'CÓMICS' },
@@ -92,6 +97,7 @@ export default function ListaProductos({ categoryFilter = 'todos' }) {
       ]
       : [
         { value: 'todos', label: 'TODOS LOS PRODUCTOS' },
+        { value: 'ofertas', label: 'OFERTAS' },
         { value: 'premium', label: 'PREMIUM' },
         { value: 'grano', label: 'EN GRANO' },
         { value: 'molido', label: 'MOLIDO' },

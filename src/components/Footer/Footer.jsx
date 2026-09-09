@@ -13,8 +13,8 @@ const INFO_LINKS = [
 const CATEGORY_LINKS = [
   { label: "Libros", path: "/catalogo/libro" },
   { label: "Cafés", path: "/catalogo/cafe" },
-  { label: "Novedades", path: "/catalogo" },
-  { label: "Ofertas", path: "/home" },
+  { label: "Novedades", path: "/home", scrollTo: "estanteria" },
+  { label: "Ofertas", path: "/catalogo/todos?orden=ofertas" },
 ];
 
 function Footer() {
@@ -75,6 +75,7 @@ function Footer() {
                   <Link
                     href={link.path}
                     className="footer__link"
+                    onClick={link.scrollTo ? () => window.setTimeout(() => document.getElementById(link.scrollTo)?.scrollIntoView({ behavior: "smooth" }), 150) : undefined}
                   >
                     {link.label}
                   </Link>
