@@ -85,6 +85,8 @@ function joinProducts(rows) {
       autor: author ? `${author.nombre} ${author.apellido}` : "",
       etiquetas: labels.map((label) => label.texto),
       etiqueta: labels[0]?.texto || (toBoolean(product.oferta) ? "OFERTA" : ""),
+      promociones: [],
+      enDescuento: toBoolean(product.oferta),
       imagen: product.imagen || "",
     };
   });

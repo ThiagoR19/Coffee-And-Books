@@ -38,7 +38,7 @@ function Home() {
             Elegí tu próxima lectura y acompañala con <br />
             el mejor café del mundo.</p>
           <div className="hero__buttons">
-          <Link href="/catalogo" className="hero__div-button">VER LIBROS</Link>
+            <Link href="/catalogo" className="hero__div-button">VER LIBROS</Link>
             <Link href="/catalogo" className="hero__div-button">EXPLORAR CAFÉS</Link>
           </div>
           <img className="hero__imagen-derecha hero__imagen-derecha--desktop" src={imagenDerecha} alt="Imagen principal derecha" />
@@ -46,13 +46,10 @@ function Home() {
         </div>
         <EsenciaCB />
         <Estanteria />
-        <div id='maderaEstanteria'>
+        <Link href="/catalogo" id='maderaEstanteria' >
           <span>Ver todos los productos</span>
           <img src={iconoFlecha} alt="Icono flecha" />
-          {/* <img className="sombra__estanteria sombra1" src={sombraEstanteria} alt="Sombra de la estanteria" />
-          <img className="sombra__estanteria sombra2" src={sombraEstanteria} alt="Sombra de la estanteria" /> */}
-        </div>
-
+        </Link>
       </article>
 
       <article id="explora">

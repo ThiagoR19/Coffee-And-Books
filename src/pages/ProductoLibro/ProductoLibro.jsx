@@ -11,10 +11,14 @@ import IconEditorial from "../../assets/productoLibro/iconsPL/icon-editorial-2.w
 import IconDE from "../../assets/productoLibro/iconsPL/descuento-resumen-4.webp";
 import CarrouselAutores from "./carrouselAutores";
 import { formatPrice, useShop } from "../../context/ShopContext";
+import { useRoute } from "wouter";
 
 export default function ProductoLibro() {
     const { products, isLoading, error, addToCart, cartItems, getProductImage } = useShop();
-    const product = products.find((item) => item.id_prod === 28) || products.find((item) => item.id_cat === 2);
+    const [, params] = useRoute('/productoLibro/:id?');
+    const id = Number(params?.id);
+    const product = products.find((item) => item.id_cat === 2 && item.id_prod === id)
+        || products.find((item) => item.id_cat === 2);
     const cantidad = cartItems.find((item) => item.id_prod === product?.id_prod)?.cantidad || 0;
 
     if (isLoading) return <main className="Contenedor-Principal-PL"><p className="catalogo-estado">Cargando producto…</p></main>;
