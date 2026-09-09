@@ -16,13 +16,13 @@
   background-color: #523325;
   border-radius: 20px;
   padding: 15px;
-  border: 4px solid #D5713C; 
+  border: 4px solid #D5713C;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
   margin: 0 0 10px 0;
-  height: 55%;
+  height: 65%;
   min-height: 0;
   box-sizing: border-box;
 }
@@ -60,6 +60,7 @@
   font-family: 'Playfair Display';
   font-weight: 100;
   text-decoration-thickness: 0.0001px;
+  font-size: 20px;
 }
 
 .producto__div-div-principal {
@@ -76,9 +77,9 @@
   display: flex;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 10px;
-  margin: 10px 0; 
+  margin: 10px 0;
   min-height: 0;
 }
 
@@ -102,7 +103,7 @@
   justify-content: center;
   margin: 0 15px;
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   background-color: #945C42;
   border: solid 2px white;
   border-radius: 40px;
@@ -112,11 +113,11 @@
 .producto__div-div-div-h3 {
   font-family: 'inter';
   font-weight: 300;
-  font-size: 40px;
+  font-size: 35px;
 }
 
 .producto__div-div-botones button img {
-  height: 45px;
+  height: 40px;
   border-top: -20px;
 }
 
@@ -142,7 +143,7 @@
 .producto__div-div-h3 {
   font-family: 'Playfair Display';
   font-weight: 100;
-  font-size: 30px;
+  font-size: 20px;
   color: white;
   padding: 10px 25px;
 }
@@ -155,59 +156,59 @@
 
 .producto__div-img {
   width: 100%;
-  height: 50px;
+  height: 40px;
   object-fit: cover;
   border-radius: 0 0 20px 20px;
 }
 
 
 /*----------------------RESPONSIVE-----------------------*/
-@media (max-width: 900px){
-  #producto{
+@media (max-width: 900px) {
+  #producto {
     margin: 5px;
   }
 
-  .producto__div-div-h2-titulo{
+  .producto__div-div-h2-titulo {
     font-size: 18px;
   }
 
-  .producto__div-div-trash img{
+  .producto__div-div-trash img {
     height: 28px;
     width: 28px;
   }
 
-  .producto__div-div-principal{
+  .producto__div-div-principal {
     width: 100%;
   }
 
-  .producto__div-div-titulo{
+  .producto__div-div-titulo {
     margin-left: -48px;
   }
 
-  .producto__div-botones div{
+  .producto__div-botones div {
     width: 100%;
   }
 
-  .producto__div-div-h3{
+  .producto__div-div-h3 {
     font-size: 25px;
   }
 }
 
-@media (max-width: 1124px){
-  #producto{
+@media (max-width: 1124px) {
+  #producto {
     margin: 5px;
   }
 
-  .producto__div-div-principal{
+  .producto__div-div-principal {
     width: 100%;
   }
 
-  .producto__div-div-trash img{
+  .producto__div-div-trash img {
     height: 28px;
     width: 28px;
   }
-  
-  .producto__div-div-h2-titulo{
+
+  .producto__div-div-h2-titulo {
     font-size: 18px;
   }
 }
@@ -218,7 +219,7 @@
     margin: 0;
     order: 1;
   }
-  
+
   .producto__div:first-child {
     height: auto;
     padding: 12px;
@@ -231,12 +232,13 @@
     border-width: 2px;
   }
 
-  .producto__div-div-h2-titulo{
+  .producto__div-div-h2-titulo {
     font-size: 20px;
     align-self: flex-start;
     margin-left: 0;
   }
-  .producto__div-div-titulo{
+
+  .producto__div-div-titulo {
     align-self: flex-start;
     padding: 15px;
     border-radius: 20px 0 20px 0;
@@ -250,47 +252,52 @@
     margin: 0;
   }
 
-  .producto__div-div-img-trash{
+  .producto__div-div-img-trash {
     height: 30px;
     width: 30px;
   }
 
   .producto__div:first-child {
-    border: 5px solid #D5713C; 
+    border: 5px solid #D5713C;
   }
 
-  .producto__div-div-principal{
-    width:100%;
+  .producto__div-div-principal {
+    width: 100%;
     margin: 10px 0 20px;
   }
 
-  .producto__div-div-botones{
+  .producto__div-div-botones {
     width: 100%;
     justify-content: space-around;
     margin-top: -10px;
     border-radius: 20px 20px 0 20px;
   }
+
   .producto__div-div-botones button img {
     height: 55px;
   }
-  .producto__div-div-div-h3{
+
+  .producto__div-div-div-h3 {
     font-size: 48px;
   }
-  .producto__div-div-botones div{
+
+  .producto__div-div-botones div {
     height: 72px;
     width: 130px;
     margin: 0;
   }
 
-  .producto__div-div-h3{
+  .producto__div-div-h3 {
     font-size: 38px;
     padding: 20px;
   }
-  .producto__divp{
+
+  .producto__divp {
     font-size: 20px;
     margin: 15px 0 30px;
   }
-  .producto__div-img{
+
+  .producto__div-img {
     height: 80px;
     border-radius: 15px 0 15px 0;
   }
