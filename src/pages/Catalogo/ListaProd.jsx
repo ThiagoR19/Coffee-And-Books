@@ -5,6 +5,7 @@ import useCarrusel from './hooksCatalogo/useCarrousel';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 import { GoChevronRight, GoChevronLeft } from 'react-icons/go';
 import { formatPrice, useShop } from '../../context/ShopContext';
+import { Link } from 'wouter';
 
 function ordenarProductos(productos, orden) {
   const copia = [...productos];
@@ -119,7 +120,11 @@ export default function ListaProductos({ categoryFilter = 'todos' }) {
         {productosFiltrados.length > 0 ? (
           <div className={`prod-grid ${animando ? 'animando' : ''}`}>
             {productosMostrados.map((producto) => (
-              <div key={producto.id_prod} className="lista-productos_card">
+              <Link
+                key={producto.id_prod}
+                href={producto.id_cat === 1 ? `/productoCafe/${producto.id_prod}` : `/productoLibro/${producto.id_prod}`}
+                className="lista-productos_card"
+              >
                 <div className="card-imagen-contenedor">
                   {producto.etiqueta && <span className="card-etiqueta">{producto.etiqueta}</span>}
                   <img className="card-imagen" src={getProductImage(producto)} alt={producto.nombre} />
@@ -130,11 +135,11 @@ export default function ListaProductos({ categoryFilter = 'todos' }) {
                     <span className="card-especificacion">{producto.especificacion}</span>
                     <span className="card-precio">${formatPrice(producto.precio)}</span>
                   </div>
-                  <button className="card-btn-agregar" onClick={() => addToCart(producto)} aria-label={`Agregar ${producto.nombre} al carrito`}>
+                  <button className="card-btn-agregar" onClick={(event) => { event.preventDefault(); event.stopPropagation(); addToCart(producto); }} aria-label={`Agregar ${producto.nombre} al carrito`}>
                     <AiOutlinePlusCircle size={esMobile ? 22 : 35} color="#DCDACE" />
                   </button>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         ) : (
