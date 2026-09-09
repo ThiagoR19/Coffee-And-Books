@@ -12,9 +12,12 @@ import IconDE from "../../assets/productoLibro/iconsPL/descuento-resumen-4.webp"
 import CarrouselAutores from "./carrouselAutores";
 import { formatPrice, useShop } from "../../context/ShopContext";
 
-export default function ProductoLibro() {
+export default function ProductoLibro({ params }) {
     const { products, isLoading, error, addToCart, cartItems, getProductImage } = useShop();
-    const product = products.find((item) => item.id_prod === 28) || products.find((item) => item.id_cat === 2);
+    const productId = Number(params?.id);
+    const product = products.find((item) => item.id_prod === productId && item.id_cat === 2)
+        || products.find((item) => item.id_prod === 28)
+        || products.find((item) => item.id_cat === 2);
     const cantidad = cartItems.find((item) => item.id_prod === product?.id_prod)?.cantidad || 0;
 
     if (isLoading) return <main className="Contenedor-Principal-PL"><p className="catalogo-estado">Cargando producto…</p></main>;
