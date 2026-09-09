@@ -183,6 +183,7 @@
   margin-top: 10px;
   cursor: pointer;
   box-shadow: 4px 4px 3px rgba(255, 255, 255, 0.25);
+  text-decoration: none;
 }
 
 .explora__slogan {

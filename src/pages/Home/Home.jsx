@@ -58,12 +58,12 @@ function Home() {
           <div className="explora__div-div cafes-origen">
             <h3 className="explora__div-div-h3">CAFÉS DE <br /> ORIGEN</h3>
             <p className="explora__div-div-p">Seleccionamos lo mejor del  <br />mundo para vos.</p>
-            <button className="explora__div-div-button">CONOCER MÁS</button>
+            <Link href="/catalogo?categoria=cafe" className="explora__div-div-button">CONOCER MÁS </Link>
           </div>
           <div className="explora__div-div novedades">
             <h3 className="explora__div-div-h3">NOVEDADES <br /> LITERARIAS</h3>
             <p className="explora__div-div-p">Descubrí los últimos <br /> lanzamientos.</p>
-            <button className="explora__div-div-button">VER NOVEDADES</button>
+            <Link href="/catalogo?categoria=libro" className="explora__div-div-button">VER NOVEDADES</Link>
           </div>
           <div className="explora__div-div combos">
             <h3 className="explora__div-div-h3" >COMBOS <br /> ESPECIALES</h3>
