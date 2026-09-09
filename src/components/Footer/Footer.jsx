@@ -11,8 +11,8 @@ const INFO_LINKS = [
 ];
 
 const CATEGORY_LINKS = [
-  { label: "Libros", path: "/catalogo?categoria=libro" },
-  { label: "Cafés", path: "/catalogo?categoria=cafe" },
+  { label: "Libros", path: "/catalogo/libro" },
+  { label: "Cafés", path: "/catalogo/cafe" },
   { label: "Novedades", path: "/catalogo" },
   { label: "Ofertas", path: "/home" },
 ];
