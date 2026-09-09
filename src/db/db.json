@@ -1,0 +1,288 @@
+{
+  "Productos": [
+    {
+      "id_prod": 1,
+      "nombre": "Café Colombia Premium",
+      "desc": "Café de origen colombiano con notas dulces y frutales.",
+      "precio": 8500,
+      "stock": 25,
+      "cant_vendida": 42,
+      "imagen": "cafe-colombia.jpg",
+      "fecha_subida": "2026-08-15",
+      "id_cat": 1
+    },
+    {
+      "id_prod": 2,
+      "nombre": "Café Espresso Intenso",
+      "desc": "Café de tueste oscuro, intenso y con cuerpo.",
+      "precio": 7800,
+      "stock": 18,
+      "cant_vendida": 67,
+      "imagen": "espresso-intenso.jpg",
+      "fecha_subida": "2026-08-18",
+      "id_cat": 1
+    },
+    {
+      "id_prod": 3,
+      "nombre": "El Principito",
+      "desc": "Clásico de la literatura universal.",
+      "precio": 12500,
+      "stock": 10,
+      "cant_vendida": 31,
+      "imagen": "el-principito.jpg",
+      "fecha_subida": "2026-08-20",
+      "id_cat": 2
+    },
+    {
+      "id_prod": 4,
+      "nombre": "Cien años de soledad",
+      "desc": "Novela clásica de realismo mágico.",
+      "precio": 18500,
+      "stock": 7,
+      "cant_vendida": 24,
+      "imagen": "cien-anos-de-soledad.jpg",
+      "fecha_subida": "2026-08-22",
+      "id_cat": 2
+    },
+    {
+      "id_prod": 5,
+      "nombre": "1984",
+      "desc": "Novela distópica sobre una sociedad bajo vigilancia.",
+      "precio": 16000,
+      "stock": 12,
+      "cant_vendida": 19,
+      "imagen": "1984.jpg",
+      "fecha_subida": "2026-08-25",
+      "id_cat": 2
+    }
+  ],
+  "Cafe": [
+    {
+      "id_prod": 1,
+      "marca": "Café Andino",
+      "desc2": "Granos seleccionados de Colombia.",
+      "tipo": "En grano",
+      "intensidad": "Media",
+      "origen": "Colombia",
+      "contenido": "500g"
+    },
+    {
+      "id_prod": 2,
+      "marca": "Montaña Negra",
+      "desc2": "Mezcla de granos de tueste oscuro.",
+      "tipo": "Molido",
+      "intensidad": "Alta",
+      "origen": "Brasil",
+      "contenido": "250g"
+    },
+    {
+      "id_prod": 5,
+      "marca": "Patagonia Coffee",
+      "desc2": "Café de especialidad con aroma intenso.",
+      "tipo": "En grano",
+      "intensidad": "Alta",
+      "origen": "Perú",
+      "contenido": "500g"
+    },
+    {
+      "id_prod": 6,
+      "marca": "Altura Premium",
+      "desc2": "Café suave y equilibrado.",
+      "tipo": "Molido",
+      "intensidad": "Baja",
+      "origen": "México",
+      "contenido": "250g"
+    },
+    {
+      "id_prod": 7,
+      "marca": "Bosque Sur",
+      "desc2": "Café artesanal de sabor frutal.",
+      "tipo": "En grano",
+      "intensidad": "Media",
+      "origen": "Costa Rica",
+      "contenido": "1kg"
+    }
+  ],
+  "Libro": [
+    {
+      "id_prod": 3,
+      "isbn": "9789871138141",
+      "genero": "Fantasía",
+      "formato": "Tapa blanda",
+      "editorial": "Salamandra"
+    },
+    {
+      "id_prod": 4,
+      "isbn": "9788437604947",
+      "genero": "Realismo mágico",
+      "formato": "Tapa blanda",
+      "editorial": "Cátedra"
+    },
+    {
+      "id_prod": 5,
+      "isbn": "9780451524935",
+      "genero": "Distopía",
+      "formato": "Tapa dura",
+      "editorial": "Signet Classics"
+    },
+    {
+      "id_prod": 8,
+      "isbn": "9788497592208",
+      "genero": "Misterio",
+      "formato": "Tapa blanda",
+      "editorial": "Debolsillo"
+    },
+    {
+      "id_prod": 9,
+      "isbn": "9789500420052",
+      "genero": "Ficción",
+      "formato": "Tapa dura",
+      "editorial": "Alfaguara"
+    }
+  ],
+  "Categorias": [
+    {
+      "id_cat": 1,
+      "nombre": "Café",
+      "desc": "Cafés, granos y productos relacionados."
+    },
+    {
+      "id_cat": 2,
+      "nombre": "Libros",
+      "desc": "Libros de distintos géneros y editoriales."
+    },
+    {
+      "id_cat": 3,
+      "nombre": "Accesorios",
+      "desc": "Accesorios para preparar y disfrutar café."
+    },
+    {
+      "id_cat": 4,
+      "nombre": "Literatura",
+      "desc": "Obras literarias de distintos autores y géneros."
+    },
+    {
+      "id_cat": 5,
+      "nombre": "Ofertas",
+      "desc": "Productos seleccionados con descuentos especiales."
+    }
+  ],
+  "Autores": [
+    {
+      "id_autor": 1,
+      "nombre": "Antoine",
+      "apellido": "de Saint-Exupéry"
+    },
+    {
+      "id_autor": 2,
+      "nombre": "Gabriel García",
+      "apellido": "Márquez"
+    },
+    {
+      "id_autor": 3,
+      "nombre": "George",
+      "apellido": "Orwell"
+    },
+    {
+      "id_autor": 4,
+      "nombre": "Agatha",
+      "apellido": "Christie"
+    },
+    {
+      "id_autor": 5,
+      "nombre": "Julio",
+      "apellido": "Cortázar"
+    }
+  ],
+  "Prod_Autor": [
+    {
+      "id_prod": 3,
+      "id_autor": 1
+    },
+    {
+      "id_prod": 4,
+      "id_autor": 2
+    },
+    {
+      "id_prod": 5,
+      "id_autor": 3
+    },
+    {
+      "id_prod": 8,
+      "id_autor": 4
+    },
+    {
+      "id_prod": 9,
+      "id_autor": 5
+    }
+  ],
+  "Promociones": [
+    {
+      "id_promo": 1,
+      "etiqueta": "Oferta especial",
+      "desc": "Descuento especial en productos seleccionados.",
+      "descuento": 15,
+      "fecha_inicio": "2026-09-01",
+      "fecha_fin": "2026-09-30",
+      "activa": 1
+    },
+    {
+      "id_promo": 2,
+      "etiqueta": "Fin de semana",
+      "desc": "Descuento en libros durante el fin de semana.",
+      "descuento": 20,
+      "fecha_inicio": "2026-09-05",
+      "fecha_fin": "2026-09-06",
+      "activa": 1
+    },
+    {
+      "id_promo": 3,
+      "etiqueta": "Vuelta a clases",
+      "desc": "Descuento en libros seleccionados.",
+      "descuento": 10,
+      "fecha_inicio": "2026-09-10",
+      "fecha_fin": "2026-09-20",
+      "activa": 1
+    },
+    {
+      "id_promo": 4,
+      "etiqueta": "Café del mes",
+      "desc": "Promoción en cafés de especialidad.",
+      "descuento": 25,
+      "fecha_inicio": "2026-09-01",
+      "fecha_fin": "2026-09-15",
+      "activa": 1
+    },
+    {
+      "id_promo": 5,
+      "etiqueta": "Liquidación",
+      "desc": "Últimas unidades con descuento.",
+      "descuento": 30,
+      "fecha_inicio": "2026-09-20",
+      "fecha_fin": "2026-10-05",
+      "activa": 0
+    }
+  ],
+  "Prod_Promo": [
+    {
+      "id_prod": 1,
+      "id_promo": 4
+    },
+    {
+      "id_prod": 2,
+      "id_promo": 1
+    },
+    {
+      "id_prod": 3,
+      "id_promo": 2
+    },
+    {
+      "id_prod": 4,
+      "id_promo": 3
+    },
+    {
+      "id_prod": 5,
+      "id_promo": 5
+    }
+  ]
+}

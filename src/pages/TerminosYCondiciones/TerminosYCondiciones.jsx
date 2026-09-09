@@ -1,11 +1,11 @@
 import "./TerminosYCondiciones.css";
-import hr1 from "../../assets/hr-decoracion1.png";
-import hr2 from "../../assets/hr-decoracionxs.png";
-import hr3 from "../../assets/hr-decoracion-blanco.png";
-import iconRules from "../../assets/icons-our-rules.png";
-import hr4 from "../../assets/hr-punteado.png";
-import hr5 from "../../assets/hr-punteado-negro.png";
-import hr7 from "../../assets/hr-decoracion2.png";
+import hr1 from "../../assets/hrs/hr-decoracion1.webp";
+import hr2 from "../../assets/hrs/hr-decoracionxs.webp";
+import hr3 from "../../assets/hrs/hr-decoracion-blanco.svg";
+import iconRules from "../../assets/icons-our-rules.svg";
+import hr4 from "../../assets/hrs/hr-punteado.webp";
+import hr5 from "../../assets/hrs/hr-punteado-negro.webp";
+import hr7 from "../../assets/hrs/hr-decoracion2.webp";
 
 
 
@@ -16,8 +16,8 @@ function TerminosYCondiciones() {
         <h1>Términos y condiciones</h1>
         <p className="h-p">Las reglas de nuestro refugio literario, última actualización: Junio, 2026</p>
       </div>
-      <img className="hr1" src={hr1} alt="Separador decorativo" />
       <div className="content">
+        <img className="hr1" src={hr1} alt="Separador decorativo" />
         <div className="about-our-prodts">
           <h2>Sobre nuestros productos</h2>
           <img className="hr5" src={hr5} alt="Línea separadora decorativa" />
@@ -32,8 +32,8 @@ function TerminosYCondiciones() {
         <div className="our-rules">
           <h2>Nuestras reglas</h2>
           <img className="hr2" src={hr2} alt="Línea separadora decorativa" />
-          <p>En esta sección nos enfocaremos en aclarar nuestras condiciones para evitar confusiones y mantener una buena relación con nuestros clientes.</p>
-          <img className="icon-rules" src={iconRules} alt="iconos"/>
+          <p className="out-rules__p">En esta sección nos enfocaremos en aclarar nuestras condiciones para evitar confusiones y mantener una buena relación con nuestros clientes.</p>
+          <img className="icon-rules" src={iconRules} alt="iconos" />
         </div>
         <div className="cont-grande">
           <h2>Condiciones Generales</h2>
@@ -52,16 +52,16 @@ function TerminosYCondiciones() {
         <div className="terms-conditns">
           <h2>Términos y condiciones</h2>
           <img className="hr5" src={hr5} alt="Línea separadora decorativa" />
-            <ol>
-              <li>Disposiciones Generales</li>
-              <li>Envíos y Entregas</li>
-              <li>Propiedad Intelectual</li>
-              <li>Devoluciones y <br/> Reembolsos</li>
-              <li>Privacdad y Protección <br/> de datos</li>
-              <li>Métodos de Pago</li>
-              <li>Disponibilidad de <br/> Productos</li>
-              <li>Atención al cliente</li>
-            </ol>
+          <ol>
+            <li>Disposiciones Generales</li>
+            <li>Envíos y Entregas</li>
+            <li>Propiedad Intelectual</li>
+            <li>Devoluciones y <br /> Reembolsos</li>
+            <li>Privacidad y Protección <br /> de datos</li>
+            <li>Métodos de Pago</li>
+            <li>Disponibilidad de <br /> productos</li>
+            <li>Atención al cliente</li>
+          </ol>
         </div>
         <div className="cont2">
           <h2>Envíos y Entregas</h2>

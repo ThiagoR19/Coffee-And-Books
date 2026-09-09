@@ -1,8 +1,8 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import "./Footer.css";
-import InstagramIcon from "../../assets/icon-instagram.png";
-import WhatsAppIcon from "../../assets/icon-whatsapp.png";
-import LogoFooter from "../../assets/logo-footer.png";
+import InstagramIcon from "../../assets/icon-instagram.svg";
+import WhatsAppIcon from "../../assets/icon-whatsapp.svg";
+import LogoFooter from "../../assets/logo-footer.svg";
 
 const INFO_LINKS = [
   { label: "Sobre nosotros", path: "/sobrenosotros" },
@@ -11,13 +11,17 @@ const INFO_LINKS = [
 ];
 
 const CATEGORY_LINKS = [
-  { label: "Books", path: "/libros" },
-  { label: "Coffees", path: "/cafe-importado" },
-  { label: "Novedades", path: "/novedades" },
-  { label: "Ofertas", path: "/ofertas" },
+  { label: "Libros", path: "/catalogo" },
+  // { label: "Libros", path: "/productoLibro" },
+  { label: "Cafés", path: "/catalogo" },
+  //{ label: "Cafés", path: "/productoCafe" },
+  { label: "Novedades", path: "/catalogo" },
+  { label: "Ofertas", path: "/home" },
 ];
 
 function Footer() {
+  const [location] = useLocation();
+
   return (
     <footer className="footer">
       <div className="footer__top">
@@ -53,8 +57,11 @@ function Footer() {
             <h3 className="footer__col-title">INFORMACIÓN</h3>
             <ul className="footer__link-list">
               {INFO_LINKS.map((link) => (
-                <li key={link.path}>
-                  <Link href={link.path} className="footer__link">
+                <li key={link.label}>
+                  <Link
+                    href={link.path}
+                    className={`footer__link${location === link.path ? " footer__link--active" : ""}`}
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -66,8 +73,11 @@ function Footer() {
             <h3 className="footer__col-title">CATEGORÍAS</h3>
             <ul className="footer__link-list">
               {CATEGORY_LINKS.map((link) => (
-                <li key={link.path}>
-                  <Link href={link.path} className="footer__link">
+                <li key={link.label}>
+                  <Link
+                    href={link.path}
+                    className="footer__link"
+                  >
                     {link.label}
                   </Link>
                 </li>

@@ -2,25 +2,27 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import "./Header.css";
 
-import WhatsappIcon from "../../assets/icon-whatsapp.png";
-import InstagramIcon from "../../assets/icon-instagram.png";
-import LogoHeader from "../../assets/logo-header.png";
-import SearchIcon from "../../assets/icon-search.png";
-import CartIcon from "../../assets/carrito-icon.png";
-import CartIconActive from "../../assets/carrito-icon-seleccionado.png";
+import WhatsappIcon from "../../assets/icon-whatsapp.svg";
+import InstagramIcon from "../../assets/icon-instagram.svg";
+import LogoHeader from "../../assets/logo-header.svg";
+import SearchIcon from "../../assets/icon-search.svg";
+import CartIcon from "../../assets/carrito/carrito-icon.svg";
+import CartIconActive from "../../assets/carrito/carrito-icon-seleccionado.svg";
+import { useShop } from "../../context/ShopContext";
 
 const NAV_LINKS = [
   { label: "HOME", path: "/" },
   { label: "CATÁLOGO", path: "/catalogo/todos" },
   { label: "CAFÉ IMPORTADO", path: "/productoCafe" },
   { label: "LIBROS", path: "/productoLibro" },
+  { label: "SOBRE NOSOTROS", path: "/sobrenosotros" },
+  { label: "PREGUNTAS FRECUENTES", path: "/faqs" },
 ];
-
-function Header({ cartCount = 0 }) {
+function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
-  const [searchValue, setSearchValue] = useState("");
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const [location] = useLocation();
+  const [location, setLocation] = useLocation();
+  const { cartCount, searchQuery, setSearchQuery } = useShop();
 
   useEffect(() => {
     function handleResize() {
@@ -29,12 +31,23 @@ function Header({ cartCount = 0 }) {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
- 
-  // function handleSearchSubmit(e) {
-  //   e.preventDefault();
-  //   console.log("Buscar:", searchValue);
-  // }
- 
+
+  // Si el usuario busca desde cualquier página que no sea el catálogo,
+  // lo llevamos ahí para que pueda ver los resultados filtrados.
+  function handleSearchChange(value) {
+    setSearchQuery(value);
+    if (value.trim() && !location.startsWith("/catalogo")) {
+      setLocation("/catalogo/todos");
+    }
+  }
+
+  function handleSearchSubmit(event) {
+    event.preventDefault();
+    if (searchQuery.trim() && !location.startsWith("/catalogo")) {
+      setLocation("/catalogo/todos");
+    }
+  }
+
   return (
     <header className="header">
       <div className="header__topbar">
@@ -84,24 +97,24 @@ function Header({ cartCount = 0 }) {
         <div className="header__actions">
           {isMobile ? (
             /* Mobile: buscador siempre visible como input expandido */
-            <form className="header__search-always" /* onSubmit={handleSearchSubmit} */>
+            <form className="header__search-always" onSubmit={handleSearchSubmit}>
               <img src={SearchIcon} alt="Buscar" />
               <input
                 type="text"
                 placeholder="Buscar..."
-                value={searchValue}
-                onChange={(e) => setSearchValue(e.target.value)}
+                value={searchQuery}
+                onChange={(e) => handleSearchChange(e.target.value)}
               />
             </form>
           ) : searchOpen ? (
             /* Desktop: buscador expandible al hacer click */
-            <form className="header__search-form" /* onSubmit={handleSearchSubmit} */ >
+            <form className="header__search-form" onSubmit={handleSearchSubmit}>
               <input
                 type="text"
                 className="header__search-input"
                 placeholder="Buscar..."
-                value={searchValue}
-                onChange={(e) => setSearchValue(e.target.value)}
+                value={searchQuery}
+                onChange={(e) => handleSearchChange(e.target.value)}
                 autoFocus
               />
               <button
@@ -109,7 +122,7 @@ function Header({ cartCount = 0 }) {
                 className="header__search-close"
                 onClick={() => {
                   setSearchOpen(false);
-                  setSearchValue("");
+                  setSearchQuery("");
                 }}
               >
                 ✕

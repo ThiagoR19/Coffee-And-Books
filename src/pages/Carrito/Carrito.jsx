@@ -1,24 +1,31 @@
-import ProductosCarrito from '../../components/productosCarrito/ProductosCarrito'
-import ProductoCarrito from '../../components/ProductoCarrito/ProductoCarrito'
-import ResumenCarrito from '../../components/ResumenCarrito/ResumenCarrito'
-
-import './Carrito.css'
-
-const productos = [
-  { id: 1, nombre: 'Nombre Producto', precio: 100000 },
-  { id: 2, nombre: 'Nombre Producto', precio: 100000 },
-  { id: 3, nombre: 'Nombre Producto', precio: 100000 },
-  { id: 4, nombre: 'Nombre Producto', precio: 100000 },
-]
+import { useState } from 'react';
+import ProductosCarrito from '../../components/ProductosCarrito/ProductosCarrito';
+import ProductoCarrito from '../../components/ProductoCarrito/ProductoCarrito';
+import ResumenCarrito from '../../components/ResumenCarrito/ResumenCarrito';
+import { useShop } from '../../context/ShopContext';
+import './Carrito.css';
 
 function Carrito() {
-  return (
-    <section className='Carrito'>
-      <ProductosCarrito productos={productos} />
-      <ProductoCarrito />
-      <ResumenCarrito />
-    </section>
-  )
-} 
+  const { cartItems, isLoading, error, updateQuantity, removeFromCart, getProductImage } = useShop();
+  const [selectedId, setSelectedId] = useState(null);
+  const prodSeleccionado = cartItems.find((item) => item.id_prod === selectedId) || cartItems[0] || null;
 
-export default Carrito
+  if (isLoading) return <section className="Carrito"><p className="carrito-estado">Cargando catálogo…</p></section>;
+  if (error) return <section className="Carrito"><p className="carrito-estado">{error}</p></section>;
+
+  return (
+    <section className="Carrito">
+      <ProductosCarrito productos={cartItems} productoSeleccionado={prodSeleccionado} setProdSeleccionado={(product) => setSelectedId(product.id_prod)} getProductImage={getProductImage} />
+      <ProductoCarrito
+        prodSeleccionado={prodSeleccionado}
+        borrarDelCarrito={removeFromCart}
+        handleAdd={() => prodSeleccionado && updateQuantity(prodSeleccionado.id_prod, 1)}
+        handleSustract={() => prodSeleccionado && updateQuantity(prodSeleccionado.id_prod, -1)}
+        getProductImage={getProductImage}
+      />
+      <ResumenCarrito productosCarrito={cartItems} />
+    </section>
+  );
+}
+
+export default Carrito;

@@ -1,16 +1,16 @@
 import './Catalogo.css'
 import '../../App.css'
-import imagenCatalogo from '../../assets/imagen-catalogo.png'
-import imagenFondo from '../../assets/fondos/fondo3.1.0.png'
+import imagenCatalogo from '../../assets/catalogo/imagen-catalogo.webp'
 import ListaProductos from './ListaProd'
-import {useRoute,useLocation} from 'wouter';
+import { useRoute, useLocation } from 'wouter';
 
 export default function Catalogo() {
   const [, route] = useRoute(':vista/:filtro')
-  const [location,setLocation] = useLocation()
+  const [, setLocation] = useLocation()
+  const filtro = route?.filtro || 'todos'
 
   function clase(tipo) {
-    if (route.filtro == tipo) {
+    if (filtro == tipo) {
       return ("btn active")
     } else {
       return ("btn")
@@ -25,9 +25,9 @@ export default function Catalogo() {
           <p className="p-Cat" >Libros y cafés importados <br /> para inspirar tus <br /> mejores momentos.</p>
 
           <div className="catalogo-botones">
-            <button className={clase("todos")}  onClick={() => setLocation("/catalogo/todos")} >TODOS LOS PRODUCTOS</button>
-            <button className={clase("libro")}  onClick={() => setLocation("/catalogo/libro")} >LIBROS</button>
-            <button className={clase("cafe")}  onClick={() => setLocation("/catalogo/cafe")} >CAFÉS IMPORTADOS</button>
+            <button className={clase("todos")} onClick={() => setLocation("/catalogo/todos")}>TODOS LOS PRODUCTOS</button>
+            <button className={clase("libro")} onClick={() => setLocation("/catalogo/libro")}>LIBROS</button>
+            <button className={clase("cafe")} onClick={() => setLocation("/catalogo/cafe")}>CAFÉS IMPORTADOS</button>
           </div>
         </div>
 
@@ -36,7 +36,7 @@ export default function Catalogo() {
 
       <div className="container-productos">
         <div className="productos">
-          <ListaProductos />
+          <ListaProductos categoryFilter={filtro} />
         </div>
       </div>
     </div>

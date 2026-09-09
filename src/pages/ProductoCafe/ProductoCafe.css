@@ -1,7 +1,7 @@
 #productoCafe {
   display: flex;
   flex-direction: column;
-  background-image: url('../../assets/fondos/fondo3.1.0.png');
+  background-image: url('../../assets/fondos/fondo3.1.0.webp');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -10,3 +10,29 @@
 /* img {
   height: 100px;
 } */
+
+/*-----------------RESPONSIVE-----------------------*/
+/*-------TABLETS----------*/
+@media (max-width: 890px) {
+  #productoCafe {
+    flex-direction: column;
+  }
+
+  #imagenes,
+  #informacion {
+    width: 100%;
+  }
+}
+
+/*--------------------CELULARES---------*/
+@media (max-width: 480px){
+  #productoCafe {
+    flex-direction: column;
+  }
+
+  #imagenes,
+  #informacion {
+    width: 100%;
+  }
+}
+
