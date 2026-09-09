@@ -44,12 +44,16 @@
 @media (max-width: 795px) {
   .Carrito{
     flex-direction: column;
+    flex-wrap: nowrap;
+    height: auto;
+    overflow: visible;
     padding: 40px 15px;
     gap: 20px;
     align-items: stretch;
   }
 
   .Carrito > article {
+    height: auto;
     max-height: none;
     overflow-y: visible;
   }
@@ -61,11 +65,11 @@
   }
 
   #producto {
-    order: 1;
+    order: 2;
   }
 
   #productos {
-    order: 2;
+    order: 1;
   }
 
   #resumen {

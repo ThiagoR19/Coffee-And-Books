@@ -120,8 +120,8 @@
 
 @media (max-width: 795px) {
   #productos {
-    flex: auto;
-    order: 2;
+    flex: none;
+    order: 1;
   }
 
   .productoL {
@@ -130,7 +130,9 @@
   }
 
   .productoL__img {
-    width: min-content;
+    width: 80px;
+    flex-shrink: 0;
+    object-fit: contain;
     height: 100px;
   }
 
@@ -167,12 +169,12 @@
   }
 
   .productoL__img {
-    width: 120px;
+    width: 72px;
     height: 85px;
   }
 
   .productoL__div-h4 {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .productoL__div-span {

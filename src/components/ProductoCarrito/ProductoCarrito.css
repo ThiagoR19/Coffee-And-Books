@@ -215,14 +215,30 @@
 
 @media (max-width: 795px) {
   #producto {
-    flex: auto;
+    flex: none;
+    height: auto;
+    overflow: visible;
     margin: 0;
-    order: 1;
+    order: 2;
   }
 
   .producto__div:first-child {
     height: auto;
     padding: 12px;
+  }
+
+  .producto__div-div-principal {
+    height: auto;
+  }
+
+  .producto__div-div-img-principal {
+    height: 260px;
+    box-sizing: border-box;
+  }
+
+  .producto__div-div-titulo {
+    margin-left: 0;
+    margin-right: 40px;
   }
 }
 
@@ -268,22 +284,25 @@
 
   .producto__div-div-botones {
     width: 100%;
+    box-sizing: border-box;
     justify-content: space-around;
     margin-top: -10px;
     border-radius: 20px 20px 0 20px;
   }
 
   .producto__div-div-botones button img {
-    height: 55px;
+    height: 44px;
   }
 
   .producto__div-div-div-h3 {
-    font-size: 48px;
+    font-size: 32px;
   }
 
   .producto__div-div-botones div {
-    height: 72px;
-    width: 130px;
+    height: 48px;
+    min-width: 60px;
+    width: auto;
+    padding: 0 12px;
     margin: 0;
   }
 

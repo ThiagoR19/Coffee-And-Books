@@ -108,7 +108,7 @@ function ProductoTop({ producto, addToCart, getProductImage }) {
       <div className="masVendido__div-cartel cartel2" style={{ background: getColorEtiqueta(producto.etiqueta || 'MÁS VENDIDO') }}>
         <h6>{producto.etiqueta || 'MÁS VENDIDO'}</h6>
       </div>
-      <Link href={detalleHref} className="masVendido__link" aria-label={"Ver el producto " + producto.nombre}>
+      <Link href={detalleHref} className="masVendido__link masVendido__imagen" aria-label={"Ver el producto " + producto.nombre}>
         <img className="masVendido__div-img" src={getProductImage(producto)} alt={producto.nombre} />
       </Link>
       <div className="masVendido__div-div">
