@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
 import './ListaProd.css';
 import useCarrusel from './hooksCatalogo/useCarrousel';
+import { getColorEtiqueta } from '../../context/etiquetaColores';
 
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 import { GoChevronRight, GoChevronLeft } from 'react-icons/go';
 import { formatPrice, useShop } from '../../context/ShopContext';
-import { Link } from 'wouter';
+import { Link, useSearch } from 'wouter';
 
 function ordenarProductos(productos, orden) {
   const copia = [...productos];
@@ -27,10 +28,23 @@ function ordenarProductos(productos, orden) {
 }
 
 export default function ListaProductos({ categoryFilter = 'todos' }) {
-  const { filteredProducts, isLoading, error, addToCart, getProductImage } = useShop();
+  const search = useSearch(); // te da el string después del "?"
+  const ordenInicial = new URLSearchParams(search).get('orden') || 'todos';
+  const [orden, setOrden] = useState(ordenInicial);
+
+  const { filteredProducts, isLoading, error, addToCart, getProductImage, cartItems } = useShop();
+  const [avisoStock, setAvisoStock] = useState(null);
   const [animando, setAnimando] = useState(false);
-  const [orden, setOrden] = useState('todos');
   const [esMobile, setEsMobile] = useState(() => window.matchMedia('(max-width: 480px)').matches);
+
+  const handleAgregar = (producto, stockDisponible) => {
+    if (stockDisponible <= 0) {
+      setAvisoStock(producto.id_prod);
+      window.setTimeout(() => setAvisoStock((actual) => (actual === producto.id_prod ? null : actual)), 2500);
+      return;
+    }
+    addToCart(producto);
+  };
 
   useEffect(() => {
     const mq = window.matchMedia('(max-width: 480px)');
@@ -119,28 +133,53 @@ export default function ListaProductos({ categoryFilter = 'todos' }) {
 
         {productosFiltrados.length > 0 ? (
           <div className={`prod-grid ${animando ? 'animando' : ''}`}>
-            {productosMostrados.map((producto) => (
-              <Link
-                key={producto.id_prod}
-                href={producto.id_cat === 1 ? `/producto/cafe/${producto.id_prod}` : `/producto/libro/${producto.id_prod}`}
-                className="lista-productos_card"
-              >
-                <div className="card-imagen-contenedor">
-                  {producto.etiqueta && <span className="card-etiqueta">{producto.etiqueta}</span>}
-                  <img className="card-imagen" src={getProductImage(producto)} alt={producto.nombre} />
-                </div>
-                <div className="card-info">
-                  <div className="card-info-texto">
-                    <h3 className="card-nombre">{producto.nombre}</h3>
-                    <span className="card-especificacion">{producto.especificacion}</span>
-                    <span className="card-precio">${formatPrice(producto.precio)}</span>
+            {productosMostrados.map((producto) => {
+              const enCarrito = cartItems.find((item) => item.id_prod === producto.id_prod)?.cantidad || 0;
+              const stockDisponible = producto.stock - enCarrito;
+              const sinStock = stockDisponible <= 0;
+
+              return (
+                <Link
+                  key={producto.id_prod}
+                  href={producto.id_cat === 1 ? `/producto/cafe/${producto.id_prod}` : `/producto/libro/${producto.id_prod}`}
+                  className={`lista-productos_card ${sinStock ? 'sin-stock' : ''}`}
+                >
+                  <div className="card-imagen-contenedor">
+                    {producto.etiqueta && (
+                      <span
+                        className="card-etiqueta"
+                        style={{ background: getColorEtiqueta(producto.etiqueta) }}
+                      >
+                        {producto.etiqueta}
+                      </span>
+                    )}
+                    <img className="card-imagen" src={getProductImage(producto)} alt={producto.nombre} />
                   </div>
-                  <button className="card-btn-agregar" onClick={(event) => { event.preventDefault(); event.stopPropagation(); addToCart(producto); }} aria-label={`Agregar ${producto.nombre} al carrito`}>
-                    <AiOutlinePlusCircle size={esMobile ? 22 : 35} color="#DCDACE" />
-                  </button>
-                </div>
-              </Link>
-            ))}
+                  <div className="card-info">
+                    <div className="card-info-texto">
+                      <h3 className="card-nombre">{producto.nombre}</h3>
+                      <span className="card-especificacion">{producto.especificacion}</span>
+                      <span className="card-precio">${formatPrice(producto.precio)}</span>
+                      {sinStock && <span className="card-sin-stock">SIN STOCK</span>}
+                      {avisoStock === producto.id_prod && (
+                        <span className="card-aviso-stock">Ya agregaste todo el stock disponible</span>
+                      )}
+                    </div>
+                    <button
+                      className="card-btn-agregar"
+                      onClick={(event) => {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        handleAgregar(producto, stockDisponible);
+                      }}
+                      aria-label={sinStock ? `${producto.nombre} sin stock` : `Agregar ${producto.nombre} al carrito`}
+                    >
+                      <AiOutlinePlusCircle size={esMobile ? 22 : 35} color="#DCDACE" />
+                    </button>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         ) : (
           <p className="catalogo-estado">No encontramos productos con ese filtro.</p>

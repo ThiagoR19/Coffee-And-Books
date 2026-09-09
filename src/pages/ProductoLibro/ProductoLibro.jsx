@@ -1,4 +1,5 @@
 import "./ProductoLibro.css";
+import { useState } from "react";
 import { FaCartShopping, FaRegUser } from "react-icons/fa6";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import imagenGrande from "../../assets/productoLibro/grande.webp";
@@ -13,52 +14,90 @@ import CarrouselAutores from "./carrouselAutores";
 import { formatPrice, useShop } from "../../context/ShopContext";
 
 export default function ProductoLibro({ params }) {
-  const { products, isLoading, error, addToCart, cartItems, getProductImage } = useShop();
-  const productId = Number(params?.id);
-  const product = products.find((item) => item.id_prod === productId && item.id_cat === 2)
-    || products.find((item) => item.id_prod === 28)
-    || products.find((item) => item.id_cat === 2);
-  const cantidad = cartItems.find((item) => item.id_prod === product?.id_prod)?.cantidad || 0;
+    const { products, isLoading, error, addToCart, cartItems, getProductImage } = useShop();
+    const productId = Number(params?.id);
+    const product = products.find((item) => item.id_prod === productId && item.id_cat === 2)
+        || products.find((item) => item.id_prod === 28)
+        || products.find((item) => item.id_cat === 2);
+    const cantidad = cartItems.find((item) => item.id_prod === product?.id_prod)?.cantidad || 0;
+    const [avisoStock, setAvisoStock] = useState(false);
+    const [indiceImagen, setIndiceImagen] = useState(0);
 
-  if (isLoading) return <main className="Contenedor-Principal-PL"><p className="catalogo-estado">Cargando producto…</p></main>;
-  if (error || !product) return <main className="Contenedor-Principal-PL"><p className="catalogo-estado">{error || 'No encontramos libros en el catálogo.'}</p></main>;
+    if (isLoading) return <main className="Contenedor-Principal-PL"><p className="catalogo-estado">Cargando producto…</p></main>;
+    if (error || !product) return <main className="Contenedor-Principal-PL"><p className="catalogo-estado">{error || 'No encontramos libros en el catálogo.'}</p></main>;
 
-  const libro = product.libro || {};
-  return (
-    <main className="Contenedor-Principal-PL">
-      <div className="contenedor-de-contenedores">
-        <div className="cont-de-imagen-grande">
-          <FaChevronLeft className="flecha-slider flecha-izq" />
-          <img className="imagen-grande" src={getProductImage(product) || imagenGrande} alt={product.nombre} />
-          <span className="contador-slider">1/3</span>
-          <FaChevronRight className="flecha-slider flecha-der" />
-        </div>
-        <div className="detalles-libro-1">
-          <div className="contenido-de-detalles">
-            <h1 className="titulo-libro">{product.nombre}</h1>
-            <p className="autor-libro">{product.autor || 'Autor no informado'}</p>
-            <div className="cont-auxiliar">
-              <div className="lado-izquierdo"><p className="precio-libro">${formatPrice(product.precio)}</p><div className="cont-de-atributos"><p className="genero">{libro.genero}</p><p className="formato">{libro.formato}</p></div></div>
-              <div className="bnt-copra-LP"><button className="boton-comprar" onClick={() => addToCart(product)}><FaCartShopping className="icono-carrito" />AGREGAR AL CARRITO</button><p className="UEC">Unidades en carrito: {cantidad}</p></div>
+    const libro = product.libro || {};
+    const stockDisponible = product.stock - cantidad;
+
+    const imagenesLibro = [
+        getProductImage(product) || imagenGrande,
+        product.imagen2,
+        product.imagen3,
+    ].filter(Boolean);
+    const imagenAnterior = () => setIndiceImagen((i) => (i === 0 ? imagenesLibro.length - 1 : i - 1));
+    const imagenSiguiente = () => setIndiceImagen((i) => (i === imagenesLibro.length - 1 ? 0 : i + 1));
+
+    const handleAgregar = () => {
+        if (stockDisponible <= 0) {
+            setAvisoStock(true);
+            window.setTimeout(() => setAvisoStock(false), 2500);
+            return;
+        }
+        addToCart(product);
+    };
+
+    return (
+        <main className="Contenedor-Principal-PL">
+            <div className="contenedor-de-contenedores">
+                <div className="cont-de-imagen-grande">
+                    {imagenesLibro.length > 1 && (
+                        <FaChevronLeft className="flecha-slider flecha-izq" onClick={imagenAnterior} />
+                    )}
+                    <img className="imagen-grande" src={imagenesLibro[indiceImagen]} alt={product.nombre} />
+                    <span className="contador-slider">{indiceImagen + 1}/{imagenesLibro.length}</span>
+                    {imagenesLibro.length > 1 && (
+                        <FaChevronRight className="flecha-slider flecha-der" onClick={imagenSiguiente} />
+                    )}
+                </div>
+                <div className="detalles-libro-1">
+                    <div className="contenido-de-detalles">
+                        <h1 className="titulo-libro">{product.nombre}</h1>
+                        <p className="autor-libro">{product.autor || 'Autor no informado'}</p>
+                        <div className="cont-auxiliar">
+                            <div className="lado-izquierdo">
+                                <p className="precio-libro">${formatPrice(product.precio)}</p>
+                                <div className="cont-de-atributos">
+                                    <p className="genero">{libro.genero}</p>
+                                    <p className="formato">{libro.formato}</p>
+                                </div>
+                            </div>
+                            <div className="bnt-copra-LP">
+                                <button className="boton-comprar" onClick={handleAgregar}>
+                                    <FaCartShopping className="icono-carrito" />
+                                    AGREGAR AL CARRITO
+                                </button>
+                                <p className="UEC">Unidades en carrito: {cantidad}</p>
+                                {avisoStock && <p className="aviso-stock-PL">Ya agregaste todo el stock disponible</p>}
+                            </div>
+                        </div>
+                        <span className="titleSinopsisLP">SINOPSIS</span>
+                        <p className="SinopsisLP">{product.descripcion}</p>
+                    </div>
+                </div>
             </div>
-            <span className="titleSinopsisLP">SINOPSIS</span>
-            <p className="SinopsisLP">{product.descripcion}</p>
-          </div>
-        </div>
-      </div>
-      <div className="detalles-libro-2">
-        <ul className="mi-listilla-pe">
-          <h3 className="detalle-del-detalle-h3">DETALLES DEL LIBRO</h3>
-          <li><span className="icono-circulo"><FaRegUser style={{ color: "black" }} className="icono-lista" /></span>Autor: {product.autor || 'No informado'}</li>
-          <li><span className="icono-circulo"><img className="icono-lista" src={IconDE} alt="" /></span>Género: {libro.genero}</li>
-          <li><span className="icono-circulo"><img className="icono-lista" src={IconLibro} alt="" /></span>Formato: {libro.formato}</li>
-          <li><span className="icono-circulo"><img className="icono-lista" src={IconEditorial} alt="" /></span>Editorial: {libro.editorial}</li>
-          <li><span className="icono-circulo"><img className="icono-lista" src={IconIsbn} alt="" /></span>ISBN: {libro.isbn}</li>
-        </ul>
-        <div className="contenedor-de-imagenes"><img className="imagenesChiquitas" src={chiquita1} alt="" /><img className="imagenesChiquitas" src={chiquita2} alt="" /><img className="imagenesChiquitas" src={chiquita3} alt="" /></div>
-      </div>
-      <h1 className="autore-h1">Mismo autor</h1>
-      <div className="contenedor-de-autores"><div className="contenedor-de-autores"><CarrouselAutores /></div></div>
-    </main>
-  );
+            <div className="detalles-libro-2">
+                <ul className="mi-listilla-pe">
+                    <h3 className="detalle-del-detalle-h3">DETALLES DEL LIBRO</h3>
+                    <li><span className="icono-circulo"><FaRegUser style={{ color: "black" }} className="icono-lista" /></span>Autor: {product.autor || 'No informado'}</li>
+                    <li><span className="icono-circulo"><img className="icono-lista" src={IconDE} alt="" /></span>Género: {libro.genero}</li>
+                    <li><span className="icono-circulo"><img className="icono-lista" src={IconLibro} alt="" /></span>Formato: {libro.formato}</li>
+                    <li><span className="icono-circulo"><img className="icono-lista" src={IconEditorial} alt="" /></span>Editorial: {libro.editorial}</li>
+                    <li><span className="icono-circulo"><img className="icono-lista" src={IconIsbn} alt="" /></span>ISBN: {libro.isbn}</li>
+                </ul>
+                <div className="contenedor-de-imagenes"><img className="imagenesChiquitas" src={chiquita1} alt="" /><img className="imagenesChiquitas" src={chiquita2} alt="" /><img className="imagenesChiquitas" src={chiquita3} alt="" /></div>
+            </div>
+            <h1 className="autore-h1">Mismo autor</h1>
+            <div className="contenedor-de-autores"><div className="contenedor-de-autores"><CarrouselAutores product={product} /></div></div>
+        </main>
+    );
 }

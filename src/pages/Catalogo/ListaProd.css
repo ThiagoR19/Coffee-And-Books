@@ -276,3 +276,25 @@
   padding: 60px 20px;
   font-size: 18px;
 }
+
+/* sin stock */
+
+.sin-stock {
+  opacity: 0.55;
+  filter: grayscale(60%);
+}
+
+.sin-stock .card-btn-agregar {
+  cursor: not-allowed;
+}
+
+.card-btn-agregar:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.card-sin-stock {
+  color: #ff8a80;
+  font-size: 11px;
+  font-weight: bold;
+}

@@ -217,20 +217,20 @@
 .explora__slogan-div {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: end;
   justify-content: center;
 }
 
 .explora__slogan-div-h2 {
   font-family: 'Merriweather';
   font-size: 40px;
-  text-align: center;
+  text-align: end;
   color: #F2D7BF;
 }
 
 .underline-slogan {
   height: 2px;
-  width: 50%;
+  width: 69%;
   background-color: #F2D7BF;
   margin: 10px 0;
 }

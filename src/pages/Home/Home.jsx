@@ -1,5 +1,7 @@
 import EsenciaCB from "../../components/EsenciaCB/EsenciaCB"
 import Estanteria from "../../components/Estanteria/Estanteria"
+import { Link, useLocation } from "wouter"
+import { getColorEtiqueta } from "../../context/etiquetaColores"
 
 import imagenIzquierda from '../../assets/home/imagen-home-izquierda.webp'
 import imagenIzquierdaMobile from '../../assets/fondos/fondo-img-hero-libro.svg'
@@ -8,22 +10,16 @@ import imagenDerecha from '../../assets/home/imagen-home-derecha.webp'
 import imagenSlogan from '../../assets/fondos/fondo-tarjeta4.webp'
 
 import { CiCirclePlus } from "react-icons/ci";
-// import cafeEjemplo1 from '../../assets/coffee-example1.png'
-// import cafeEjemplo3 from '../../assets/coffee-example3.png'
-
-// import sombraEstanteria from '../../assets/sombra-estanteria.svg'
-
 import obtenerPodio from "../../context/obtenerPodio"
-
 import iconoFlecha from '../../assets/icono-flecha.svg'
 
 import './Home.css'
-import { Link } from "wouter";
 import { formatPrice, useShop } from "../../context/ShopContext";
 
 const MAX_DESCRIPTION_LENGTH = 100;
 
 function Home() {
+  const [, setLocation] = useLocation();
   const { products, isLoading, error, addToCart, getProductImage } = useShop();
   const top3 = obtenerPodio(products);
 
@@ -39,16 +35,17 @@ function Home() {
           <p className="hero__p">Tu tienda online de libros y café importado. <br />
             Elegí tu próxima lectura y acompañala con <br />
             el mejor café del mundo.</p>
+
           <div className="hero__buttons">
-            <Link href="/catalogo" className="hero__div-button">VER LIBROS</Link>
-            <Link href="/catalogo" className="hero__div-button">EXPLORAR CAFÉS</Link>
+            <button className="hero__div-button" onClick={() => setLocation("/catalogo/libro")}>VER LIBROS</button>
+            <button className="hero__div-button" onClick={() => setLocation("/catalogo/cafe")}>EXPLORAR CAFÉS</button>
           </div>
           <img className="hero__imagen-derecha hero__imagen-derecha--desktop" src={imagenDerecha} alt="Imagen principal derecha" />
           <img className="hero__imagen-derecha hero__imagen-derecha--mobile" src={imagenDerechaMobile} alt="Imagen principal derecha" />
         </div>
         <EsenciaCB />
         <Estanteria />
-        <Link href="/catalogo" id='maderaEstanteria' >
+        <Link href="/catalogo/todos" id='maderaEstanteria'>
           <span>Ver todos los productos</span>
           <img src={iconoFlecha} alt="Icono flecha" />
         </Link>
@@ -60,17 +57,17 @@ function Home() {
           <div className="explora__div-div cafes-origen">
             <h3 className="explora__div-div-h3">CAFÉS DE <br /> ORIGEN</h3>
             <p className="explora__div-div-p">Seleccionamos lo mejor del  <br />mundo para vos.</p>
-            <Link href="/catalogo?categoria=cafe" className="explora__div-div-button">CONOCER MÁS </Link>
+            <button className="explora__div-div-button" onClick={() => setLocation("/catalogo/todos?orden=recientes")}>CONOCER MÁS</button>
           </div>
           <div className="explora__div-div novedades">
             <h3 className="explora__div-div-h3">NOVEDADES <br /> LITERARIAS</h3>
             <p className="explora__div-div-p">Descubrí los últimos <br /> lanzamientos.</p>
-            <Link href="/catalogo?categoria=libro" className="explora__div-div-button">VER NOVEDADES</Link>
+            <button className="explora__div-div-button" onClick={() => setLocation("/catalogo/todos?orden=novedades")}>VER NOVEDADES</button>
           </div>
           <div className="explora__div-div combos">
-            <h3 className="explora__div-div-h3" >COMBOS <br /> ESPECIALES</h3>
+            <h3 className="explora__div-div-h3">COMBOS <br /> ESPECIALES</h3>
             <p className="explora__div-div-p">Libros + Café <br /> al mejor precio</p>
-            <button className="explora__div-div-button" >VER COMBOS</button>
+            <button className="explora__div-div-button" onClick={() => setLocation("/catalogo/todos?orden=combos")}>VER COMBOS</button>
           </div>
         </div>
         <div className="explora__slogan">
@@ -79,7 +76,6 @@ function Home() {
             <h2 className="explora__slogan-div-h2">“Cada lectura merece <br /> un buen café”</h2>
             <div className="underline-slogan"></div>
           </div>
-          <button className="explora__slogan-button">Descubrí los combos</button>
         </div>
       </article>
       <article id="masVendido">
@@ -109,7 +105,9 @@ function ProductoTop({ producto, addToCart, getProductImage }) {
 
   return (
     <div className="masVendido__div">
-      <div className="masVendido__div-cartel cartel2"><h6>{producto.etiqueta || 'MÁS VENDIDO'}</h6></div>
+      <div className="masVendido__div-cartel cartel2" style={{ background: getColorEtiqueta(producto.etiqueta || 'MÁS VENDIDO') }}>
+        <h6>{producto.etiqueta || 'MÁS VENDIDO'}</h6>
+      </div>
       <Link href={detalleHref} className="masVendido__link" aria-label={"Ver el producto " + producto.nombre}>
         <img className="masVendido__div-img" src={getProductImage(producto)} alt={producto.nombre} />
       </Link>
@@ -126,4 +124,4 @@ function ProductoTop({ producto, addToCart, getProductImage }) {
       </div>
     </div>
   )
-} 
+}

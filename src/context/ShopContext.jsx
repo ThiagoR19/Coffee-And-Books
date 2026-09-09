@@ -116,6 +116,43 @@ function readStoredCart() {
   }
 }
 
+// --- Búsqueda ---
+
+function normalizeText(value) {
+  return String(value ?? "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, ""); // saca tildes: "café" -> "cafe"
+}
+
+// Junta TODOS los atributos buscables de un producto (café o libro) en un solo texto.
+function buildSearchableText(product) {
+  const campos = [
+    product.nombre,
+    product.descripcion,
+    product.categoria,
+    product.autor,
+    product.etiqueta,
+    ...(product.etiquetas || []),
+    // atributos de café
+    product.cafe?.marca,
+    product.cafe?.tipo,
+    product.cafe?.intensidad,
+    product.cafe?.origen,
+    product.cafe?.contenido,
+    product.cafe?.presentacion,
+    product.cafe?.compatibilidad,
+    product.cafe?.perfil_sabor,
+    // atributos de libro
+    product.libro?.genero,
+    product.libro?.formato,
+    product.libro?.editorial,
+    product.libro?.isbn,
+  ];
+
+  return normalizeText(campos.filter(Boolean).join(" "));
+}
+
 const ShopContext = createContext(null);
 
 export function ShopProvider({ children }) {
@@ -194,18 +231,19 @@ export function ShopProvider({ children }) {
 
   const clearCart = () => setCartItems([]);
 
+  // Búsqueda por palabras: cada palabra escrita debe aparecer en algún atributo del producto
+  // (no necesariamente todas en el mismo campo). Así "orwell policial" encuentra un libro
+  // cuyo autor sea Orwell aunque "policial" esté en el campo género, por ejemplo.
   const filteredProducts = useMemo(() => {
-    const query = searchQuery.trim().toLowerCase();
+    const query = normalizeText(searchQuery).trim();
     if (!query) return products;
-    return products.filter((product) => [
-      product.nombre,
-      product.descripcion,
-      product.categoria,
-      product.cafe?.marca,
-      product.cafe?.tipo,
-      product.libro?.genero,
-      product.autor,
-    ].some((value) => String(value || "").toLowerCase().includes(query)));
+
+    const palabras = query.split(/\s+/).filter(Boolean);
+
+    return products.filter((product) => {
+      const texto = buildSearchableText(product);
+      return palabras.every((palabra) => texto.includes(palabra));
+    });
   }, [products, searchQuery]);
 
   const value = useMemo(() => ({

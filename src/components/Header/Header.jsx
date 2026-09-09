@@ -12,15 +12,14 @@ import { useShop } from "../../context/ShopContext";
 
 const NAV_LINKS = [
   { label: "HOME", path: "/" },
-  { label: "CATÁLOGO", path: "/catalogo" },
+  { label: "CATÁLOGO", path: "/catalogo/todos" },
   { label: "SOBRE NOSOTROS", path: "/sobrenosotros" },
   { label: "PREGUNTAS FRECUENTES", path: "/faqs" },
 ];
-
 function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const [location] = useLocation();
+  const [location, setLocation] = useLocation();
   const { cartCount, searchQuery, setSearchQuery } = useShop();
 
   useEffect(() => {
@@ -31,10 +30,21 @@ function Header() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // function handleSearchSubmit(e) {
-  //   e.preventDefault();
-  //   console.log("Buscar:", searchValue);
-  // }
+  // Si el usuario busca desde cualquier página que no sea el catálogo,
+  // lo llevamos ahí para que pueda ver los resultados filtrados.
+  function handleSearchChange(value) {
+    setSearchQuery(value);
+    if (value.trim() && !location.startsWith("/catalogo")) {
+      setLocation("/catalogo/todos");
+    }
+  }
+
+  function handleSearchSubmit(event) {
+    event.preventDefault();
+    if (searchQuery.trim() && !location.startsWith("/catalogo")) {
+      setLocation("/catalogo/todos");
+    }
+  }
 
   return (
     <header className="header">
@@ -85,28 +95,24 @@ function Header() {
         <div className="header__actions">
           {isMobile ? (
             /* Mobile: buscador siempre visible como input expandido */
-            <form className="header__search-always" /* onSubmit={handleSearchSubmit} */>
+            <form className="header__search-always" onSubmit={handleSearchSubmit}>
               <img src={SearchIcon} alt="Buscar" />
               <input
                 type="text"
                 placeholder="Buscar..."
                 value={searchQuery}
-                onChange={(e) => {
-                  setSearchQuery(e.target.value);
-                }}
+                onChange={(e) => handleSearchChange(e.target.value)}
               />
             </form>
           ) : searchOpen ? (
             /* Desktop: buscador expandible al hacer click */
-            <form className="header__search-form" /* onSubmit={handleSearchSubmit} */ >
+            <form className="header__search-form" onSubmit={handleSearchSubmit}>
               <input
                 type="text"
                 className="header__search-input"
                 placeholder="Buscar..."
                 value={searchQuery}
-                onChange={(e) => {
-                  setSearchQuery(e.target.value);
-                }}
+                onChange={(e) => handleSearchChange(e.target.value)}
                 autoFocus
               />
               <button

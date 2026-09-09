@@ -1,36 +1,36 @@
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "./carrouselAutores.css";
-import cafe9 from '../../assets/catalogo/productos/laInvencion.png';
-import cafe5 from '../../assets/catalogo/productos/habitosAtom.png';
-import cafe6 from '../../assets/catalogo/productos/maus.png';
-
-const librosEjemplo = [
-    { id: 1, titulo: "La Invención de Morel", portada: cafe9 },
-    { id: 2, titulo: "Hábitos Atómicos", portada: cafe5 },
-    { id: 3, titulo: "Maus", portada: cafe6 },
-    { id: 4, titulo: "Hábitos Atómicos", portada: cafe5 },
-    { id: 5, titulo: "La Invención de Morel", portada: cafe9 },
-    { id: 6, titulo: "Maus", portada: cafe6 },
-    { id: 7, titulo: "Hábitos Atómicos", portada: cafe5 },
-    { id: 8, titulo: "La Invención de Morel", portada: cafe9 },
-    { id: 9, titulo: "Maus", portada: cafe6 },
-];
+import { useMemo, useState } from "react";
+import { useShop } from "../../context/ShopContext";
 
 const VISIBLES = 6;
 
-export default function CarrouselAutores({ libros = librosEjemplo }) {
-    // const [inicio, setInicio] = useState(0);
-    // const maxInicio = Math.max(0, libros.length - VISIBLES);
-    // const anterior = () => setInicio((i) => Math.max(i - 1, 0));
-    // const siguiente = () => setInicio((i) => Math.min(i + 1, maxInicio));
-    // const visibles = libros.slice(inicio, inicio + VISIBLES);
+export default function CarrouselAutores({ product }) {
+    const { products, getProductImage } = useShop();
+
+    const libros = useMemo(() => {
+        if (!product?.autor) return [];
+        return products.filter(
+            (item) => item.id_prod !== product.id_prod && item.autor === product.autor,
+        );
+    }, [products, product]);
+
+    const [inicio, setInicio] = useState(0);
+    const maxInicio = Math.max(0, libros.length - VISIBLES);
+    const anterior = () => setInicio((i) => Math.max(i - 1, 0));
+    const siguiente = () => setInicio((i) => Math.min(i + 1, maxInicio));
+    const visibles = libros.slice(inicio, inicio + VISIBLES);
+
+    if (libros.length === 0) {
+        return <p className="carrousel-vacio">No encontramos más libros de este autor.</p>;
+    }
 
     return (
         <div className="carrousel-wrapper">
             <button
                 className="carrousel-btn"
-                // onClick={anterior}
-                // disabled={inicio === 0}
+                onClick={anterior}
+                disabled={inicio === 0}
                 aria-label="Anterior"
             >
                 <FaChevronLeft size={70} color="#D9D9D9" />
@@ -38,11 +38,10 @@ export default function CarrouselAutores({ libros = librosEjemplo }) {
 
             <div className="carrousel-track-container">
                 <div className="carrousel-track">
-                    {/* visibles */}
-                    {libros.slice(0, VISIBLES).map((libro) => (
-                        <div className="carrousel-card" key={libro.id}>
-                            <img src={libro.portada} alt={libro.titulo} />
-                            <p>{libro.titulo}</p>
+                    {visibles.map((libro) => (
+                        <div className="carrousel-card" key={libro.id_prod}>
+                            <img src={getProductImage(libro)} alt={libro.nombre} />
+                            <p>{libro.nombre}</p>
                         </div>
                     ))}
                 </div>
@@ -50,8 +49,8 @@ export default function CarrouselAutores({ libros = librosEjemplo }) {
 
             <button
                 className="carrousel-btn"
-                // onClick={siguiente}
-                // disabled={inicio >= maxInicio}
+                onClick={siguiente}
+                disabled={inicio >= maxInicio}
                 aria-label="Siguiente"
             >
                 <FaChevronRight size={70} color="#D9D9D9" />
