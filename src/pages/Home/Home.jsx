@@ -21,6 +21,8 @@ import './Home.css'
 import { Link } from "wouter";
 import { formatPrice, useShop } from "../../context/ShopContext";
 
+const MAX_DESCRIPTION_LENGTH = 100;
+
 function Home() {
   const { products, isLoading, error, addToCart, getProductImage } = useShop();
   const top3 = obtenerPodio(products);
@@ -99,20 +101,29 @@ function Home() {
 export default Home
 
 function ProductoTop({ producto, addToCart, getProductImage }) {
+  const detalleHref = (producto.id_cat === 1 ? '/producto/cafe/' : '/producto/libro/') + producto.id_prod;
+  const descripcion = String(producto.descripcion || '');
+  const descripcionRecortada = descripcion.length > MAX_DESCRIPTION_LENGTH
+    ? descripcion.slice(0, MAX_DESCRIPTION_LENGTH).trimEnd() + '…'
+    : descripcion;
+
   return (
-    < div className="masVendido__div" >
+    <div className="masVendido__div">
       <div className="masVendido__div-cartel cartel2"><h6>{producto.etiqueta || 'MÁS VENDIDO'}</h6></div>
-      <img className="masVendido__div-img" src={getProductImage(producto)} alt={producto.nombre} />
+      <Link href={detalleHref} className="masVendido__link" aria-label={"Ver el producto " + producto.nombre}>
+        <img className="masVendido__div-img" src={getProductImage(producto)} alt={producto.nombre} />
+      </Link>
       <div className="masVendido__div-div">
-        <div className="masVendido__div-div-div">
+        <Link href={detalleHref} className="masVendido__link masVendido__div-div-div" aria-label={"Ver la descripción completa de " + producto.nombre}>
           <h5 className="masVendido__div-div-div-h5">{producto.nombre}</h5>
-          <h6 className="masVendido__div-div-div-h6">{producto.descripcion}</h6>
+          <h6 className="masVendido__div-div-div-h6">{descripcionRecortada}</h6>
+          {descripcion.length > MAX_DESCRIPTION_LENGTH && <span className="masVendido__ver-detalle">Ver descripción completa</span>}
           <span className="masVendido__div-div-div-span">${formatPrice(producto.precio)}</span>
-        </div>
+        </Link>
         <button className="iconoPlus-button" onClick={() => addToCart(producto)} aria-label={`Agregar ${producto.nombre} al carrito`}>
           <CiCirclePlus className="iconoPlus" />
         </button>
       </div>
-    </div >
+    </div>
   )
 } 
