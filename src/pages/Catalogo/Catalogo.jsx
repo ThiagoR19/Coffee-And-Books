@@ -2,10 +2,22 @@ import './Catalogo.css'
 import '../../App.css'
 import imagenCatalogo from '../../assets/catalogo/imagen-catalogo.webp'
 import ListaProductos from './ListaProd'
-import { useState } from 'react'
+import { useLocation, useSearch } from 'wouter'
+
+function getCategoryFromSearch(search) {
+  const categoria = new URLSearchParams(search).get('categoria');
+
+  if (categoria === 'libro' || categoria === 'cafe') return categoria;
+  return 'todos';
+}
 
 export default function Catalogo() {
-  const [categoryFilter, setCategoryFilter] = useState('todos');
+  const [, navigate] = useLocation();
+  const search = useSearch();
+  const categoryFilter = getCategoryFromSearch(search);
+  const cambiarCategoria = (categoria) => {
+    navigate(categoria === 'todos' ? '/catalogo' : `/catalogo?categoria=${categoria}`);
+  };
 
   return (
     <div className="catalogo">
@@ -15,9 +27,9 @@ export default function Catalogo() {
           <p className="p-Cat" >Libros y cafés importados <br /> para inspirar tus <br /> mejores momentos.</p>
 
           <div className="catalogo-botones">
-            <button className={`btn ${categoryFilter === 'todos' ? 'active' : ''}`} onClick={() => setCategoryFilter('todos')}>TODOS</button>
-            <button className={`btn ${categoryFilter === 'libro' ? 'active' : ''}`} onClick={() => setCategoryFilter('libro')}>LIBROS</button>
-            <button className={`btn ${categoryFilter === 'cafe' ? 'active' : ''}`} onClick={() => setCategoryFilter('cafe')}>CAFÉS IMPORTADOS</button>
+            <button className={`btn ${categoryFilter === 'todos' ? 'active' : ''}`} onClick={() => cambiarCategoria('todos')}>TODOS</button>
+            <button className={`btn ${categoryFilter === 'libro' ? 'active' : ''}`} onClick={() => cambiarCategoria('libro')}>LIBROS</button>
+            <button className={`btn ${categoryFilter === 'cafe' ? 'active' : ''}`} onClick={() => cambiarCategoria('cafe')}>CAFÉS IMPORTADOS</button>
           </div>
         </div>
 

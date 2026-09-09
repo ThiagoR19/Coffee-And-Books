@@ -11,10 +11,8 @@ const INFO_LINKS = [
 ];
 
 const CATEGORY_LINKS = [
-  { label: "Libros", path: "/catalogo" },
-  // { label: "Libros", path: "/productoLibro" },
-  { label: "Cafés", path: "/catalogo" },
-  //{ label: "Cafés", path: "/productoCafe" },
+  { label: "Libros", path: "/catalogo?categoria=libro" },
+  { label: "Cafés", path: "/catalogo?categoria=cafe" },
   { label: "Novedades", path: "/catalogo" },
   { label: "Ofertas", path: "/home" },
 ];
