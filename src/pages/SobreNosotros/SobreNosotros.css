@@ -113,7 +113,7 @@
 }
 
 /* vista responsive para celulares */
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   #sobreNosotros {
     background: url('../../assets/fondos/fondo2.0.0.svg');
     background-size: cover;
