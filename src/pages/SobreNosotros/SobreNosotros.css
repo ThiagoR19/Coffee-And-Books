@@ -150,3 +150,24 @@
   }
 
 }
+
+@media (max-width: 400px) {
+  .nuestraHistoria__img {
+    width: 150px;
+    height: 170px;
+    object-fit: cover;
+    object-position: center bottom;
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 350px) {
+
+  .nuestraHistoria__img {
+    width: 80px;
+    height: 170px;
+    object-fit: cover;
+    object-position: center bottom;
+    align-self: flex-end;
+  }
+}
